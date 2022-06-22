@@ -8,9 +8,18 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
 	/**
-	 * Define the application's command schedule.
+	 * The Artisan commands provided by your application.
 	 *
-	 * @param  \Illuminate\Console\Scheduling\Schedule $schedule
+	 * @var array
+	 */
+	protected $commands = [
+		Commands\ResetAuth::class,
+	];
+
+	/**
+	 * Defines the application's command schedule.
+	 *
+	 * @param  Schedule $schedule
 	 * @return void
 	 */
 	protected function schedule(Schedule $schedule)
@@ -18,7 +27,7 @@ class Kernel extends ConsoleKernel
 	}
 
 	/**
-	 * Register the commands for the application.
+	 * Registers the commands for the application.
 	 *
 	 * @return void
 	 */
