@@ -1,0 +1,68 @@
+.star {
+	font-size: 0;
+	height: $star-size;
+	margin-right: 1rem;
+	order: -1;
+	position: relative;
+	width: #{$star-size * 5};
+
+	&::before,
+	&::after {
+		background-image: url('/assets/img/star.svg');
+		background-size: $star-size;
+		content: '';
+		display: block;
+		flex: 0 0 auto;
+		height: $star-size;
+	}
+
+	&::before {
+		left: 0;
+		position: absolute;
+	}
+
+	&::after {
+		opacity: .1;
+		width: #{$star-size * 5};
+	}
+}
+
+.star--05::before {
+	width: #{$star-size * .5};
+}
+
+.star--10::before {
+	width: $star-size;
+}
+
+.star--15::before {
+	width: #{$star-size * 1.5};
+}
+
+.star--20::before {
+	width: #{$star-size * 2};
+}
+
+.star--25::before {
+	width: #{$star-size * 2.5};
+}
+
+.star--30::before {
+	width: #{$star-size * 3};
+}
+
+.star--35::before {
+	width: #{$star-size * 3.5};
+}
+
+.star--40::before {
+	width: #{$star-size * 4};
+}
+
+.star--45::before {
+	width: #{$star-size * 4.5};
+}
+
+.star--50::before {
+	width: #{$star-size * 5};
+}

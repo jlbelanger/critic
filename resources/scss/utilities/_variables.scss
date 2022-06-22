@@ -1,0 +1,37 @@
+$black: #000;
+$white: #fff;
+$light-gray: #aaa;
+
+$yellow: #eedfb7;
+
+$dark-blue: #121829;
+$blue: #202636;
+$light-blue: scale-color($blue, $lightness: 20%);
+
+$red: #782932;
+$light-red: scale-color($red, $lightness: 20%);
+
+$green: #093;
+
+$focus-color: #0cf;
+
+$font-size: 20px;
+$line-height: 1.2;
+$margin: 20px;
+$padding: 16px;
+
+$checkbox-size: 32px;
+
+$icon-size: 20px;
+
+$input-border-width: 1px;
+$input-line-height: 1;
+$input-padding: 12px;
+
+$password-button-width: 80px;
+
+$star-size: 24px;
+
+$breakpoint-tiny: 600px;
+$breakpoint-small: 800px;
+$breakpoint-medium: 1024px;

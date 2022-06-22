@@ -1,0 +1,62 @@
+.widget--graph {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	line-height: 1;
+	text-align: center;
+
+	.widget__title {
+		margin-top: 16px;
+		order: 2;
+	}
+}
+
+.graph {
+	align-items: flex-end;
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.graph__list-item {
+	flex: 1 1 auto;
+}
+
+.graph__link {
+	display: block;
+	margin: 0 2px;
+	max-width: 32px;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		.graph__bar {
+			background: $light-red;
+			font-size: 15px;
+			min-height: 22px;
+		}
+	}
+}
+
+.graph__bar {
+	background: $red;
+	display: block;
+	font-size: 0;
+	height: 150px;
+	margin: 0 auto 8px;
+	padding: 4px 0;
+	width: 100%;
+
+	&:empty {
+		padding: 0;
+	}
+}
+
+.graph__label {
+	font-size: 14px;
+	margin: 0 2px;
+}

@@ -1,0 +1,23 @@
+@font-face {
+	font-display: swap;
+	font-family: 'Libre Franklin';
+	font-style: normal;
+	font-weight: normal;
+	src: url('/assets/fonts/libre-franklin-medium.woff2') format('woff2'), url('/assets/fonts/libre-franklin-medium.woff') format('woff');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Libre Franklin';
+	font-style: italic;
+	font-weight: normal;
+	src: url('/assets/fonts/libre-franklin-medium-italic.woff2') format('woff2'), url('/assets/fonts/libre-franklin-medium-italic.woff') format('woff');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Libre Franklin';
+	font-style: normal;
+	font-weight: bold;
+	src: url('/assets/fonts/libre-franklin-extra-bold.woff2') format('woff2'), url('/assets/fonts/libre-franklin-extra-bold.woff') format('woff');
+}

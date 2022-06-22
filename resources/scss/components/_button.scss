@@ -1,0 +1,17 @@
+button {
+	background: $light-blue;
+	border: 1px solid $light-blue;
+	color: $black;
+	cursor: pointer;
+	display: inline-block;
+	font-size: $font-size;
+	line-height: $input-line-height;
+	padding: $input-padding;
+	text-decoration: none;
+}
+
+.button--danger {
+	background: $red;
+	border-color: $red;
+	color: $white;
+}

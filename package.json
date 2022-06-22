@@ -1,7 +1,7 @@
 {
 	"name": "@jlbelanger/critic",
 	"version": "1.0.0",
-	"description": "TV/movie/music reviews.",
+	"description": "Movie/TV/music reviews.",
 	"license": "GPL-3.0-only",
 	"author": {
 		"name": "Jenny Belanger",

@@ -1,0 +1,21 @@
+#page-header {
+	line-height: 1;
+	margin: #{$padding * 2} 0;
+	text-align: center;
+}
+
+#page-title {
+	background-image: url('/assets/img/title.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	font-size: 0;
+	height: 27px;
+	text-decoration: none;
+	width: 200px;
+
+	@media screen and (min-width: $breakpoint-tiny) {
+		height: 62px;
+		width: 450px;
+	}
+}

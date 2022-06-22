@@ -1,0 +1,114 @@
+#widgets {
+	display: grid;
+	grid-gap: $padding;
+
+	@media screen and (min-width: $breakpoint-medium) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+}
+
+.widget {
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+	animation-name: flip;
+	animation-timing-function: linear;
+	background: rgba($black, .2);
+	flex: 1 1 auto;
+	opacity: 0;
+	padding: 20px 24px 24px;
+	transform: rotateY(-180deg);
+
+	@media (prefers-reduced-motion) {
+		animation-name: none;
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes flip {
+	0% {
+		opacity: 0;
+		transform: rotateY(-180deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateY(0deg);
+	}
+}
+
+.widget--2col {
+	grid-column: 1/3;
+}
+
+.widget--2row {
+	grid-row: 1/3;
+}
+
+.widget__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.widget__list--columns {
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 0 8px;
+	grid-template-rows: repeat(5, 1fr);
+}
+
+.widget__list-item {
+	margin-top: 20px;
+}
+
+#recent-movies {
+	.widget__list-item + .widget__list-item {
+		margin-top: 24px;
+	}
+}
+
+#stats {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+
+	.widget__list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.widget__list-item {
+		line-height: 1;
+		margin: 0;
+		text-align: center;
+		width: 50%;
+	}
+
+	.widget__link {
+		color: $light-gray;
+		display: inline-block;
+		margin: 1rem 0;
+		text-decoration: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			.num {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.num {
+		color: $white;
+		display: block;
+		font-size: 2rem;
+		font-weight: bold;
+		margin-bottom: .5rem;
+		text-decoration: underline;
+		text-decoration-color: $light-blue;
+		text-decoration-thickness: 4px;
+	}
+}
