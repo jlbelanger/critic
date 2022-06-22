@@ -7,4 +7,6 @@
 	<arg name="ignore" value="bootstrap/*,node_modules/*,storage/*,vendor/*" />
 	<arg value="p" />
 	<arg value="s" />
+
+	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
 </ruleset>
