@@ -87,10 +87,11 @@
 	}
 
 	.widget__link {
+		@include unlink;
+
 		color: $light-gray;
 		display: inline-block;
 		margin: 1rem 0;
-		text-decoration: none;
 
 		&:hover,
 		&:active,
@@ -102,13 +103,11 @@
 	}
 
 	.num {
-		color: $white;
+		@include link;
+
 		display: block;
 		font-size: 2rem;
 		font-weight: bold;
 		margin-bottom: .5rem;
-		text-decoration: underline;
-		text-decoration-color: $light-blue;
-		text-decoration-thickness: 4px;
 	}
 }

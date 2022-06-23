@@ -7,6 +7,7 @@
 }
 
 .cloud {
+	font-size: 0;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -15,6 +16,14 @@
 .cloud__list-item {
 	display: inline-block;
 	margin: 4px;
+}
+
+.cloud__link {
+	@include unlink;
+}
+
+.cloud__text {
+	@include link;
 }
 
 .cloud__num {

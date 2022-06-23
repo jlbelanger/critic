@@ -1,5 +1,6 @@
-a {
+@mixin link {
 	color: $white;
+	text-decoration: underline;
 	text-decoration-color: $light-blue;
 	text-decoration-thickness: 4px;
 
@@ -8,6 +9,14 @@ a {
 	&:focus {
 		text-decoration: none;
 	}
+}
+
+@mixin unlink {
+	text-decoration: none;
+}
+
+a {
+	@include link;
 }
 
 .link {

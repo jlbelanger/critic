@@ -3,7 +3,11 @@
 namespace App\Providers;
 
 use App\Http\Kernel;
+use App\Models\Work;
+use App\Observers\WorkObserver;
+use DB;
 use Illuminate\Support\ServiceProvider;
+use Log;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,5 +38,7 @@ class AppServiceProvider extends ServiceProvider
 				Log::info($query->sql, $query->bindings, $query->time);
 			});
 		}
+
+		Work::observe(WorkObserver::class);
 	}
 }
