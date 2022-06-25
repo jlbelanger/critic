@@ -1,0 +1,90 @@
+$table-cell-padding: .75rem;
+
+table {
+	border-spacing: 0;
+	width: 100%;
+
+	input,
+	select {
+		width: 100%;
+	}
+}
+
+td {
+	border-top: 1px solid $light-blue;
+	padding: $table-cell-padding;
+}
+
+.column--name {
+	width: 100%;
+}
+
+.column--year {
+	width: 122px;
+}
+
+.column--author {
+	width: 222px;
+}
+
+.column--date {
+	width: 222px;
+}
+
+.column--rating {
+	width: 114px;
+}
+
+.column--tags {
+	width: 270px;
+}
+
+.sortable-button {
+	padding-right: calc(#{$table-cell-padding * 2} + #{($sorted-size * 2)});
+	position: relative;
+	width: 100%;
+}
+
+.sortable-button--asc,
+.sortable-button--desc {
+	&::after {
+		border-color: $white transparent transparent;
+		border-style: solid;
+		border-width: $sorted-size;
+		content: '';
+		display: block;
+		margin-top: #{-.5 * $sorted-size};
+		position: absolute;
+		right: $table-cell-padding;
+		top: 50%;
+		width: 0;
+	}
+}
+
+.sortable-button--desc {
+	&::after {
+		border-color: transparent transparent $white;
+		bottom: 50%;
+		margin-bottom: #{-.5 * $sorted-size};
+		margin-top: 0;
+		top: auto;
+	}
+}
+
+[data-filter-hide^='('] {
+	display: none;
+}
+
+.no-results {
+	thead {
+		td {
+			border-bottom: 1px solid $light-blue;
+		}
+	}
+
+	&::after {
+		content: 'No results.';
+		display: block;
+		padding: #{$table-cell-padding * 1.5} $table-cell-padding;
+	}
+}

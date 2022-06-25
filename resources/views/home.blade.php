@@ -8,7 +8,12 @@
 				<ul class="widget__list">
 					@foreach ($recentMovies as $movie)
 						<li class="widget__list-item">
-							<cite>{{ $movie->title }}</cite> <span class="year">({{ $movie->start_release_year }})</span>
+							@if (Auth::user())
+								<a href="{{ $movie->editUrl() }}"><cite>{{ $movie->title }}</cite></a>{{ $movie->is_private ? ' *' : '' }}
+							@else
+								<cite>{{ $movie->title }}</cite>
+							@endif
+							<span class="year">({{ $movie->year() }})</span>
 							<div class="date">{{ date('F j, Y', strtotime($movie->start_date)) }}</div>
 							<div class="star star--{{ $movie->rating * 10 }}">{{ $movie->rating }} out of 5</div>
 						</li>
@@ -61,11 +66,11 @@
 			<h1 class="widget__title">Movies by Decade</h1>
 			@if (!$moviesByDecade->isEmpty())
 				<ul class="graph">
-					@foreach ($moviesByDecade as $row)
+					@foreach ($moviesByDecade as $movie)
 						<li class="graph__list-item">
-							<a class="graph__link" href="/movies?decade={{ $row->decade }}0s">
-								<span class="graph__bar">{{ $row->num }}</span>
-								<span class="graph__label">&rsquo;{{ substr($row->decade, 2) }}0s</span>
+							<a class="graph__link" href="/movies?year={{ $movie->decade }}">
+								<span class="graph__bar">{{ $movie->num }}</span>
+								<span class="graph__label">&rsquo;{{ substr($movie->decade, 2) }}0s</span>
 							</a>
 						</li>
 					@endforeach
@@ -79,11 +84,11 @@
 			<h1 class="widget__title">Movies by Rating</h1>
 			@if (!$moviesByRating->isEmpty())
 				<ul class="graph">
-					@foreach ($moviesByRating as $row)
+					@foreach ($moviesByRating as $movie)
 						<li class="graph__list-item">
-							<a class="graph__link" href="/movies?rating={{ $row->rating }}">
-								<span class="graph__bar">{{ $row->num }}</span>
-								<span class="graph__label">{{ $row->rating }}</span>
+							<a class="graph__link" href="/movies?rating={{ $movie->rating }}">
+								<span class="graph__bar">{{ $movie->num }}</span>
+								<span class="graph__label">{{ $movie->rating }}</span>
 							</a>
 						</li>
 					@endforeach
@@ -99,7 +104,12 @@
 				<ul class="widget__list widget__list--columns">
 					@foreach ($currentTv as $tv)
 						<li class="widget__list-item">
-							<cite>{{ $tv->title }}</cite> <span class="year">({{ $tv->start_release_year }}&ndash;{{ $tv->end_release_year }})</span>
+							@if (Auth::user())
+								<a href="{{ $tv->editUrl() }}"><cite>{{ $tv->title }}</cite></a>{{ $tv->is_private ? ' *' : '' }}
+							@else
+								<cite>{{ $tv->title }}</cite>
+							@endif
+							<span class="year">({{ $tv->year() }})</span>
 						</li>
 					@endforeach
 				</ul>
@@ -114,7 +124,12 @@
 				<ul class="widget__list">
 					@foreach ($favouriteTv as $tv)
 						<li class="widget__list-item">
-							<cite>{{ $tv->title }}</cite> <span class="year">({{ $tv->start_release_year }}&ndash;{{ $tv->end_release_year }})</span>
+							@if (Auth::user())
+								<a href="{{ $tv->editUrl() }}"><cite>{{ $tv->title }}</cite></a>{{ $tv->is_private ? ' *' : '' }}
+							@else
+								<cite>{{ $tv->title }}</cite>
+							@endif
+							<span class="year">({{ $tv->year() }})</span>
 						</li>
 					@endforeach
 				</ul>
@@ -129,7 +144,12 @@
 				<ul class="widget__list">
 					@foreach ($favouriteMovies as $movie)
 						<li class="widget__list-item">
-							<cite>{{ $movie->title }}</cite> <span class="year">({{ $movie->start_release_year }})</span>
+							@if (Auth::user())
+								<a href="{{ $movie->editUrl() }}"><cite>{{ $movie->title }}</cite></a>{{ $movie->is_private ? ' *' : '' }}
+							@else
+								<cite>{{ $movie->title }}</cite>
+							@endif
+							<span class="year">({{ $movie->year() }})</span>
 						</li>
 					@endforeach
 				</ul>

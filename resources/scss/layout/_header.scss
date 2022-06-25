@@ -1,6 +1,7 @@
 #page-header {
+	font-size: 0;
 	line-height: 1;
-	margin: $padding 0 #{$padding * 2};
+	margin: $padding-large 0 0;
 	text-align: center;
 }
 
@@ -28,17 +29,37 @@
 
 $page-auth-height: ($input-padding * 2) + ($font-size * $line-height);
 
-body {
+body.auth {
 	padding-top: $page-auth-height;
 }
 
 #page-auth {
-	background: $darker-blue;
 	height: $page-auth-height;
 	left: 0;
-	padding: 0 $padding;
 	position: absolute;
 	right: 0;
-	text-align: right;
 	top: 0;
+}
+
+#page-auth-inner {
+	display: flex;
+}
+
+#page-auth-flex {
+	flex: 1 1 auto;
+}
+
+#page-auth,
+#page-footer {
+	background: $darker-blue;
+	text-align: right;
+}
+
+#page-footer {
+	margin-top: $padding-large;
+}
+
+#page-auth-inner,
+#page-footer-inner {
+	padding: 0 $padding;
 }

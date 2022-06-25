@@ -16,6 +16,8 @@
 @import 'components/paragraph';
 @import 'components/screenreader';
 @import 'components/star';
+@import 'components/table';
+@import 'components/tag-list';
 @import 'components/widget';
 @import 'components/widget-cloud';
 @import 'components/widget-graph';
@@ -49,5 +51,6 @@ body {
 }
 
 article {
-	padding: 0 $padding $padding;
+	margin-top: $padding-large;
+	padding: 0 $padding;
 }

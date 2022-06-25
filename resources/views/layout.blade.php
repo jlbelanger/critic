@@ -14,15 +14,23 @@
 		<link rel="icon" href="/favicon.ico">
 		<link rel="stylesheet" href="/assets/css/style.min.css?20220622">
 		<link rel="alternate" type="application/rss+xml" href="/feed.xml">
+		@if (!empty($canonical))
+			<link rel="canonical" href="{{ url($canonical) }}">
+		@endif
 		<script>document.documentElement.classList.remove('no-js');</script>
 	</head>
-	<body>
-		<main class="contain">
+	<body class="{{ Auth::user() ? 'auth' : '' }}">
+		<main>
 			<header id="page-header">
 				<a href="/" id="page-title">Critic</a>
-				<div id="page-auth">
-					<div class="contain">
-						@if (Auth::user())
+				@if (Auth::user())
+					<div id="page-auth">
+						<div class="contain" id="page-auth-inner">
+							<a class="link" href="/albums">Albums</a>
+							<a class="link" href="/books">Books</a>
+							<a class="link" href="/movies">Movies</a>
+							<a class="link" href="/tv">TV Shows</a>
+							<span id="page-auth-flex"></span>
 							<a class="link" href="/works/create?type=Album">+ Album</a>
 							<a class="link" href="/works/create?type=Book">+ Book</a>
 							<a class="link" href="/works/create?type=Movie">+ Movie</a>
@@ -32,16 +40,21 @@
 								@csrf
 								<button class="button--link" type="submit">Logout</button>
 							</form>
-						@elseif (Request::is('/'))
-							<a class="link" href="/login">Login</a>
-							<a href="https://github.com/jlbelanger/critic">GitHub</a>
-						@endif
+						</div>
 					</div>
-				</div>
+				@endif
 			</header>
-			<article>
+			<article class="contain">
 				@yield('content')
 			</article>
+			<footer id="page-footer">
+				<div class="contain" id="page-footer-inner">
+					@if (!Auth::user())
+						<a class="link" href="/login">Login</a>
+					@endif
+					<a class="link" href="https://github.com/jlbelanger/critic">GitHub</a>
+				</div>
+			</footer>
 		</main>
 		<script src="/assets/js/functions.min.js?20220622"></script>
 	</body>

@@ -6,6 +6,7 @@ use App\Models\Tag;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class TagController extends Controller
@@ -48,6 +49,45 @@ class TagController extends Controller
 		return redirect($row->editUrl())
 			->with('message', 'Tag added successfully.')
 			->with('status', 'success');
+	}
+
+	/**
+	 * Displays the specified resource.
+	 *
+	 * @param  Request $request
+	 * @param  string  $slug
+	 * @return View
+	 */
+	public function show(Request $request, string $slug) : View
+	{
+		$row = Tag::where('slug', '=', $slug);
+		if (!Auth::user()) {
+			$row = $row->where('is_private', '=', '0');
+		}
+		$row = $row->firstOrFail();
+		$works = $row->works()
+			->with([
+				'tags' => function ($q) {
+					$q->where('is_private', '=', '0')
+						->orderBy('slug');
+				},
+			])
+			->orderBy('title')
+			->get();
+		$defaults = [
+			'title' => $request->query('title'),
+			'year' => $request->query('year'),
+			'author' => $request->query('author'),
+			'date' => $request->query('date'),
+			'rating' => $request->query('rating'),
+			'tags' => $request->query('tags'),
+		];
+		return view('tags/show')
+			->with('metaTitle', $row->title)
+			->with('row', $row)
+			->with('works', $works)
+			->with('canonical', $row->url())
+			->with('defaults', $defaults);
 	}
 
 	/**

@@ -2,9 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class Work extends Model
@@ -26,6 +29,27 @@ class Work extends Model
 		'author',
 		'published_at',
 	];
+
+	public function date() : string
+	{
+		$date = $this->start_date;
+		if (!$date) {
+			return '';
+		}
+
+		$len = strlen($date);
+		if ($len === 4) {
+			$format = 'Y';
+			$date .= '-01-01';
+		} elseif ($len === 7) {
+			$format = 'F Y';
+			$date .= '-01';
+		} else {
+			$format = 'F j, Y';
+		}
+
+		return date($format, strtotime($date));
+	}
 
 	public function editUrl() : string
 	{
@@ -51,8 +75,26 @@ class Work extends Model
 		];
 	}
 
+	public function tags() : BelongsToMany
+	{
+		return $this->belongsToMany(Tag::class);
+	}
+
 	public function url() : string
 	{
 		return '/' . Str::plural(strtolower($this->type)) . '/' . $this->slug;
+	}
+
+	public static function visible() : Builder
+	{
+		if (!Auth::user()) {
+			return self::where('is_private', '=', 0);
+		}
+		return (new self)->newQuery();
+	}
+
+	public function year() : string
+	{
+		return $this->start_release_year . ($this->type === 'Tv' ? '–' . $this->end_release_year : '');
 	}
 }
