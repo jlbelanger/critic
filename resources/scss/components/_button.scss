@@ -1,6 +1,6 @@
 button {
-	background: $light-blue;
-	border: 1px solid $light-blue;
+	background: $light-yellow;
+	border: 1px solid $light-yellow;
 	color: $black;
 	cursor: pointer;
 	display: inline-block;
@@ -8,10 +8,52 @@ button {
 	line-height: $input-line-height;
 	padding: $input-padding;
 	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $yellow;
+		border-color: $yellow;
+	}
+}
+
+.button--link {
+	@include link;
+
+	background: transparent;
+	border-color: transparent;
+	color: $white;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparent;
+		border-color: transparent;
+	}
 }
 
 .button--danger {
 	background: $red;
 	border-color: $red;
 	color: $white;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $light-red;
+		border-color: $light-red;
+	}
+}
+
+.button--secondary {
+	background: $light-blue;
+	border-color: $light-blue;
+	color: $white;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $lighter-blue;
+		border-color: $lighter-blue;
+	}
 }

@@ -17,18 +17,25 @@
 		<script>document.documentElement.classList.remove('no-js');</script>
 	</head>
 	<body>
-		<main>
+		<main class="contain">
 			<header id="page-header">
 				<a href="/" id="page-title">Critic</a>
 				<div id="page-auth">
-					@if (Auth::user())
-						<form action="/logout" method="post">
-							@csrf
-							<button type="submit">Logout</button>
-						</form>
-					@elseif (Request::is('/'))
-						<a class="link" href="/login">Login</a>
-					@endif
+					<div class="contain">
+						@if (Auth::user())
+							<a class="link" href="/works/create?type=Album">+ Album</a>
+							<a class="link" href="/works/create?type=Book">+ Book</a>
+							<a class="link" href="/works/create?type=Movie">+ Movie</a>
+							<a class="link" href="/works/create?type=Tv">+ TV</a>
+							<form action="/logout" id="logout" method="post">
+								@csrf
+								<button class="button--link" type="submit">Logout</button>
+							</form>
+						@elseif (Request::is('/'))
+							<a class="link" href="/login">Login</a>
+							<a href="https://github.com/jlbelanger/critic">GitHub</a>
+						@endif
+					</div>
 				</div>
 			</header>
 			<article>

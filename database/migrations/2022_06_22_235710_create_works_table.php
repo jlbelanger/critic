@@ -20,7 +20,7 @@ class CreateWorksTable extends Migration
 			$table->smallInteger('start_release_year')->unsigned()->nullable();
 			$table->smallInteger('end_release_year')->unsigned()->nullable();
 			$table->string('slug');
-			$table->text('content');
+			$table->text('content')->nullable();
 			$table->boolean('is_private')->default(false);
 			$table->boolean('is_favourite')->default(false);
 			$table->float('rating')->unsigned()->nullable();

@@ -2,11 +2,14 @@ $black: #000;
 $white: #fff;
 $light-gray: #aaa;
 
-$yellow: #eedfb7;
+$light-yellow: #eedfb7;
+$yellow: #f9d268;
 
 $dark-blue: #121829;
+$darker-blue: scale-color($dark-blue, $lightness: -50%);
 $blue: #202636;
 $light-blue: scale-color($blue, $lightness: 20%);
+$lighter-blue: scale-color($light-blue, $lightness: 15%);
 
 $red: #782932;
 $light-red: scale-color($red, $lightness: 20%);
@@ -20,13 +23,22 @@ $line-height: 1.2;
 $margin: 20px;
 $padding: 16px;
 
+$caret-size: 12px;
+
 $checkbox-size: 32px;
+
+$form-margin: $margin / 2;
 
 $icon-size: 20px;
 
+$input-background-color: rgba($white, .05);
+$input-border-color: $black;
 $input-border-width: 1px;
-$input-line-height: 1;
+$input-line-height: 1.2;
 $input-padding: 12px;
+$input-height: ($font-size * $input-line-height) + ($input-padding * 2);
+
+$label-padding: $form-margin + $input-border-width + $input-padding;
 
 $password-button-width: 80px;
 

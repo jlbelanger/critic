@@ -1,6 +1,6 @@
 #page-header {
 	line-height: 1;
-	margin: #{$padding * 2} 0;
+	margin: $padding 0 #{$padding * 2};
 	text-align: center;
 }
 
@@ -14,8 +14,31 @@
 	text-decoration: none;
 	width: 200px;
 
+	&:hover,
+	&:active,
+	&:focus {
+		opacity: .7;
+	}
+
 	@media screen and (min-width: $breakpoint-tiny) {
 		height: 62px;
 		width: 450px;
 	}
+}
+
+$page-auth-height: ($input-padding * 2) + ($font-size * $line-height);
+
+body {
+	padding-top: $page-auth-height;
+}
+
+#page-auth {
+	background: $darker-blue;
+	height: $page-auth-height;
+	left: 0;
+	padding: 0 $padding;
+	position: absolute;
+	right: 0;
+	text-align: right;
+	top: 0;
 }

@@ -27,21 +27,26 @@ class Work extends Model
 		'published_at',
 	];
 
+	public function editUrl() : string
+	{
+		return '/works/' . $this->id . '/edit';
+	}
+
 	public function rules(string $id = '') : array
 	{
 		$required = $id ? 'filled' : 'required';
 		return [
 			'type' => [$required, 'in:Album,Book,Movie,Tv'],
 			'title' => [$required, 'max:255'],
-			'start_release_year' => ['digits:4'],
-			'end_release_year' => ['digits:4'],
+			'start_release_year' => ['nullable', 'digits:4'],
+			'end_release_year' => ['nullable', 'digits:4'],
 			'slug' => [$required, 'max:255', 'alpha_dash'],
 			'is_private' => ['boolean'],
 			'is_favourite' => ['boolean'],
-			'rating' => ['numeric', 'gte:0', 'lte:5'],
-			'start_date' => ['date_format:Y-m-d'],
-			'end_date' => ['date_format:Y-m-d'],
-			'published_at' => ['date_format:"Y-m-d H:i:s"'],
+			'rating' => ['nullable', 'numeric', 'gte:0', 'lte:5'],
+			'start_date' => ['nullable', 'date_format:Y-m-d'],
+			'end_date' => ['nullable', 'date_format:Y-m-d'],
+			'published_at' => ['nullable', 'date_format:"Y-m-d H:i:s"'],
 		];
 	}
 
