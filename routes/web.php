@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\WorkController;
 use App\Models\Tag;
 use App\Models\Work;
@@ -94,5 +95,6 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
 	Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+	Route::resource('tags', TagController::class)->except(['index', 'show']);
 	Route::resource('works', WorkController::class)->except(['index', 'show']);
 });

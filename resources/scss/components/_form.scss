@@ -59,7 +59,7 @@
 	color: $red;
 }
 
-#title {
+[action^='/works'] #title {
 	font-style: italic;
 }
 
@@ -90,6 +90,14 @@
 			padding-bottom: $form-margin;
 			padding-top: $form-margin;
 			vertical-align: middle;
+		}
+	}
+
+	.form-input {
+		input,
+		select,
+		textarea {
+			margin-top: 0;
 		}
 	}
 }

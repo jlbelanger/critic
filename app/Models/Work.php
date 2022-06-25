@@ -34,13 +34,14 @@ class Work extends Model
 
 	public function rules(string $id = '') : array
 	{
+		$unique = $id ? ',' . $id : '';
 		$required = $id ? 'filled' : 'required';
 		return [
 			'type' => [$required, 'in:Album,Book,Movie,Tv'],
 			'title' => [$required, 'max:255'],
 			'start_release_year' => ['nullable', 'digits:4'],
 			'end_release_year' => ['nullable', 'digits:4'],
-			'slug' => [$required, 'max:255', 'alpha_dash'],
+			'slug' => [$required, 'max:255', 'alpha_dash', 'unique:works,slug' . $unique],
 			'is_private' => ['boolean'],
 			'is_favourite' => ['boolean'],
 			'rating' => ['nullable', 'numeric', 'gte:0', 'lte:5'],

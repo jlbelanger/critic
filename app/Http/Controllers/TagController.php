@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Work;
+use App\Models\Tag;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class WorkController extends Controller
+class TagController extends Controller
 {
 	/**
 	 * Shows the form for creating a new resource.
@@ -18,8 +18,8 @@ class WorkController extends Controller
 	 */
 	public function create(Request $request) : View
 	{
-		return view('works/create')
-			->with('metaTitle', 'Add Work')
+		return view('tags/create')
+			->with('metaTitle', 'Add Tag')
 			->with('defaultType', $request->query('type'));
 	}
 
@@ -31,22 +31,22 @@ class WorkController extends Controller
 	 */
 	public function store(Request $request) : RedirectResponse
 	{
-		$request->validate(Work::rules());
+		$request->validate(Tag::rules());
 		$input = $request->input();
 
 		$input['is_private'] = $request->has('is_private');
-		$input['is_favourite'] = $request->has('is_favourite');
+		$input['hide_from_cloud'] = $request->has('hide_from_cloud');
 
 		if (empty($input['is_private'])) {
 			$input['published_at'] = date('Y-m-d H:i:s');
 		}
 
-		$row = Work::create($input);
+		$row = Tag::create($input);
 		if ($request->wantsJson()) {
-			return response()->json(['message' => 'Work added successfully.']);
+			return response()->json(['message' => 'Tag added successfully.']);
 		}
 		return redirect($row->editUrl())
-			->with('message', 'Work added successfully.')
+			->with('message', 'Tag added successfully.')
 			->with('status', 'success');
 	}
 
@@ -58,8 +58,8 @@ class WorkController extends Controller
 	 */
 	public function edit(string $id) : View
 	{
-		$row = Work::findOrFail($id);
-		return view('works/edit')
+		$row = Tag::findOrFail($id);
+		return view('tags/edit')
 			->with('metaTitle', 'Edit ' . $row->title)
 			->with('row', $row);
 	}
@@ -73,12 +73,12 @@ class WorkController extends Controller
 	 */
 	public function update(Request $request, string $id)
 	{
-		$row = Work::findOrFail($id);
-		$request->validate(Work::rules($id));
+		$row = Tag::findOrFail($id);
+		$request->validate(Tag::rules($id));
 		$input = $request->input();
 
 		$input['is_private'] = $request->has('is_private');
-		$input['is_favourite'] = $request->has('is_favourite');
+		$input['hide_from_cloud'] = $request->has('hide_from_cloud');
 
 		if (empty($input['published_at']) && empty($input['is_private'])) {
 			$input['published_at'] = date('Y-m-d H:i:s');
@@ -86,11 +86,11 @@ class WorkController extends Controller
 
 		$row->update($input);
 		if ($request->wantsJson()) {
-			return response()->json(['message' => 'Work updated successfully.']);
+			return response()->json(['message' => 'Tag updated successfully.']);
 		}
 
 		return back()
-			->with('message', 'Work updated successfully.')
+			->with('message', 'Tag updated successfully.')
 			->with('status', 'success');
 	}
 
@@ -103,13 +103,13 @@ class WorkController extends Controller
 	 */
 	public function destroy(Request $request, string $id) : RedirectResponse
 	{
-		$row = Work::findOrFail($id);
+		$row = Tag::findOrFail($id);
 		$row->delete();
 		if ($request->wantsJson()) {
-			return response()->json(['message' => 'Work deleted successfully.']);
+			return response()->json(['message' => 'Tag deleted successfully.']);
 		}
 		return redirect(RouteServiceProvider::HOME)
-			->with('message', 'Work deleted successfully.')
+			->with('message', 'Tag deleted successfully.')
 			->with('status', 'success');
 	}
 }

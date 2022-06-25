@@ -18,13 +18,19 @@ class Tag extends Model
 		'hide_from_cloud',
 	];
 
+	public function editUrl() : string
+	{
+		return '/tags/' . $this->id . '/edit';
+	}
+
 	public function rules(string $id = '') : array
 	{
+		$unique = $id ? ',' . $id : '';
 		$required = $id ? 'filled' : 'required';
 		return [
 			'title' => [$required, 'max:255'],
 			'short_title' => ['max:255'],
-			'slug' => [$required, 'max:255', 'alpha_dash'],
+			'slug' => [$required, 'max:255', 'alpha_dash', 'unique:tags,slug' . $unique],
 			'is_private' => ['boolean'],
 			'hide_from_cloud' => ['boolean'],
 		];

@@ -27,6 +27,7 @@
 							<a class="link" href="/works/create?type=Book">+ Book</a>
 							<a class="link" href="/works/create?type=Movie">+ Movie</a>
 							<a class="link" href="/works/create?type=Tv">+ TV</a>
+							<a class="link" href="/tags/create">+ Tag</a>
 							<form action="/logout" id="logout" method="post">
 								@csrf
 								<button class="button--link" type="submit">Logout</button>
