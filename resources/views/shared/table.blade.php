@@ -88,7 +88,7 @@
 					</td>
 					<td data-key="year">{{ $work->year() }}</td>
 					@if (!empty($showAuthor))
-						<td>{{ $work->author }}</td>
+						<td data-key="author">{{ $work->author }}</td>
 					@endif
 					<td data-key="date" data-sortable-value="{{ $work->start_date }}">{{ $work->date() }}</td>
 					<td data-key="rating">{{ $work->rating }}</td>

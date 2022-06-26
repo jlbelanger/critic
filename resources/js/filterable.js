@@ -23,22 +23,11 @@ function Filterable($list) {
 		}
 	};
 
-	const toSlug = (s) => (
-		s.toLowerCase()
-			.replace(/ & /g, '-and-')
-			.replace(/<[^>]+>/g, '')
-			.replace(/['’.]/g, '')
-			.replace(/[^a-z0-9-]+/g, '-')
-			.replace(/^-+/, '')
-			.replace(/-+$/, '')
-			.replace(/--+/g, '-')
-	);
-
 	const getValue = ($value) => {
 		if ($value.getAttribute('data-value')) {
-			return $value.getAttribute('data-value');
+			return slugify($value.getAttribute('data-value'));
 		}
-		return toSlug($value.innerText);
+		return slugify($value.innerText);
 	};
 
 	const showItem = ($item, filterKey) => {
@@ -57,7 +46,7 @@ function Filterable($list) {
 		const $input = e.target;
 		const filterKey = $input.getAttribute('data-filterable-input');
 		const isExact = $input.getAttribute('data-filterable-exact');
-		const value = toSlug($input.value);
+		const value = slugify($input.value);
 		$items.forEach(($item) => {
 			const $element = $item.querySelector(`[data-key="${filterKey}"]`);
 			if (!value || ($element && (isExact ? getValue($element) === value : getValue($element).indexOf(value) > -1))) {

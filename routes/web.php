@@ -117,6 +117,7 @@ Route::middleware('auth')->group(function () {
 	Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 	Route::resource('tags', TagController::class)->except(['index', 'show']);
 	Route::resource('works', WorkController::class)->except(['index', 'show']);
+	Route::get('/tags.json', [TagController::class, 'search']);
 });
 
 Route::get('/albums', [WorkController::class, 'albums']);

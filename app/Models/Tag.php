@@ -19,6 +19,15 @@ class Tag extends Model
 		'hide_from_cloud',
 	];
 
+	public function asJsonArray() : array
+	{
+		return [
+			'id' => (string) $this->id,
+			'url' => $this->url(),
+			'title' => $this->title,
+		];
+	}
+
 	public function editUrl() : string
 	{
 		return '/tags/' . $this->id . '/edit';

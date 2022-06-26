@@ -188,3 +188,19 @@
 		@enderror
 	</div>
 </div>
+
+<div class="form-row">
+	<label class="form-label" for="tags">Tags</label>
+	<div class="form-input">
+		@include(
+			'shared.autocomplete',
+			[
+				'id' => 'tags',
+				'items' => $tags,
+			]
+		)
+		@error('tags')
+			<span class="form-error">{{ $message }}</span>
+		@enderror
+	</div>
+</div>

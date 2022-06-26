@@ -10,15 +10,7 @@ function Slugable($slugInput) {
 			}
 			values.push($input.value);
 		});
-		return values.join('-')
-			.toLowerCase()
-			.replace(/ & /g, '-and-')
-			.replace(/<[^>]+>/g, '')
-			.replace(/['’.]/g, '')
-			.replace(/[^a-z0-9-]+/g, '-')
-			.replace(/^-+/, '')
-			.replace(/-+$/, '')
-			.replace(/--+/g, '-');
+		return slugify(values.join('-'));
 	};
 
 	const onChangeInput = () => {

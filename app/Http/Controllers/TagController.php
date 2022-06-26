@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class TagController extends Controller
@@ -29,9 +31,9 @@ class TagController extends Controller
 	 * Stores a newly created resource in storage.
 	 *
 	 * @param  Request $request
-	 * @return RedirectResponse
+	 * @return JsonResponse|RedirectResponse
 	 */
-	public function store(Request $request) : RedirectResponse
+	public function store(Request $request)
 	{
 		$request->validate(Tag::rules());
 		$input = $request->input();
@@ -146,9 +148,9 @@ class TagController extends Controller
 	 *
 	 * @param  Request $request
 	 * @param  string  $id
-	 * @return View
+	 * @return JsonResponse|RedirectResponse
 	 */
-	public function destroy(Request $request, string $id) : RedirectResponse
+	public function destroy(Request $request, string $id)
 	{
 		$row = Tag::findOrFail($id);
 		$row->delete();
@@ -161,5 +163,22 @@ class TagController extends Controller
 		return redirect(RouteServiceProvider::HOME)
 			->with('message', 'Tag deleted successfully.')
 			->with('status', 'success');
+	}
+
+	/**
+	 * @param  Request $request
+	 * @return JsonResponse
+	 */
+	public function search(Request $request) : JsonResponse
+	{
+		$term = Str::slug($request->query('q'));
+		$items = Tag::where('slug', 'LIKE', '%' . $term . '%')
+			->orderBy('slug')
+			->get();
+		$output = [];
+		foreach ($items as $item) {
+			$output[] = $item->asJsonArray();
+		}
+		return response()->json(['items' => $output]);
 	}
 }

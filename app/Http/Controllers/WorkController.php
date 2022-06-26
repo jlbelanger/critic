@@ -103,16 +103,17 @@ class WorkController extends Controller
 	{
 		return view('works/create')
 			->with('metaTitle', 'Add Work')
-			->with('defaultType', $request->query('type'));
+			->with('defaultType', $request->query('type'))
+			->with('tags', []);
 	}
 
 	/**
 	 * Stores a newly created resource in storage.
 	 *
 	 * @param  Request $request
-	 * @return RedirectResponse
+	 * @return JsonResponse|RedirectResponse
 	 */
-	public function store(Request $request) : RedirectResponse
+	public function store(Request $request)
 	{
 		$request->validate(Work::rules());
 		$input = $request->input();
@@ -125,6 +126,10 @@ class WorkController extends Controller
 		}
 
 		$row = Work::create($input);
+		if (!empty($input['tags'])) {
+			$row->tags()->attach($input['tags']);
+		}
+
 		Cache::forget('indexVarsAuth');
 		Cache::forget('indexVarsGuest');
 
@@ -145,9 +150,17 @@ class WorkController extends Controller
 	public function edit(string $id) : View
 	{
 		$row = Work::findOrFail($id);
+
+		$tags = $row->tags()->orderBy('slug')->get();
+		$tagsOutput = [];
+		foreach ($tags as $tag) {
+			$tagsOutput[] = $tag->asJsonArray();
+		}
+
 		return view('works/edit')
 			->with('metaTitle', 'Edit ' . $row->title)
-			->with('row', $row);
+			->with('row', $row)
+			->with('tags', $tagsOutput);
 	}
 
 	/**
@@ -171,6 +184,12 @@ class WorkController extends Controller
 		}
 
 		$row->update($input);
+		if (!empty($input['tags'])) {
+			$row->tags()->sync($input['tags']);
+		} else {
+			$row->tags()->detach();
+		}
+
 		Cache::forget('indexVarsAuth');
 		Cache::forget('indexVarsGuest');
 
@@ -188,7 +207,7 @@ class WorkController extends Controller
 	 *
 	 * @param  Request $request
 	 * @param  string  $id
-	 * @return View
+	 * @return JsonResponse|RedirectResponse
 	 */
 	public function destroy(Request $request, string $id) : RedirectResponse
 	{
