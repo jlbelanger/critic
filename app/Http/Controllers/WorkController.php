@@ -6,6 +6,7 @@ use App\Models\Work;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
@@ -124,6 +125,9 @@ class WorkController extends Controller
 		}
 
 		$row = Work::create($input);
+		Cache::forget('indexVarsAuth');
+		Cache::forget('indexVarsGuest');
+
 		if ($request->wantsJson()) {
 			return response()->json(['message' => 'Work added successfully.']);
 		}
@@ -167,6 +171,9 @@ class WorkController extends Controller
 		}
 
 		$row->update($input);
+		Cache::forget('indexVarsAuth');
+		Cache::forget('indexVarsGuest');
+
 		if ($request->wantsJson()) {
 			return response()->json(['message' => 'Work updated successfully.']);
 		}
@@ -187,7 +194,11 @@ class WorkController extends Controller
 	{
 		$row = Work::findOrFail($id);
 		$url = '/' . Str::plural(strtolower($row->type));
+
 		$row->delete();
+		Cache::forget('indexVarsAuth');
+		Cache::forget('indexVarsGuest');
+
 		if ($request->wantsJson()) {
 			return response()->json(['message' => 'Work deleted successfully.']);
 		}

@@ -16,7 +16,7 @@
 	background: rgba($black, .2);
 	flex: 1 1 auto;
 	opacity: 0;
-	padding: 20px 24px 24px;
+	padding: 1.25rem;
 	transform: rotateY(-180deg);
 
 	@media (prefers-reduced-motion) {
@@ -55,17 +55,21 @@
 .widget__list--columns {
 	display: grid;
 	grid-auto-flow: column;
-	grid-gap: 0 8px;
+	grid-gap: 0 1rem;
 	grid-template-rows: repeat(5, 1fr);
 }
 
 .widget__list-item {
-	margin-top: 20px;
+	margin-top: 1rem;
 }
 
 #recent-movies {
 	.widget__list-item + .widget__list-item {
-		margin-top: 24px;
+		margin-top: 1.5rem;
+	}
+
+	.date {
+		margin-top: .25rem;
 	}
 }
 

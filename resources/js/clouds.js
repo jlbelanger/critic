@@ -10,8 +10,8 @@ clouds.forEach((cloud) => {
 		}
 	});
 
-	const minFontSize = 8;
-	const maxFontSize = 28;
+	const minFontSize = 10;
+	const maxFontSize = 24;
 	nums.forEach((num) => {
 		const val = parseInt(num.innerText, 10);
 		if (val) {

@@ -15,34 +15,40 @@
 	text-decoration: none;
 	width: 200px;
 
-	&:hover,
-	&:active,
-	&:focus {
-		opacity: .7;
-	}
-
 	@media screen and (min-width: $breakpoint-tiny) {
 		height: 62px;
 		width: 450px;
 	}
 }
 
-$page-auth-height: ($input-padding * 2) + ($font-size * $line-height);
+a#page-title {
+	&:hover,
+	&:active,
+	&:focus {
+		opacity: .7;
+	}
+}
 
 body.auth {
 	padding-top: $page-auth-height;
 }
 
 #page-auth {
-	height: $page-auth-height;
+	font-size: $font-size;
 	left: 0;
+	min-height: $page-auth-height;
 	position: absolute;
 	right: 0;
 	top: 0;
+
+	.link {
+		white-space: nowrap;
+	}
 }
 
 #page-auth-inner {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 #page-auth-flex {

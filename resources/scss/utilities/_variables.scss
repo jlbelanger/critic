@@ -13,10 +13,12 @@ $lighter-blue: scale-color($light-blue, $lightness: 15%);
 
 $red: #782932;
 $light-red: scale-color($red, $lightness: 20%);
+$lighter-red: #ce717b;
 
 $green: #093;
 
 $focus-color: #0cf;
+$focus-width: 4px;
 
 $font-size: 20px;
 $line-height: 1.2;
@@ -41,6 +43,8 @@ $input-padding: 12px;
 $input-height: ($font-size * $input-line-height) + ($input-padding * 2);
 
 $label-padding: $form-margin + $input-border-width + $input-padding;
+
+$page-auth-height: ($input-padding * 2) + ($font-size * $line-height);
 
 $password-button-width: 80px;
 

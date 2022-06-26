@@ -95,6 +95,13 @@ class Work extends Model
 
 	public function year() : string
 	{
-		return $this->start_release_year . ($this->type === 'Tv' ? '–' . $this->end_release_year : '');
+		$output = '';
+		if ($this->start_release_year) {
+			$output .= $this->start_release_year;
+		}
+		if ($this->type === 'Tv' && $this->start_release_year !== $this->end_release_year) {
+			$output .= '–' . $this->end_release_year;
+		}
+		return $output;
 	}
 }

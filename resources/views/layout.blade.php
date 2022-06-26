@@ -20,22 +20,52 @@
 		<script>document.documentElement.classList.remove('no-js');</script>
 	</head>
 	<body class="{{ Auth::user() ? 'auth' : '' }}">
+		<a class="button" href="#article" id="skip">Skip to content</a>
 		<main>
 			<header id="page-header">
-				<a href="/" id="page-title">Critic</a>
+				@if (Request::is('/'))
+					<span id="page-title">Critic</span>
+				@else
+					<a href="/" id="page-title">Critic</a>
+				@endif
 				@if (Auth::user())
 					<div id="page-auth">
 						<div class="contain" id="page-auth-inner">
-							<a class="link" href="/albums">Albums</a>
-							<a class="link" href="/books">Books</a>
-							<a class="link" href="/movies">Movies</a>
-							<a class="link" href="/tv">TV Shows</a>
+							<a class="link{{ Request::is('albums') ? ' link--active' : '' }}" href="/albums">Albums</a>
+							<a class="link{{ Request::is('books') ? ' link--active' : '' }}" href="/books">Books</a>
+							<a class="link{{ Request::is('movies') ? ' link--active' : '' }}" href="/movies">Movies</a>
+							<a class="link{{ Request::is('tv') ? ' link--active' : '' }}" href="/tv">TV Shows</a>
 							<span id="page-auth-flex"></span>
-							<a class="link" href="/works/create?type=Album">+ Album</a>
-							<a class="link" href="/works/create?type=Book">+ Book</a>
-							<a class="link" href="/works/create?type=Movie">+ Movie</a>
-							<a class="link" href="/works/create?type=Tv">+ TV</a>
-							<a class="link" href="/tags/create">+ Tag</a>
+							<a
+								class="link{{ Request::is('works/create') && $defaultType === 'Album' ? ' link--active' : '' }}"
+								href="/works/create?type=Album"
+							>
+								+ Album
+							</a>
+							<a
+								class="link{{ Request::is('works/create') && $defaultType === 'Book' ? ' link--active' : '' }}"
+								href="/works/create?type=Book"
+							>
+								+ Book
+							</a>
+							<a
+								class="link{{ Request::is('works/create') && $defaultType === 'Movie' ? ' link--active' : '' }}"
+								href="/works/create?type=Movie"
+							>
+								+ Movie
+							</a>
+							<a
+								class="link{{ Request::is('works/create') && $defaultType === 'Tv' ? ' link--active' : '' }}"
+								href="/works/create?type=Tv"
+							>
+								+ TV
+							</a>
+							<a
+								class="link{{ Request::is('tags/create') ? ' link--active' : '' }}"
+								href="/tags/create"
+							>
+								+ Tag
+							</a>
 							<form action="/logout" id="logout" method="post">
 								@csrf
 								<button class="button--link" type="submit">Logout</button>
@@ -44,12 +74,12 @@
 					</div>
 				@endif
 			</header>
-			<article class="contain">
+			<article class="contain" id="article">
 				@yield('content')
 			</article>
 			<footer id="page-footer">
 				<div class="contain" id="page-footer-inner">
-					@if (!Auth::user())
+					@if (!Auth::user() && !Request::is('login'))
 						<a class="link" href="/login">Login</a>
 					@endif
 					<a class="link" href="https://github.com/jlbelanger/critic">GitHub</a>

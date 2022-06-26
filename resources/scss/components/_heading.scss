@@ -6,7 +6,16 @@ h1 {
 
 	small {
 		color: $light-gray;
-		font-weight: normal;
 		font-size: 1rem;
+		font-weight: normal;
+	}
+}
+
+#content-title {
+	padding-left: $padding;
+	padding-right: $padding;
+
+	&.content-title--no-results {
+		padding: 0;
 	}
 }

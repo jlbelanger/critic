@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<title>Not Found | Critic</title>
+		<title>404 Not Found | Critic</title>
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 		<link rel="icon" href="/favicon.ico">
@@ -28,7 +28,7 @@
 			}
 			p {
 				line-height: 1.5;
-				margin: 24px 0 0;
+				margin: 1rem 0 0;
 				text-align: center;
 			}
 		</style>

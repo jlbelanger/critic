@@ -3,11 +3,14 @@ function Slugable($slugInput) {
 	const $inputs = document.querySelectorAll(inputSelectors);
 
 	const toSlug = () => {
-		const value = [];
+		const values = [];
 		$inputs.forEach(($input) => {
-			value.push($input.value);
+			if ($input.name === 'end_release_year' && $input.value === values.at(-1)) {
+				return;
+			}
+			values.push($input.value);
 		});
-		return value.join('-')
+		return values.join('-')
 			.toLowerCase()
 			.replace(/ & /g, '-and-')
 			.replace(/<[^>]+>/g, '')

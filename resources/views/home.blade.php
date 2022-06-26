@@ -14,8 +14,8 @@
 								<cite>{{ $movie->title }}</cite>
 							@endif
 							<span class="year">({{ $movie->year() }})</span>
-							<div class="date">{{ date('F j, Y', strtotime($movie->start_date)) }}</div>
-							<div class="star star--{{ $movie->rating * 10 }}">{{ $movie->rating }} out of 5</div>
+							<div class="date"><span class="sr">Date: </span>{{ date('F j, Y', strtotime($movie->start_date)) }}</div>
+							<div class="star star--{{ $movie->rating * 10 }}"><span class="sr">Rating: </span>{{ $movie->rating }} out of 5</div>
 						</li>
 					@endforeach
 				</ul>
@@ -28,16 +28,24 @@
 			<h1 class="widget__title sr">Stats</h1>
 			<ul class="widget__list">
 				<li class="widget__list-item">
-					<a class="widget__link" href="/movies"><span class="num">{{ !empty($stats['Movie']) ? number_format($stats['Movie']) : 0 }}</span> Movies</a>
+					<a class="widget__link" href="/movies">
+						<span class="num">{{ !empty($stats['Movie']) ? number_format($stats['Movie']) : 0 }}</span> Movies
+					</a>
 				</li>
 				<li class="widget__list-item">
-					<a class="widget__link" href="/tv"><span class="num">{{ !empty($stats['Tv']) ? number_format($stats['Tv']) : 0 }}</span> TV</a>
+					<a class="widget__link" href="/tv">
+						<span class="num">{{ !empty($stats['Tv']) ? number_format($stats['Tv']) : 0 }}</span> TV
+					</a>
 				</li>
 				<li class="widget__list-item">
-					<a class="widget__link" href="/books"><span class="num">{{ !empty($stats['Book']) ? number_format($stats['Book']) : 0 }}</span> Books</a>
+					<a class="widget__link" href="/books">
+						<span class="num">{{ !empty($stats['Book']) ? number_format($stats['Book']) : 0 }}</span> Books
+					</a>
 				</li>
 				<li class="widget__list-item">
-					<a class="widget__link" href="/albums"><span class="num">{{ !empty($stats['Album']) ? number_format($stats['Album']) : 0 }}</span> Albums</a>
+					<a class="widget__link" href="/albums">
+						<span class="num">{{ !empty($stats['Album']) ? number_format($stats['Album']) : 0 }}</span> Albums
+					</a>
 				</li>
 			</ul>
 		</section>
@@ -68,7 +76,11 @@
 				<ul class="graph">
 					@foreach ($moviesByDecade as $movie)
 						<li class="graph__list-item">
-							<a class="graph__link" href="/movies?year={{ $movie->decade }}">
+							<a
+								aria-label="{{ $movie->decade }}0s: {{ $movie->num }} movie{{ $movie->num !== 1 ? 's' : '' }}"
+								class="graph__link"
+								href="/movies?year={{ $movie->decade }}"
+							>
 								<span class="graph__bar">{{ $movie->num }}</span>
 								<span class="graph__label">&rsquo;{{ substr($movie->decade, 2) }}0s</span>
 							</a>
@@ -86,7 +98,11 @@
 				<ul class="graph">
 					@foreach ($moviesByRating as $movie)
 						<li class="graph__list-item">
-							<a class="graph__link" href="/movies?rating={{ $movie->rating }}">
+							<a
+								aria-label="{{ $movie->rating }} out of 5: {{ $movie->num }} movie{{ $movie->num !== 1 ? 's' : '' }}"
+								class="graph__link"
+								href="/movies?rating={{ $movie->rating }}"
+							>
 								<span class="graph__bar">{{ $movie->num }}</span>
 								<span class="graph__label">{{ $movie->rating }}</span>
 							</a>

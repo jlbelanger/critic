@@ -16,7 +16,7 @@
 .cloud__list-item {
 	display: inline-block;
 	font-size: $font-size;
-	margin: 4px;
+	margin: .25rem;
 }
 
 .cloud__link {
@@ -28,5 +28,5 @@
 }
 
 .cloud__num {
-	font-size: 0;
+	display: none;
 }

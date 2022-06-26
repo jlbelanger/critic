@@ -2,12 +2,14 @@
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1600px;
+	width: 100%;
 }
 
 .contain-small {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 900px;
+	width: 100%;
 }
 
 .form-header {
@@ -50,6 +52,7 @@
 .form-note,
 .form-error {
 	display: block;
+	font-size: 16px;
 	margin-top: .25rem;
 }
 
@@ -58,7 +61,7 @@
 }
 
 .form-error {
-	color: $red;
+	color: $lighter-red;
 }
 
 [action^='/works'] #title {

@@ -4,7 +4,13 @@
 	<div class="contain-small">
 		@include('shared.errors', ['errors' => $errors])
 
-		<form action="/works/{{ $row->id }}" class="admin" data-confirmable="Are you sure you want to delete this work?" id="delete-form" method="post">
+		<form
+			action="/works/{{ $row->id }}"
+			class="admin"
+			data-confirmable="Are you sure you want to delete this work?"
+			id="delete-form"
+			method="post"
+		>
 			@csrf
 			@method('DELETE')
 		</form>

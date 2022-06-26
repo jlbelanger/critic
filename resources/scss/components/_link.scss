@@ -6,3 +6,8 @@ a {
 	display: inline-block;
 	padding: $input-padding;
 }
+
+.link--active {
+	color: $light-gray;
+	text-decoration: none;
+}

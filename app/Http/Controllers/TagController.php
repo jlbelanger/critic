@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
 class TagController extends Controller
@@ -43,6 +44,9 @@ class TagController extends Controller
 		}
 
 		$row = Tag::create($input);
+		Cache::forget('indexVarsAuth');
+		Cache::forget('indexVarsGuest');
+
 		if ($request->wantsJson()) {
 			return response()->json(['message' => 'Tag added successfully.']);
 		}
@@ -125,6 +129,9 @@ class TagController extends Controller
 		}
 
 		$row->update($input);
+		Cache::forget('indexVarsAuth');
+		Cache::forget('indexVarsGuest');
+
 		if ($request->wantsJson()) {
 			return response()->json(['message' => 'Tag updated successfully.']);
 		}
@@ -145,6 +152,9 @@ class TagController extends Controller
 	{
 		$row = Tag::findOrFail($id);
 		$row->delete();
+		Cache::forget('indexVarsAuth');
+		Cache::forget('indexVarsGuest');
+
 		if ($request->wantsJson()) {
 			return response()->json(['message' => 'Tag deleted successfully.']);
 		}

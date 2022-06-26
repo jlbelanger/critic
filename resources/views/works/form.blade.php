@@ -28,8 +28,26 @@
 <div class="form-row">
 	<label class="form-label required" for="start_release_year">Year</label>
 	<div class="form-input">
-		<input id="start_release_year" maxlength="4" name="start_release_year" required size="4" type="text" value="{{ old('start_release_year', !empty($row) ? $row->start_release_year : '') }}" />
-		<input data-show-for-type="Tv" id="end_release_year" maxlength="4" name="end_release_year" size="4" type="text" value="{{ old('end_release_year', !empty($row) ? $row->end_release_year : '') }}" />
+		<input
+			aria-label="Start Year"
+			id="start_release_year"
+			maxlength="4"
+			name="start_release_year"
+			required
+			size="4"
+			type="text"
+			value="{{ old('start_release_year', !empty($row) ? $row->start_release_year : '') }}"
+		/>
+		<input
+			aria-label="End Year"
+			data-show-for-type="Tv"
+			id="end_release_year"
+			maxlength="4"
+			name="end_release_year"
+			size="4"
+			type="text"
+			value="{{ old('end_release_year', !empty($row) ? $row->end_release_year : '') }}"
+		/>
 		@error('start_release_year')
 			<span class="form-error">{{ $message }}</span>
 		@enderror
@@ -42,7 +60,15 @@
 <div class="form-row">
 	<label class="form-label required" for="slug">Slug</label>
 	<div class="form-input">
-		<input data-slug="#title,#start_release_year,#end_release_year" id="slug" maxlength="255" name="slug" required type="text" value="{{ old('slug', !empty($row) ? $row->slug : '') }}" />
+		<input
+			data-slug="#title,#start_release_year,#end_release_year"
+			id="slug"
+			maxlength="255"
+			name="slug"
+			required
+			type="text"
+			value="{{ old('slug', !empty($row) ? $row->slug : '') }}"
+		/>
 		@error('slug')
 			<span class="form-error">{{ $message }}</span>
 		@enderror
@@ -65,8 +91,23 @@
 <div class="form-row">
 	<label class="form-label" for="start_date">Date</label>
 	<div class="form-input">
-		<input id="start_date" maxlength="12" name="start_date" size="12" type="text" value="{{ old('start_date', !empty($row) ? $row->start_date : '') }}" />
-		<input data-show-for-type="Book,Tv" id="end_date" name="end_date" size="12" type="text" value="{{ old('end_date', !empty($row) ? $row->end_date : '') }}" />
+		<input
+			id="start_date"
+			maxlength="12"
+			name="start_date"
+			size="12"
+			type="text"
+			value="{{ old('start_date', !empty($row) ? $row->start_date : '') }}"
+		/>
+		<input
+			aria-label="End Date"
+			data-show-for-type="Book,Tv"
+			id="end_date"
+			name="end_date"
+			size="12"
+			type="text"
+			value="{{ old('end_date', !empty($row) ? $row->end_date : '') }}"
+		/>
 		<small class="form-note">YYYY-MM-DD</small>
 		@error('start_date')
 			<span class="form-error">{{ $message }}</span>
@@ -80,7 +121,7 @@
 <div class="form-row">
 	<label class="form-label" for="rating">Rating</label>
 	<div class="form-input">
-		<input id="rating" maxlength="1" name="rating" size="3" type="text" value="{{ old('rating', !empty($row) ? $row->rating : '') }}" />
+		<input id="rating" maxlength="3" name="rating" size="3" type="text" value="{{ old('rating', !empty($row) ? $row->rating : '') }}" />
 		out of 5
 		@error('rating')
 			<span class="form-error">{{ $message }}</span>
@@ -92,7 +133,6 @@
 	<label class="form-label" for="content">Content</label>
 	<div class="form-input">
 		<textarea class="textarea--large" id="content" name="content">{{ old('content', !empty($row) ? $row->content : '') }}</textarea>
-		<small class="form-note">Supports Markdown</small>
 		@error('content')
 			<span class="form-error">{{ $message }}</span>
 		@enderror
@@ -134,7 +174,14 @@
 <div class="form-row">
 	<label class="form-label" for="published_at">Published</label>
 	<div class="form-input">
-		<input id="published_at" maxlength="18" name="published_at" size="19" type="text" value="{{ old('published_at', !empty($row) ? $row->published_at : '') }}" />
+		<input
+			id="published_at"
+			maxlength="18"
+			name="published_at"
+			size="18"
+			type="text"
+			value="{{ old('published_at', !empty($row) ? $row->published_at : '') }}"
+		/>
 		<small class="form-note">YYYY-MM-DD HH:MM:SS</small>
 		@error('published_at')
 			<span class="form-error">{{ $message }}</span>

@@ -5,6 +5,7 @@ table {
 	width: 100%;
 
 	input,
+	input[size],
 	select {
 		width: 100%;
 	}
@@ -21,6 +22,10 @@ td {
 
 .column--year {
 	width: 122px;
+}
+
+.column--long-year {
+	width: 142px;
 }
 
 .column--author {
@@ -43,6 +48,12 @@ td {
 	padding-right: calc(#{$table-cell-padding * 2} + #{($sorted-size * 2)});
 	position: relative;
 	width: 100%;
+
+	.no-js & {
+		cursor: default;
+		pointer-events: none;
+		text-decoration: none;
+	}
 }
 
 .sortable-button--asc,
@@ -86,5 +97,11 @@ td {
 		content: 'No results.';
 		display: block;
 		padding: #{$table-cell-padding * 1.5} $table-cell-padding;
+	}
+}
+
+.no-js {
+	#filters {
+		display: none;
 	}
 }
