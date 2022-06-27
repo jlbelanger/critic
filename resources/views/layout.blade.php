@@ -31,45 +31,48 @@
 				@if (Auth::user())
 					<div id="page-auth">
 						<div class="contain" id="page-auth-inner">
-							<a class="link{{ Request::is('albums') ? ' link--active' : '' }}" href="/albums">Albums</a>
-							<a class="link{{ Request::is('books') ? ' link--active' : '' }}" href="/books">Books</a>
-							<a class="link{{ Request::is('movies') ? ' link--active' : '' }}" href="/movies">Movies</a>
-							<a class="link{{ Request::is('tv') ? ' link--active' : '' }}" href="/tv">TV Shows</a>
-							<span id="page-auth-flex"></span>
-							<a
-								class="link{{ Request::is('works/create') && $defaultType === 'Album' ? ' link--active' : '' }}"
-								href="/works/create?type=Album"
-							>
-								+ Album
-							</a>
-							<a
-								class="link{{ Request::is('works/create') && $defaultType === 'Book' ? ' link--active' : '' }}"
-								href="/works/create?type=Book"
-							>
-								+ Book
-							</a>
-							<a
-								class="link{{ Request::is('works/create') && $defaultType === 'Movie' ? ' link--active' : '' }}"
-								href="/works/create?type=Movie"
-							>
-								+ Movie
-							</a>
-							<a
-								class="link{{ Request::is('works/create') && $defaultType === 'Tv' ? ' link--active' : '' }}"
-								href="/works/create?type=Tv"
-							>
-								+ TV
-							</a>
-							<a
-								class="link{{ Request::is('tags/create') ? ' link--active' : '' }}"
-								href="/tags/create"
-							>
-								+ Tag
-							</a>
-							<form action="/logout" id="logout" method="post">
-								@csrf
-								<button class="button--link" type="submit">Logout</button>
-							</form>
+							<button id="menu-button" type="button">Menu</button>
+							<div id="menu">
+								<a class="link{{ Request::is('albums') ? ' link--active' : '' }}" href="/albums">Albums</a>
+								<a class="link{{ Request::is('books') ? ' link--active' : '' }}" href="/books">Books</a>
+								<a class="link{{ Request::is('movies') ? ' link--active' : '' }}" href="/movies">Movies</a>
+								<a class="link{{ Request::is('tv') ? ' link--active' : '' }}" href="/tv">TV Shows</a>
+								<span id="page-auth-flex"></span>
+								<a
+									class="link{{ Request::is('works/create') && $defaultType === 'Album' ? ' link--active' : '' }}"
+									href="/works/create?type=Album"
+								>
+									+ Album
+								</a>
+								<a
+									class="link{{ Request::is('works/create') && $defaultType === 'Book' ? ' link--active' : '' }}"
+									href="/works/create?type=Book"
+								>
+									+ Book
+								</a>
+								<a
+									class="link{{ Request::is('works/create') && $defaultType === 'Movie' ? ' link--active' : '' }}"
+									href="/works/create?type=Movie"
+								>
+									+ Movie
+								</a>
+								<a
+									class="link{{ Request::is('works/create') && $defaultType === 'Tv' ? ' link--active' : '' }}"
+									href="/works/create?type=Tv"
+								>
+									+ TV
+								</a>
+								<a
+									class="link{{ Request::is('tags/create') ? ' link--active' : '' }}"
+									href="/tags/create"
+								>
+									+ Tag
+								</a>
+								<form action="/logout" id="logout" method="post">
+									@csrf
+									<button class="button--link" type="submit">Logout</button>
+								</form>
+							</div>
 						</div>
 					</div>
 				@endif

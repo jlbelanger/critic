@@ -1,0 +1,23 @@
+.toggle-button {
+	font-size: 18px;
+	margin: $margin 0 0;
+	width: 100%;
+
+	@media (min-width: #{$breakpoint-table}) {
+		display: none;
+	}
+}
+
+.toggle-hidden {
+	display: none !important; // stylelint-disable-line declaration-no-important
+
+	@media (min-width: #{$breakpoint-table}) {
+		display: block !important; // stylelint-disable-line declaration-no-important
+	}
+}
+
+thead.toggle-hidden {
+	@media (min-width: #{$breakpoint-table}) {
+		display: table-header-group !important; // stylelint-disable-line declaration-no-important
+	}
+}

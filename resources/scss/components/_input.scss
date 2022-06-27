@@ -6,7 +6,6 @@ textarea {
 	border: $input-border-width solid $input-border-color;
 	border-radius: 0;
 	color: $white;
-	font-size: $font-size;
 	line-height: $input-line-height;
 	max-width: 100%;
 	padding: $input-padding;
@@ -48,9 +47,9 @@ select {
 	background-image: url('/assets/img/caret.svg');
 	background-position: calc(100% - #{$input-padding}) center;
 	background-repeat: no-repeat;
-	background-size: $caret-size;
+	background-size: $select-caret-size;
 	cursor: pointer;
-	padding-right: #{$caret-size + ($input-padding * 2)};
+	padding-right: #{$select-caret-size + ($input-padding * 2)};
 }
 
 .textarea--large {

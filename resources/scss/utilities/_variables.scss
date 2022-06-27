@@ -22,16 +22,16 @@ $focus-width: 4px;
 
 $font-size: 20px;
 $line-height: 1.2;
-$margin: 20px;
-$padding: 16px;
+$margin: 1rem;
+$padding: .75rem;
 $padding-large: $padding * 4;
 
-$caret-size: 12px;
-$sorted-size: 6px;
+$select-caret-size: 12px;
+$sorted-caret-size: 6px;
 
 $checkbox-size: 32px;
 
-$form-margin: $margin / 2;
+$form-margin: 10px;
 
 $icon-size: 20px;
 
@@ -50,6 +50,9 @@ $password-button-width: 80px;
 
 $star-size: 24px;
 
-$breakpoint-tiny: 600px;
-$breakpoint-small: 800px;
-$breakpoint-medium: 1024px;
+$breakpoint-small: 480px;
+$breakpoint-medium: 800px;
+$breakpoint-large: 1024px;
+
+$breakpoint-nav: $breakpoint-large;
+$breakpoint-table: $breakpoint-large;

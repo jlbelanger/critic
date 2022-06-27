@@ -12,10 +12,15 @@ h1 {
 }
 
 #content-title {
-	padding-left: $padding;
-	padding-right: $padding;
+	margin-top: #{$padding * 2};
 
-	&.content-title--no-results {
-		padding: 0;
+	@media screen and (min-width: $breakpoint-large) {
+		margin-top: $padding-large;
+		padding-left: $padding;
+		padding-right: $padding;
+
+		&.content-title--no-results {
+			padding: 0;
+		}
 	}
 }

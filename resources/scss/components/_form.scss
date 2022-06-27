@@ -12,6 +12,10 @@
 	width: 100%;
 }
 
+#form {
+	margin-top: 2rem;
+}
+
 .form-header {
 	align-items: center;
 	display: flex;
@@ -23,6 +27,7 @@
 }
 
 .form-footer {
+	margin-top: $margin;
 	text-align: right;
 }
 
@@ -37,15 +42,16 @@
 .form-input {
 	input,
 	select,
-	textarea {
+	textarea,
+	.autocomplete__clear {
 		margin-top: .25rem;
 	}
 
 	header & {
 		align-items: center;
 		display: flex;
-		height: $input-height;
 		justify-content: space-between;
+		padding-top: 0;
 	}
 }
 
@@ -68,7 +74,7 @@
 	font-style: italic;
 }
 
-@media screen and (min-width: $breakpoint-small) {
+@media screen and (min-width: $breakpoint-medium) {
 	.form {
 		display: table;
 	}

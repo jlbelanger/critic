@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 	$cacheKey = 'indexVars' . (Auth::user() ? 'Auth' : 'Guest');
-	$vars = Cache::remember($cacheKey, 3600, function () {
+	$vars = Cache::remember($cacheKey, env('DISABLE_CACHE') ? 0 : 3600, function () {
 		$vars = [];
 
 		$vars['recentMovies'] = Work::visible()
@@ -41,7 +41,8 @@ Route::get('/', function () {
 
 		$vars['moviesByDecade'] = DB::table('works')
 			->select([DB::raw('SUBSTR(start_release_year, 1, 3) AS decade'), DB::raw('COUNT(*) AS num')])
-			->where('type', '=', 'Movie');
+			->where('type', '=', 'Movie')
+			->where('start_release_year', '>=', '1930');
 		if (!Auth::user()) {
 			$vars['moviesByDecade'] = $vars['moviesByDecade']->where('is_private', '=', 0);
 		}

@@ -1,8 +1,12 @@
 #page-header {
 	font-size: 0;
 	line-height: 1;
-	margin: $padding-large 0 0;
+	margin: #{$padding * 2} 0 0;
 	text-align: center;
+
+	@media screen and (min-width: $breakpoint-large) {
+		margin-top: $padding-large;
+	}
 }
 
 #page-title {
@@ -15,7 +19,12 @@
 	text-decoration: none;
 	width: 200px;
 
-	@media screen and (min-width: $breakpoint-tiny) {
+	@media screen and (min-width: $breakpoint-small) {
+		height: 41px;
+		width: 300px;
+	}
+
+	@media screen and (min-width: $breakpoint-large) {
 		height: 62px;
 		width: 450px;
 	}
@@ -33,13 +42,35 @@ body.auth {
 	padding-top: $page-auth-height;
 }
 
+#menu-button {
+	background: transparent;
+	border: 0;
+	font-size: 0;
+	margin-left: auto;
+
+	&::after {
+		background-image: url('/assets/img/menu.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 20px;
+		content: '';
+		display: block;
+		height: $icon-size;
+		width: $icon-size;
+	}
+
+	@media screen and (min-width: $breakpoint-nav) {
+		display: none;
+	}
+}
+
 #page-auth {
-	font-size: $font-size;
 	left: 0;
 	min-height: $page-auth-height;
 	position: absolute;
 	right: 0;
 	top: 0;
+	z-index: 1;
 
 	.link {
 		white-space: nowrap;
@@ -49,6 +80,54 @@ body.auth {
 #page-auth-inner {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.open-menu {
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+
+	@media screen and (min-width: $breakpoint-nav) {
+		height: auto;
+		overflow: initial;
+		position: static;
+		width: auto;
+	}
+}
+
+#menu {
+	display: none;
+	flex-wrap: wrap;
+	max-height: calc(100vh - #{$page-auth-height});
+	overflow: auto;
+
+	.open-menu & {
+		display: flex;
+	}
+
+	.link,
+	button {
+		border-top: 1px solid $light-blue;
+		display: block;
+		font-size: $font-size;
+		text-align: left;
+		width: 100%;
+	}
+
+	@media screen and (min-width: $breakpoint-nav) {
+		display: flex;
+		max-height: auto;
+		text-align: right;
+		width: 100%;
+
+		.link,
+		button {
+			border: 0;
+			display: inline-block;
+			width: auto;
+		}
+	}
 }
 
 #page-auth-flex {
@@ -62,10 +141,16 @@ body.auth {
 }
 
 #page-footer {
-	margin-top: $padding-large;
+	margin-top: #{$padding * 2};
+
+	@media screen and (min-width: $breakpoint-large) {
+		margin-top: $padding-large;
+	}
 }
 
 #page-auth-inner,
 #page-footer-inner {
-	padding: 0 $padding;
+	@media screen and (min-width: $breakpoint-large) {
+		padding: 0 $padding;
+	}
 }

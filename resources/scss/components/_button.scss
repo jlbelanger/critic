@@ -4,9 +4,8 @@ button {
 	color: $black;
 	cursor: pointer;
 	display: inline-block;
-	font-size: $font-size;
 	line-height: $input-line-height;
-	padding: $input-padding;
+	padding: $input-padding 1rem;
 	text-decoration: none;
 
 	&:hover,

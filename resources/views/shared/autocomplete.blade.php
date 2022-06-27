@@ -1,4 +1,4 @@
-<div class="autocomplete" data-autocomplete="{{ url('/tags.json?q=') }}" data-autocomplete-name="{{ $id }}" tabindex="-1">
+<div class="autocomplete" data-autocomplete="{{ url('/tags.json?q=') }}" data-autocomplete-name="{{ $id }}">
 	<div class="autocomplete__input-wrapper">
 		<input autocomplete="off" class="autocomplete__input" id="{{ $id }}" placeholder="Search" type="text" />
 

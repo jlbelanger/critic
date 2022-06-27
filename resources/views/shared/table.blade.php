@@ -1,6 +1,16 @@
 @if (!$works->isEmpty())
+	<button
+		class="button--secondary toggle-button"
+		data-hide-label="Hide Sort &amp; Filter Options"
+		data-show-label="Show Sort &amp; Filter Options"
+		data-toggle="thead"
+		type="button"
+	>
+		Show Sort &amp; Filter Options
+	</button>
+
 	<table data-filterable-list data-sortable-list data-sortable-default-key="title">
-		<thead>
+		<thead class="toggle-hidden">
 			<tr>
 				<th class="column--title">
 					<button aria-label="Sort by Title" class="button--link sortable-button" data-sortable-key="title" type="button">Title</button>
@@ -32,12 +42,15 @@
 			</tr>
 			<tr id="filters">
 				<td>
-					<input aria-label="Filter Title" data-filterable-input="title" type="text" value="{{ $defaults['title'] }}" />
+					<label class="filter-label" for="title">Filter Title</label>
+					<input aria-label="Filter Title" data-filterable-input="title" id="title" type="text" value="{{ $defaults['title'] }}" />
 				</td>
 				<td>
+					<label class="filter-label" for="year">Filter Year</label>
 					<input
 						aria-label="Filter Year"
 						data-filterable-input="year"
+						id="year"
 						maxlength="{{ !empty($longYear) ? '9' : '4' }}"
 						size="4"
 						type="text"
@@ -46,19 +59,23 @@
 				</td>
 				@if (!empty($showAuthor))
 					<td>
+						<label class="filter-label" for="author">Filter {{ $authorTitle ? $authorTitle : 'Author' }}</label>
 						<input
 							aria-label="Filter {{ $authorTitle ? $authorTitle : 'Author' }}"
 							data-filterable-input="author"
+							id="author"
 							type="text"
 							value="{{ $defaults['author'] }}"
 						/>
 					</td>
 				@endif
 				<td>
-					<input aria-label="Filter Date" data-filterable-input="date" type="text" value="{{ $defaults['date'] }}" />
+					<label class="filter-label" for="date">Filter Date</label>
+					<input aria-label="Filter Date" data-filterable-input="date" id="date" type="text" value="{{ $defaults['date'] }}" />
 				</td>
 				<td>
-					<select aria-label="Filter Rating" data-filterable-input="rating" data-filterable-exact="true">
+					<label class="filter-label" for="rating">Filter Rating</label>
+					<select aria-label="Filter Rating" data-filterable-input="rating" data-filterable-exact="true" id="rating">
 						<option></option>
 						<option{{ $defaults['rating'] === '1' ? ' selected' : '' }}>1</option>
 						<option{{ $defaults['rating'] === '1.5' ? ' selected' : '' }}>1.5</option>
@@ -72,7 +89,8 @@
 					</select>
 				</td>
 				<td>
-					<input aria-label="Filter Tags" data-filterable-input="tags" type="text" value="{{ $defaults['tags'] }}" />
+					<label class="filter-label" for="tags">Filter Tags</label>
+					<input aria-label="Filter Tags" data-filterable-input="tags" id="tags" type="text" value="{{ $defaults['tags'] }}" />
 				</td>
 			</tr>
 		</thead>
@@ -92,15 +110,19 @@
 					@endif
 					<td data-key="date" data-sortable-value="{{ $work->start_date }}">{{ $work->date() }}</td>
 					<td data-key="rating">{{ $work->rating }}</td>
-					<td data-key="tags">
-						<ul class="tag-list">
-							@foreach ($work->tags as $tag)
-								<li class="tag-list__item">
-									<a href="{{ $tag->url() }}">{{ $tag->short_title ? $tag->short_title : $tag->title }}</a>
-								</li>
-							@endforeach
-						</ul>
-					</td>
+					@if (!empty($work->tags->count()))
+						<td data-key="tags">
+							<ul class="tag-list">
+								@foreach ($work->tags as $tag)
+									<li class="tag-list__item">
+										<a href="{{ $tag->url() }}">{{ $tag->short_title ? $tag->short_title : $tag->title }}</a>
+									</li>
+								@endforeach
+							</ul>
+						</td>
+					@else
+						<td data-key="tags"></td>
+					@endif
 				</tr>
 			@endforeach
 		</tbody>
