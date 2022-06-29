@@ -48,7 +48,7 @@
 
 			<p>
 				<button type="submit">Login</button>
-				<a class="link" href="/forgot-password">Forgot your password?</a>
+				<a class="link" href="/forgot-password">Forgot password?</a>
 			</p>
 		</form>
 	</div>

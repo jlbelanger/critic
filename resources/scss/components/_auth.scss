@@ -1,6 +1,10 @@
 #auth {
-	margin: 0 auto;
+	margin: #{$padding * 2} auto 0;
 	max-width: 450px;
+
+	@media screen and (min-width: $breakpoint-large) {
+		margin-top: $padding-large;
+	}
 }
 
 #logout {

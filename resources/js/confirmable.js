@@ -1,12 +1,18 @@
 function Confirmable($form) {
-	$form.addEventListener('submit', (e) => {
+	const onSubmit = (e) => {
 		const message = e.target.getAttribute('data-confirmable');
 		if (!window.confirm(message)) { // eslint-disable-line no-alert
 			e.preventDefault();
 			return false;
 		}
 		return true;
-	}, true);
+	};
+
+	const init = () => {
+		$form.addEventListener('submit', onSubmit, true);
+	};
+
+	init();
 }
 
 function initConfirmable() {

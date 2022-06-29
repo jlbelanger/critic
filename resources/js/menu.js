@@ -29,8 +29,10 @@ function Menu() {
 	};
 
 	this.init = () => {
-		$menuButton.addEventListener('click', toggleMenu);
-		document.addEventListener('keyup', onDocumentKeyup);
+		if ($menuButton) {
+			$menuButton.addEventListener('click', toggleMenu);
+			document.addEventListener('keyup', onDocumentKeyup);
+		}
 	};
 }
 

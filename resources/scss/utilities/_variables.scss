@@ -46,13 +46,13 @@ $label-padding: $form-margin + $input-border-width + $input-padding;
 
 $page-auth-height: ($input-padding * 2) + ($font-size * $line-height);
 
-$password-button-width: 80px;
+$password-button-width: 87px;
 
 $star-size: 24px;
 
 $breakpoint-small: 480px;
-$breakpoint-medium: 800px;
+$breakpoint-medium: 768px;
 $breakpoint-large: 1024px;
 
 $breakpoint-nav: $breakpoint-large;
-$breakpoint-table: $breakpoint-large;
+$breakpoint-table: $breakpoint-medium + 1px;

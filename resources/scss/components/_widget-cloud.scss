@@ -16,11 +16,18 @@
 .cloud__list-item {
 	display: inline-block;
 	font-size: $font-size;
-	margin: .25rem;
 }
 
 .cloud__link {
 	@include unlink;
+
+	display: block;
+	margin: .25rem;
+	padding: .5rem;
+
+	@media (min-width: #{$breakpoint-large}) {
+		padding: .25rem;
+	}
 }
 
 .cloud__text {

@@ -14,6 +14,9 @@
 			<p>
 				<label class="required" for="email">Email</label>
 				<input autocomplete="email" id="email" name="email" required type="email" value="{{ old('email', $request->email) }}" />
+				@error('email')
+					<span class="form-error">{{ $message }}</span>
+				@enderror
 			</p>
 
 			<p>
@@ -31,6 +34,9 @@
 					/>
 					<button aria-label="Show Password" class="button--secondary password-button" data-toggle-password type="button">Show</button>
 				</span>
+				@error('password')
+					<span class="form-error">{{ $message }}</span>
+				@enderror
 			</p>
 
 			<p>
@@ -47,6 +53,9 @@
 					/>
 					<button aria-label="Show Password" class="button--secondary password-button" data-toggle-password type="button">Show</button>
 				</span>
+				@error('password_confirmation')
+					<span class="form-error">{{ $message }}</span>
+				@enderror
 			</p>
 
 			<p>

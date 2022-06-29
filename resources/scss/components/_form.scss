@@ -40,13 +40,6 @@
 }
 
 .form-input {
-	input,
-	select,
-	textarea,
-	.autocomplete__clear {
-		margin-top: .25rem;
-	}
-
 	header & {
 		align-items: center;
 		display: flex;
@@ -68,6 +61,10 @@
 
 .form-error {
 	color: $lighter-red;
+
+	&::before {
+		content: 'Error: ';
+	}
 }
 
 [action^='/works'] #title {

@@ -11,13 +11,17 @@ function removeUnloadListener() {
 	window.removeEventListener('beforeunload', onBeforeUnload, { capture: true });
 }
 
-const $form = document.getElementById('form');
-if ($form) {
-	const $inputs = $form.querySelectorAll('input,select,textarea');
-	$inputs.forEach(($input) => {
-		$input.addEventListener('keyup', addUnloadListener);
-		$input.addEventListener('change', addUnloadListener);
-	});
+function initBeforeUnload() {
+	const $form = document.getElementById('form');
+	if ($form) {
+		const $inputs = $form.querySelectorAll('input,select,textarea');
+		$inputs.forEach(($input) => {
+			$input.addEventListener('keyup', addUnloadListener);
+			$input.addEventListener('change', addUnloadListener);
+		});
 
-	$form.addEventListener('submit', removeUnloadListener);
+		$form.addEventListener('submit', removeUnloadListener);
+	}
 }
+
+initBeforeUnload();

@@ -52,6 +52,14 @@ select {
 	padding-right: #{$select-caret-size + ($input-padding * 2)};
 }
 
+input,
+select,
+textarea,
+.autocomplete__clear,
+.password-button {
+	margin-top: .25rem;
+}
+
 .textarea--large {
 	height: 50vh;
 	line-height: 1.5;

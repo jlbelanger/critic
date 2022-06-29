@@ -2,7 +2,7 @@
 
 @section('content')
 	<div id="widgets">
-		<section class="widget widget--2col widget--2row" id="recent-movies" style="animation-delay: 100ms">
+		<section class="widget widget--m2row widget--l2col widget--l2row" id="recent-movies" style="animation-delay: 100ms">
 			<h1 class="widget__title">Recent Movies</h1>
 			@if (!$recentMovies->isEmpty())
 				<ul class="widget__list">
@@ -114,7 +114,7 @@
 			@endif
 		</section>
 
-		<section class="widget widget--2col" id="current-tv" style="animation-delay: 600ms">
+		<section class="widget widget--m2col widget--l2col" id="current-tv" style="animation-delay: 600ms">
 			<h1 class="widget__title">Current TV</h1>
 			@if (!$currentTv->isEmpty())
 				<ul class="widget__list widget__list--columns">

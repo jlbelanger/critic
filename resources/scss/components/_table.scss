@@ -171,11 +171,6 @@ td {
 		}
 	}
 
-	input,
-	select {
-		margin-top: .25rem;
-	}
-
 	[data-key='title'] {
 		border-top: 1px solid $light-blue;
 		display: block;
@@ -186,6 +181,7 @@ td {
 	[data-key='year'] {
 		display: inline-block;
 		font-size: 16px;
+		padding-top: 0;
 
 		&::before {
 			content: '(';
