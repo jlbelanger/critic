@@ -1,5 +1,5 @@
 // https://davidwalsh.name/javascript-debounce-function
-function debounce(func, wait, immediate) { // eslint-disable-line no-unused-vars
+export default function (func, wait, immediate) {
 	let timeout;
 	return function () { // eslint-disable-line func-names
 		const context = this;

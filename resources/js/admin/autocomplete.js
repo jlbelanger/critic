@@ -1,3 +1,6 @@
+import debounce from '../utilities/debounce';
+import slugify from '../utilities/slugify';
+
 function Autocomplete($container) {
 	const url = $container.getAttribute('data-autocomplete');
 	const name = $container.getAttribute('data-autocomplete-name');
@@ -244,7 +247,7 @@ function Autocomplete($container) {
 	const init = () => {
 		document.addEventListener('keyup', onKeyup, { capture: true });
 		$input.addEventListener('keydown', onKeydownTerm);
-		$input.addEventListener('keyup', debounce(onKeyupTerm, 250)); // eslint-disable-line no-undef
+		$input.addEventListener('keyup', debounce(onKeyupTerm, 250));
 		$input.addEventListener('focus', onFocusInput);
 		$clear.addEventListener('click', onClickClear);
 

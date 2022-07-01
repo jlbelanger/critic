@@ -1,3 +1,5 @@
+import slugify from '../utilities/slugify';
+
 function Slugable($slugInput) {
 	const inputSelectors = $slugInput.getAttribute('data-slug').split(',');
 	const $inputs = document.querySelectorAll(inputSelectors);

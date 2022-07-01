@@ -1,3 +1,6 @@
+import debounce from '../utilities/debounce';
+import slugify from '../utilities/slugify';
+
 function Filterable($list) {
 	const $inputs = $list.querySelectorAll('[data-filterable-input]');
 	const $items = $list.querySelectorAll('[data-filterable-item]');
@@ -60,7 +63,7 @@ function Filterable($list) {
 
 	const init = () => {
 		$inputs.forEach(($input) => {
-			$input.addEventListener('keyup', debounce(onChangeInput, 100)); // eslint-disable-line no-undef
+			$input.addEventListener('keyup', debounce(onChangeInput, 100));
 			$input.addEventListener('change', onChangeInput);
 
 			if ($input.value) {

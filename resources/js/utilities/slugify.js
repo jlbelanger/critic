@@ -1,4 +1,4 @@
-function slugify(value) { // eslint-disable-line no-unused-vars
+export default (value) => {
 	if (!value) {
 		return '';
 	}
@@ -10,4 +10,4 @@ function slugify(value) { // eslint-disable-line no-unused-vars
 		.replace(/^-+/, '')
 		.replace(/-+$/, '')
 		.replace(/--+/g, '-');
-}
+};
