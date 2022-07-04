@@ -1,0 +1,63 @@
+// stylelint-disable declaration-no-important
+#editor {
+	background-color: $input-background-color;
+	border: 1px solid $white;
+	line-height: 1.5;
+	min-height: 107px;
+	opacity: .5;
+	padding: 0 12px;
+
+	&::before {
+		background-color: $white;
+		content: '';
+		display: block;
+		height: 77px;
+		margin: 0 -12px 1rem;
+	}
+}
+
+.ck-content {
+	blockquote {
+		border-color: $light-blue !important;
+		font-style: normal !important;
+
+		& > :first-child {
+			margin-top: 0;
+		}
+	}
+
+	hr {
+		background-color: $light-blue !important;
+		height: 1px !important;
+	}
+}
+
+.ck.ck-editor__main > .ck-editor__editable {
+	background-color: $input-background-color !important;
+
+	p,
+	ol,
+	ul {
+		line-height: 1.5;
+	}
+}
+
+.ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+	border-color: $focus-color !important;
+	box-shadow: 0 0 0 $focus-width $focus-color !important;
+}
+
+.ck-word-count {
+	color: $light-gray;
+	display: flex;
+	font-size: 16px;
+	justify-content: space-between;
+	margin-top: .25rem;
+}
+
+.ck {
+	img:not([alt]),
+	img[alt=''] {
+		box-shadow: 0 0 0 4px $red;
+	}
+}

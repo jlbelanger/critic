@@ -1,8 +1,10 @@
 {
-    "/assets/js/app.js": "/assets/js/app.js?id=5c18ebbd3447afb0c2d8091f90a569b7",
-    "/assets/js/admin.js": "/assets/js/admin.js?id=485d63ebddb105f7d9636d5dd1d556fc",
-    "/assets/css/style.css": "/assets/css/style.css?id=06250d661be24d2f02c071afaaf268dc",
-    "/assets/js/app.min.js": "/assets/js/app.min.js?id=5c18ebbd3447afb0c2d8091f90a569b7",
-    "/assets/js/admin.min.js": "/assets/js/admin.min.js?id=485d63ebddb105f7d9636d5dd1d556fc",
-    "/assets/css/style.min.css": "/assets/css/style.min.css?id=06250d661be24d2f02c071afaaf268dc"
+    "/assets/js/app.js": "/assets/js/app.js?id=3f2e841ed8851da6581a957d5d2f29dc",
+    "/assets/js/admin.js": "/assets/js/admin.js?id=910c8a22b8a266e86904d7e64550ea50",
+    "/assets/js/ckeditor.js": "/assets/js/ckeditor.js?id=feac3221c285c8fad1c2c53ca84135f4",
+    "/assets/css/style.css": "/assets/css/style.css?id=48f75abfb4c8ffd2c6c8d1192768ef6a",
+    "/assets/js/app.min.js": "/assets/js/app.min.js?id=3f2e841ed8851da6581a957d5d2f29dc",
+    "/assets/js/admin.min.js": "/assets/js/admin.min.js?id=910c8a22b8a266e86904d7e64550ea50",
+    "/assets/js/ckeditor.min.js": "/assets/js/ckeditor.min.js?id=feac3221c285c8fad1c2c53ca84135f4",
+    "/assets/css/style.min.css": "/assets/css/style.min.css?id=48f75abfb4c8ffd2c6c8d1192768ef6a"
 }

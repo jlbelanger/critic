@@ -104,7 +104,8 @@
 	.form-input {
 		input,
 		select,
-		textarea {
+		textarea,
+		.ck-editor.ck.ck-reset {
 			margin-top: 0;
 		}
 	}
