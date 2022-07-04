@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Work;
+use DB;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -67,6 +68,10 @@ class WorkController extends Controller
 	 */
 	protected function index(Request $request, string $canonical, string $type, string $title) : View
 	{
+		$sortKey = $request->query('sort');
+		$sortDir = $sortKey && $sortKey[0] === '-' ? 'desc' : 'asc';
+		$sortKey = trim($sortKey, '-');
+
 		$works = Work::with([
 			'tags' => function ($q) {
 				$q->where('is_private', '=', '0')
@@ -77,7 +82,14 @@ class WorkController extends Controller
 		if (!Auth::user()) {
 			$works = $works->where('is_private', '=', '0');
 		}
+		if ($sortKey === 'date') {
+			$works = $works->orderBy(DB::raw('IF(start_date, 0, 1)'))
+				->orderBy('start_date', $sortDir);
+		} else {
+			$works = $works->orderBy('slug');
+		}
 		$works = $works->get();
+
 		$defaults = [
 			'title' => $request->query('title'),
 			'year' => $request->query('year'),
@@ -86,11 +98,13 @@ class WorkController extends Controller
 			'rating' => $request->query('rating'),
 			'tags' => $request->query('tags'),
 		];
+
 		return view('works/index')
 			->with('metaTitle', $title)
 			->with('works', $works)
 			->with('canonical', $canonical)
-			->with('defaults', $defaults);
+			->with('defaults', $defaults)
+			->with('defaultSortKey', $sortKey);
 	}
 
 	/**

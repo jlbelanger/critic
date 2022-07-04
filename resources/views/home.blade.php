@@ -28,22 +28,22 @@
 			<h1 class="widget__title sr">Stats</h1>
 			<ul class="widget__list">
 				<li class="widget__list-item">
-					<a class="widget__link" href="/movies">
+					<a class="widget__link" href="/movies?sort=-date">
 						<span class="num">{{ !empty($stats['Movie']) ? number_format($stats['Movie']) : 0 }}</span> Movies
 					</a>
 				</li>
 				<li class="widget__list-item">
-					<a class="widget__link" href="/tv">
+					<a class="widget__link" href="/tv?sort=-date">
 						<span class="num">{{ !empty($stats['Tv']) ? number_format($stats['Tv']) : 0 }}</span> TV
 					</a>
 				</li>
 				<li class="widget__list-item">
-					<a class="widget__link" href="/books">
+					<a class="widget__link" href="/books?sort=-date">
 						<span class="num">{{ !empty($stats['Book']) ? number_format($stats['Book']) : 0 }}</span> Books
 					</a>
 				</li>
 				<li class="widget__list-item">
-					<a class="widget__link" href="/albums">
+					<a class="widget__link" href="/albums?sort=-date">
 						<span class="num">{{ !empty($stats['Album']) ? number_format($stats['Album']) : 0 }}</span> Albums
 					</a>
 				</li>

@@ -9,7 +9,7 @@
 		Show Sort &amp; Filter Options
 	</button>
 
-	<table data-filterable-list data-sortable-list data-sortable-default-key="title">
+	<table data-filterable-list data-sortable-list data-sortable-default-key="{{ !empty($defaultSortKey) ? $defaultSortKey : 'title' }}">
 		<thead class="toggle-hidden">
 			<tr>
 				<th class="column--title">

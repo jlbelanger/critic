@@ -13,6 +13,7 @@
 				'showAuthor' => in_array($metaTitle, ['Books', 'Albums']),
 				'authorTitle' => $metaTitle === 'Albums' ? 'Artist' : 'Author',
 				'longYear' => $metaTitle === 'TV Shows',
+				'defaultSortKey' => $defaultSortKey,
 			]
 		)
 	</div>
