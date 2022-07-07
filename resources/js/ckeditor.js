@@ -38,7 +38,7 @@ var ready = (callback) => {
 };
 
 ready(() => {
-	const elem = document.getElementById('editor');
+	const elem = document.getElementById('content');
 	if (elem) {
 		ClassicEditor
 			.create(
@@ -107,6 +107,7 @@ ready(() => {
 					htmlSupport: {
 						allow: [
 							{ name: 'cite' },
+							{ name: 'small' },
 							{ name: 'sub' },
 							{
 								name: 'img',
@@ -131,10 +132,6 @@ ready(() => {
 				const wordCountPlugin = editor.plugins.get('WordCount');
 				const wordCountWrapper = document.getElementById('word-count');
 				wordCountWrapper.appendChild(wordCountPlugin.wordCountContainer);
-
-				elem.closest('form').addEventListener('submit', () => {
-					document.getElementById('content').value = window.EDITOR.getData();
-				});
 			});
 	}
 });

@@ -132,8 +132,7 @@
 <div class="form-row">
 	<label class="form-label" for="content">Content</label>
 	<div class="form-input">
-		<div id="editor">{!! old('content', !empty($row) ? $row->content : '') !!}</div>
-		<textarea id="content" name="content" style="display:none">{{ old('content', !empty($row) ? $row->content : '') }}</textarea>
+		<textarea id="content" name="content">{{ old('content', !empty($row) ? $row->content : '') }}</textarea>
 		<div id="word-count"></div>
 		@error('content')
 			<span class="form-error">{{ $message }}</span>

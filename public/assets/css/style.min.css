@@ -729,7 +729,7 @@ button:hover, button:active, button:focus {
   border-color: #52628b;
 }
 
-#editor {
+#content {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid #fff;
   line-height: 1.5;
@@ -737,7 +737,7 @@ button:hover, button:active, button:focus {
   opacity: 0.5;
   padding: 0 12px;
 }
-#editor::before {
+#content::before {
   background-color: #fff;
   content: "";
   display: block;

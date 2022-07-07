@@ -89,4 +89,12 @@ mix.webpackConfig({
 
 mix.version();
 
-mix.browserSync({ proxy: process.env.MIX_APP_URL });
+mix.browserSync({
+	injectChanges: true,
+	proxy: process.env.MIX_APP_URL,
+	files: [
+		'./public/assets/css/*.css',
+		'./public/assets/js/*.js',
+		'./resources/views/**/*.blade.php',
+	],
+});
