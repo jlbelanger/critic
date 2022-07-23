@@ -69,8 +69,8 @@ class Work extends Model
 			'is_private' => ['boolean'],
 			'is_favourite' => ['boolean'],
 			'rating' => ['nullable', 'numeric', 'gte:0', 'lte:5'],
-			'start_date' => ['nullable', 'date_format:Y-m-d'],
-			'end_date' => ['nullable', 'date_format:Y-m-d'],
+			'start_date' => ['nullable', 'regex:/^\d{4}(-\d{2})?(-\d{2})?$/'],
+			'end_date' => ['nullable', 'regex:/^\d{4}(-\d{2})?(-\d{2})?$/'],
 			'published_at' => ['nullable', 'date_format:"Y-m-d H:i:s"'],
 		];
 	}
