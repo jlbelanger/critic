@@ -26,6 +26,7 @@ import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
 import Bold from './ckeditor/bold';
 import Cite from './ckeditor/cite';
 import Emphasis from './ckeditor/emphasis';
+import Gallery from './ckeditor/gallery';
 import Small from './ckeditor/small';
 import Strong from './ckeditor/strong';
 
@@ -55,6 +56,7 @@ ready(() => {
 						CodeBlock,
 						Emphasis,
 						Essentials,
+						Gallery,
 						GeneralHtmlSupport,
 						Heading,
 						HorizontalLine,
@@ -90,6 +92,7 @@ ready(() => {
 							'horizontalLine',
 							'insertTable',
 							'insertImage',
+							'gallery',
 							'codeBlock',
 							'sourceEditing',
 						],
@@ -107,6 +110,7 @@ ready(() => {
 					htmlSupport: {
 						allow: [
 							{ name: 'cite' },
+							{ name: 'gallery' },
 							{ name: 'small' },
 							{ name: 'sub' },
 							{

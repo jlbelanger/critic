@@ -1,5 +1,6 @@
 import './app/cloudable';
 import './app/filterable';
+import './app/gallery';
 import './app/graphable';
 import './app/password';
 import './app/sortable';

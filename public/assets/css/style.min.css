@@ -1733,3 +1733,10 @@ article {
   flex: 1 1 auto;
   padding: 0 0.75rem;
 }
+
+gallery {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
