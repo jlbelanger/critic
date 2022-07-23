@@ -92,7 +92,7 @@
 			@endif
 		</section>
 
-		<section class="widget widget--graph" id="movies-by-decade" style="animation-delay: 500ms">
+		<section class="widget widget--graph" id="movies-by-rating" style="animation-delay: 500ms">
 			<h1 class="widget__title">Movies by Rating</h1>
 			@if (!$moviesByRating->isEmpty())
 				<ul class="graph">
