@@ -177,9 +177,9 @@
 	<div class="form-input">
 		<input
 			id="published_at"
-			maxlength="18"
+			maxlength="19"
 			name="published_at"
-			size="18"
+			size="19"
 			type="text"
 			value="{{ old('published_at', !empty($row) ? $row->published_at : '') }}"
 		/>
