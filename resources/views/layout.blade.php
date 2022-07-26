@@ -7,6 +7,7 @@
 		<meta name="description" content="Movie/TV/music reviews.">
 		<meta name="keywords" content="reviews, movies, tv, television, music">
 		<meta property="og:title" content="{{ !empty($metaTitle) ? $metaTitle . ' | ' : '' }}Critic">
+		<meta property="og:image" content="{{ url('/assets/img/share.png') }}">
 		<meta property="og:description" content="Movie/TV/music reviews.">
 		<title>{{ !empty($metaTitle) ? $metaTitle . ' | ' : '' }}Critic</title>
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
