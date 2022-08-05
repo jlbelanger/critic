@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateWorksTable extends Migration
 {
 	/**
-	 * Run the migrations.
+	 * Runs the migrations.
 	 *
 	 * @return void
 	 */
@@ -39,7 +39,7 @@ class CreateWorksTable extends Migration
 	}
 
 	/**
-	 * Reverse the migrations.
+	 * Reverses the migrations.
 	 *
 	 * @return void
 	 */
