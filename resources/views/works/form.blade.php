@@ -31,8 +31,10 @@
 		<input
 			aria-label="Start Year"
 			id="start_release_year"
+			inputmode="numeric"
 			maxlength="4"
 			name="start_release_year"
+			pattern="[0-9]*"
 			required
 			size="4"
 			type="text"
@@ -42,8 +44,10 @@
 			aria-label="End Year"
 			data-show-for-type="Tv"
 			id="end_release_year"
+			inputmode="numeric"
 			maxlength="4"
 			name="end_release_year"
+			pattern="[0-9]*"
 			size="4"
 			type="text"
 			value="{{ old('end_release_year', !empty($row) ? $row->end_release_year : '') }}"
@@ -93,9 +97,9 @@
 	<div class="form-input">
 		<input
 			id="start_date"
-			maxlength="12"
+			maxlength="10"
 			name="start_date"
-			size="12"
+			size="10"
 			type="text"
 			value="{{ old('start_date', !empty($row) ? $row->start_date : '') }}"
 		/>
@@ -103,8 +107,9 @@
 			aria-label="End Date"
 			data-show-for-type="Book,Tv"
 			id="end_date"
+			maxlength="10"
 			name="end_date"
-			size="12"
+			size="10"
 			type="text"
 			value="{{ old('end_date', !empty($row) ? $row->end_date : '') }}"
 		/>
@@ -121,7 +126,15 @@
 <div class="form-row">
 	<label class="form-label" for="rating">Rating</label>
 	<div class="form-input">
-		<input id="rating" maxlength="3" name="rating" size="3" type="text" value="{{ old('rating', !empty($row) ? $row->rating : '') }}" />
+		<input
+			id="rating"
+			inputmode="decimal"
+			maxlength="3"
+			name="rating"
+			size="3"
+			type="text"
+			value="{{ old('rating', !empty($row) ? $row->rating : '') }}"
+		/>
 		out of 5
 		@error('rating')
 			<span class="form-error">{{ $message }}</span>
