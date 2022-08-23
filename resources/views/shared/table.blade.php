@@ -115,7 +115,7 @@
 							<ul class="tag-list">
 								@foreach ($work->tags as $tag)
 									<li class="tag-list__item">
-										<a href="{{ $tag->url() }}">{{ $tag->short_title ? $tag->short_title : $tag->title }}</a>
+										<a href="{{ $tag->url() }}">{{ $tag->title() }}</a>
 									</li>
 								@endforeach
 							</ul>

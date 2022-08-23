@@ -46,6 +46,11 @@ class Tag extends Model
 		];
 	}
 
+	public function title() : string
+	{
+		return $this->short_title ? $this->short_title : $this->title;
+	}
+
 	public function url() : string
 	{
 		return '/tags/' . $this->slug;

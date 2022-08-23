@@ -9,9 +9,9 @@
 					@foreach ($recentMovies as $movie)
 						<li class="widget__list-item">
 							@if (Auth::user())
-								<a href="{{ $movie->editUrl() }}"><cite>{{ $movie->title }}</cite></a>{{ $movie->is_private ? ' *' : '' }}
+								<a href="{{ $movie->editUrl() }}"><cite>{{ $movie->title() }}</cite></a>{{ $movie->is_private ? ' *' : '' }}
 							@else
-								<cite>{{ $movie->title }}</cite>
+								<cite>{{ $movie->title() }}</cite>
 							@endif
 							<span class="year">({{ $movie->year() }})</span>
 							<div class="date"><span class="sr">Date: </span>{{ date('F j, Y', strtotime($movie->start_date)) }}</div>
@@ -58,7 +58,7 @@
 						@if (!empty($tagCounts[$tag->slug]))
 							<li class="cloud__list-item">
 								<a class="cloud__link" href="{{ $tag->url() }}">
-									<span class="cloud__text">{{ $tag->short_title ? $tag->short_title : $tag->title }}</span>
+									<span class="cloud__text">{{ $tag->title() }}</span>
 									<span class="cloud__num">{{ $tagCounts[$tag->slug] }}</span>
 								</a>
 							</li>
@@ -121,9 +121,9 @@
 					@foreach ($currentTv as $tv)
 						<li class="widget__list-item">
 							@if (Auth::user())
-								<a href="{{ $tv->editUrl() }}"><cite>{{ $tv->title }}</cite></a>{{ $tv->is_private ? ' *' : '' }}
+								<a href="{{ $tv->editUrl() }}"><cite>{{ $tv->title() }}</cite></a>{{ $tv->is_private ? ' *' : '' }}
 							@else
-								<cite>{{ $tv->title }}</cite>
+								<cite>{{ $tv->title() }}</cite>
 							@endif
 							<span class="year">({{ $tv->year() }})</span>
 						</li>
@@ -141,9 +141,9 @@
 					@foreach ($favouriteTv as $tv)
 						<li class="widget__list-item">
 							@if (Auth::user())
-								<a href="{{ $tv->editUrl() }}"><cite>{{ $tv->title }}</cite></a>{{ $tv->is_private ? ' *' : '' }}
+								<a href="{{ $tv->editUrl() }}"><cite>{{ $tv->title() }}</cite></a>{{ $tv->is_private ? ' *' : '' }}
 							@else
-								<cite>{{ $tv->title }}</cite>
+								<cite>{{ $tv->title() }}</cite>
 							@endif
 							<span class="year">({{ $tv->year() }})</span>
 						</li>
@@ -161,9 +161,9 @@
 					@foreach ($favouriteMovies as $movie)
 						<li class="widget__list-item">
 							@if (Auth::user())
-								<a href="{{ $movie->editUrl() }}"><cite>{{ $movie->title }}</cite></a>{{ $movie->is_private ? ' *' : '' }}
+								<a href="{{ $movie->editUrl() }}"><cite>{{ $movie->title() }}</cite></a>{{ $movie->is_private ? ' *' : '' }}
 							@else
-								<cite>{{ $movie->title }}</cite>
+								<cite>{{ $movie->title() }}</cite>
 							@endif
 							<span class="year">({{ $movie->year() }})</span>
 						</li>

@@ -28,6 +28,7 @@ class Work extends Model
 		'end_date',
 		'author',
 		'published_at',
+		'short_title',
 	];
 
 	public function date() : string
@@ -72,6 +73,7 @@ class Work extends Model
 			'start_date' => ['nullable', 'regex:/^\d{4}(-\d{2})?(-\d{2})?$/'],
 			'end_date' => ['nullable', 'regex:/^\d{4}(-\d{2})?(-\d{2})?$/'],
 			'published_at' => ['nullable', 'date_format:"Y-m-d H:i:s"'],
+			'short_title' => ['nullable', 'max:255'],
 		];
 	}
 
@@ -84,7 +86,13 @@ class Work extends Model
 
 	public function tags() : BelongsToMany
 	{
-		return $this->belongsToMany(Tag::class);
+		return $this->belongsToMany(Tag::class)
+			->orderBy(\DB::raw('COALESCE(short_title, title)'));
+	}
+
+	public function title() : string
+	{
+		return $this->short_title ? $this->short_title : $this->title;
 	}
 
 	public function url() : string

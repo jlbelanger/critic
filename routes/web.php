@@ -28,7 +28,7 @@ Route::get('/', function () {
 			->pluck('num', 'type');
 
 		$vars['tags'] = Tag::where('hide_from_cloud', '=', 0)
-			->orderBy('short_title')
+			->orderBy(DB::raw('COALESCE(short_title, title)'))
 			->get();
 		$vars['tagCounts'] = DB::table('tags')
 			->select(['tags.slug', DB::raw('COUNT(*) AS num')])
@@ -64,16 +64,19 @@ Route::get('/', function () {
 			->where('type', '=', 'Tv')
 			->whereNotNull('start_date')
 			->whereNull('end_date')
+			->orderBy(DB::raw('COALESCE(short_title, title)'))
 			->get();
 
 		$vars['favouriteTv'] = Work::visible()
 			->where('type', '=', 'Tv')
 			->where('is_favourite', '=', 1)
+			->orderBy(DB::raw('COALESCE(short_title, title)'))
 			->get();
 
 		$vars['favouriteMovies'] = Work::visible()
 			->where('type', '=', 'Movie')
 			->where('is_favourite', '=', 1)
+			->orderBy(DB::raw('COALESCE(short_title, title)'))
 			->get();
 
 		return $vars;
