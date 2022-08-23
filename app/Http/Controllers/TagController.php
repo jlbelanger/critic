@@ -85,6 +85,7 @@ class TagController extends Controller
 			'year' => $request->query('year'),
 			'author' => $request->query('author'),
 			'date' => $request->query('date'),
+			'end_date' => $request->query('end_date'),
 			'rating' => $request->query('rating'),
 			'tags' => $request->query('tags'),
 		];

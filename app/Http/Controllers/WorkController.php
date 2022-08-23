@@ -85,6 +85,9 @@ class WorkController extends Controller
 		if ($sortKey === 'date') {
 			$works = $works->orderBy(DB::raw('IF(start_date, 0, 1)'))
 				->orderBy('start_date', $sortDir);
+		} elseif ($sortKey === 'end_date') {
+			$works = $works->orderBy(DB::raw('IF(end_date, 0, 1)'))
+				->orderBy('end_date', $sortDir);
 		} else {
 			$works = $works->orderBy('slug');
 		}
@@ -95,6 +98,7 @@ class WorkController extends Controller
 			'year' => $request->query('year'),
 			'author' => $request->query('author'),
 			'date' => $request->query('date'),
+			'end_date' => $request->query('end_date'),
 			'rating' => $request->query('rating'),
 			'tags' => $request->query('tags'),
 		];

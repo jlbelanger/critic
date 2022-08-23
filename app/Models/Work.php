@@ -31,9 +31,8 @@ class Work extends Model
 		'short_title',
 	];
 
-	public function date() : string
+	public static function formatDate(string $date) : string
 	{
-		$date = $this->start_date;
 		if (!$date) {
 			return '';
 		}
@@ -52,9 +51,19 @@ class Work extends Model
 		return date($format, strtotime($date));
 	}
 
+	public function date() : string
+	{
+		return self::formatDate((string) $this->start_date);
+	}
+
 	public function editUrl() : string
 	{
 		return '/works/' . $this->id . '/edit';
+	}
+
+	public function endDate() : string
+	{
+		return self::formatDate((string) $this->end_date);
 	}
 
 	public function rules(string $id = '') : array

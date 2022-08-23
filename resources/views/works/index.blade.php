@@ -11,6 +11,7 @@
 			'shared.table',
 			[
 				'showAuthor' => in_array($metaTitle, ['Books', 'Albums']),
+				'showEndDate' => $metaTitle === 'TV Shows',
 				'authorTitle' => $metaTitle === 'Albums' ? 'Artist' : 'Author',
 				'longYear' => $metaTitle === 'TV Shows',
 				'defaultSortKey' => $defaultSortKey,

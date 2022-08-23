@@ -33,6 +33,13 @@
 				<th class="column--date">
 					<button aria-label="Sort by Date" class="button--link sortable-button" data-sortable-key="date" type="button">Date</button>
 				</th>
+				@if (!empty($showEndDate))
+					<th class="column--date">
+						<button aria-label="Sort by End Date" class="button--link sortable-button" data-sortable-key="end_date" type="button">
+							End Date
+						</button>
+					</th>
+				@endif
 				<th class="column--rating">
 					<button aria-label="Sort by Rating" class="button--link sortable-button" data-sortable-key="rating" type="button">Rating</button>
 				</th>
@@ -73,6 +80,18 @@
 					<label class="filter-label" for="date">Filter Date</label>
 					<input aria-label="Filter Date" data-filterable-input="date" id="date" type="text" value="{{ $defaults['date'] }}" />
 				</td>
+				@if (!empty($showEndDate))
+					<td>
+						<label class="filter-label" for="end_date">Filter End Date</label>
+						<input
+							aria-label="Filter End Date"
+							data-filterable-input="end_date"
+							id="end_date"
+							type="text"
+							value="{{ $defaults['end_date'] }}"
+						/>
+					</td>
+				@endif
 				<td>
 					<label class="filter-label" for="rating">Filter Rating</label>
 					<select aria-label="Filter Rating" data-filterable-input="rating" data-filterable-exact="true" id="rating">
@@ -109,6 +128,9 @@
 						<td data-key="author">{{ $work->author }}</td>
 					@endif
 					<td data-key="date" data-sortable-value="{{ $work->start_date }}">{{ $work->date() }}</td>
+					@if (!empty($showEndDate))
+						<td data-key="end_date" data-sortable-value="{{ $work->end_date }}">{{ $work->endDate() }}</td>
+					@endif
 					<td data-key="rating">{{ $work->rating }}</td>
 					@if (!empty($work->tags->count()))
 						<td data-key="tags">
