@@ -39,6 +39,16 @@
 								<a class="link{{ Request::is('movies') ? ' link--active' : '' }}" href="/movies">Movies</a>
 								<a class="link{{ Request::is('tv') ? ' link--active' : '' }}" href="/tv">TV Shows</a>
 								<span id="page-auth-flex"></span>
+								@if (Request::is('tags/*') && !Request::is('tags/*/edit'))
+									<a class="link" href="{{ $row->editUrl() }}">
+										Edit Tag
+									</a>
+								@endif
+								@if (Request::is('tags/*/edit'))
+									<a class="link" href="{{ $row->url() }}">
+										View Tag
+									</a>
+								@endif
 								<a
 									class="link{{ Request::is('works/create') && $defaultType === 'Album' ? ' link--active' : '' }}"
 									href="/works/create?type=Album"
