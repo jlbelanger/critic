@@ -12,14 +12,14 @@
 	<table data-filterable-list data-sortable-list data-sortable-default-key="{{ !empty($defaultSortKey) ? $defaultSortKey : 'title' }}">
 		<thead class="toggle-hidden">
 			<tr>
-				<th class="column--title">
+				<th class="column--title" scope="col">
 					<button aria-label="Sort by Title" class="button--link sortable-button" data-sortable-key="title" type="button">Title</button>
 				</th>
-				<th class="column--{{ !empty($longYear) ? 'long-' : '' }}year">
+				<th class="column--{{ !empty($longYear) ? 'long-' : '' }}year" scope="col">
 					<button aria-label="Sort by Year" class="button--link sortable-button" data-sortable-key="year" type="button">Year</button>
 				</th>
 				@if (!empty($showAuthor))
-					<th class="column--author">
+					<th class="column--author" scope="col">
 						<button
 							aria-label="Sort by {{ $authorTitle ? $authorTitle : 'Author' }}"
 							class="button--link sortable-button"
@@ -30,20 +30,20 @@
 						</button>
 					</th>
 				@endif
-				<th class="column--date">
+				<th class="column--date" scope="col">
 					<button aria-label="Sort by Date" class="button--link sortable-button" data-sortable-key="date" type="button">Date</button>
 				</th>
 				@if (!empty($showEndDate))
-					<th class="column--date">
+					<th class="column--date" scope="col">
 						<button aria-label="Sort by End Date" class="button--link sortable-button" data-sortable-key="end_date" type="button">
 							End Date
 						</button>
 					</th>
 				@endif
-				<th class="column--rating">
+				<th class="column--rating" scope="col">
 					<button aria-label="Sort by Rating" class="button--link sortable-button" data-sortable-key="rating" type="button">Rating</button>
 				</th>
-				<th class="column--tags">
+				<th class="column--tags" scope="col">
 					<button aria-label="Sort by Tags" class="button--link sortable-button" data-sortable-key="tags" type="button">Tags</button>
 				</th>
 			</tr>
