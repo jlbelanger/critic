@@ -3,12 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="description" content="Movie/TV/music reviews.">
 		<meta name="keywords" content="reviews, movies, tv, television, music">
 		<meta property="og:title" content="{{ !empty($metaTitle) ? $metaTitle . ' | ' : '' }}Critic">
-		<meta property="og:image" content="{{ url('/assets/img/share.png') }}">
 		<meta property="og:description" content="Movie/TV/music reviews.">
+		<meta property="og:image" content="{{ url('/assets/img/share.png') }}">
 		<title>{{ !empty($metaTitle) ? $metaTitle . ' | ' : '' }}Critic</title>
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
