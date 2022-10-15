@@ -16,7 +16,7 @@
 		"build": "node_modules/.bin/mix --production",
 		"lint": "yarn lint:css && yarn lint:js",
 		"lint:css": "node_modules/.bin/stylelint 'resources/scss/**/*.scss'",
-		"lint:js": "node_modules/.bin/eslint resources/js/* --ext .js",
+		"lint:js": "node_modules/.bin/eslint . --ext .js",
 		"lint:php": "./vendor/bin/phpcs",
 		"test:php": "./vendor/bin/phpunit",
 		"watch": "node_modules/.bin/mix watch"
@@ -63,7 +63,6 @@
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.25.3",
 		"sass": "^1.53.0",
-		"sass-lint": "^1.13.1",
 		"sass-loader": "^12.1.0",
 		"stylelint": "^14.2.0",
 		"stylelint-config-standard-scss": "^3.0.0",

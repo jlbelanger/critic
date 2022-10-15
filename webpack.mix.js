@@ -26,7 +26,7 @@ const CKERegex = {
 };
 
 // https://stackoverflow.com/a/60196916
-Mix.listen('configReady', (webpackConfig) => {
+Mix.listen('configReady', (webpackConfig) => { // eslint-disable-line no-undef
 	const rules = webpackConfig.module.rules;
 	const targetSVG = /(\.(png|jpe?g|gif|webp|avif)$|^((?!font).)*\.svg$)/;
 	const targetFont = /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/;

@@ -29,7 +29,7 @@ import Emphasis from './ckeditor/emphasis';
 import Small from './ckeditor/small';
 import Strong from './ckeditor/strong';
 
-var ready = (callback) => {
+const ready = (callback) => {
 	if (document.readyState !== 'loading') {
 		callback();
 	} else {
@@ -125,7 +125,7 @@ ready(() => {
 					link: {
 						defaultProtocol: 'http://',
 					},
-				},
+				}
 			)
 			.then((editor) => {
 				window.EDITOR = editor;
