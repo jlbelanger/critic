@@ -481,7 +481,7 @@ body.auth {
 @media screen and (min-width: 1024px) {
   #page-auth-inner,
 #page-footer-inner {
-    padding: 0 0.5625rem;
+    padding: 0;
   }
 }
 
