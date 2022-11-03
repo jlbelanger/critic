@@ -78,6 +78,12 @@
 								>
 									+ Tag
 								</a>
+								<a
+									class="link{{ Request::is('profile') ? ' link--active' : '' }}"
+									href="/profile"
+								>
+									Profile
+								</a>
 								<form action="/logout" id="logout" method="post">
 									@csrf
 									<button class="button--link" type="submit">Logout</button>

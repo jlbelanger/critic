@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\WorkController;
 use App\Models\Tag;
@@ -118,6 +119,9 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+	Route::get('profile', [ProfileController::class, 'show']);
+	Route::put('profile', [ProfileController::class, 'update']);
+
 	Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 	Route::resource('tags', TagController::class)->except(['index', 'show']);
 	Route::resource('works', WorkController::class)->except(['index', 'show']);

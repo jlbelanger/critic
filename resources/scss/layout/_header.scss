@@ -151,6 +151,6 @@ body.auth {
 #page-auth-inner,
 #page-footer-inner {
 	@media screen and (min-width: $breakpoint-large) {
-		padding: 0 $padding;
+		padding: 0 #{$padding - $input-padding};
 	}
 }
