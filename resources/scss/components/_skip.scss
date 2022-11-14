@@ -6,7 +6,7 @@ $skip-width: 200px;
 	border-radius: 0;
 	left: 50%;
 	line-height: $page-auth-height;
-	margin-left: #{$skip-width / -2};
+	margin-left: #{$skip-width * -.5};
 	opacity: 0;
 	position: absolute;
 	text-align: center;
