@@ -1,7 +1,7 @@
 // https://davidwalsh.name/javascript-debounce-function
-export default (func, wait, immediate, ...args) => {
+export default (func, wait, immediate) => {
 	let timeout;
-	return () => {
+	return function (...args) { // eslint-disable-line func-names
 		const context = this;
 		const later = () => {
 			timeout = null;
