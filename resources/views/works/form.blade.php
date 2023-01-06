@@ -113,6 +113,7 @@
 			type="text"
 			value="{{ old('end_date', !empty($row) ? $row->end_date : '') }}"
 		/>
+		<button class="button--secondary" data-action="today" type="button">Today</button>
 		<small class="form-note">YYYY-MM-DD</small>
 		@error('start_date')
 			<span class="form-error">{{ $message }}</span>
