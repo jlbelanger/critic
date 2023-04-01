@@ -1,5 +1,13 @@
+function pad(n, width = 2, z = '0') {
+	z = z || '0';
+	n = n.toString();
+	return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+
 function setToday() {
-	document.getElementById('start_date').value = new Date().toLocaleString().substring(0, 10);
+	const date = new Date();
+	const ymd = `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+	document.getElementById('start_date').value = ymd;
 }
 
 function initToday() {
