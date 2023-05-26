@@ -230,7 +230,8 @@ class WorkController extends Controller
 	public function destroy(Request $request, string $id) : RedirectResponse
 	{
 		$row = Work::findOrFail($id);
-		$url = '/' . Str::plural(strtolower($row->type));
+		$type = strtolower($row->type);
+		$url = '/' . ($type === 'tv' ? $type : Str::plural($type));
 
 		$row->delete();
 		Cache::forget('indexVarsAuth');
