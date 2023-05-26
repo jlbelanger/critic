@@ -1,0 +1,20 @@
+.modal {
+	background: $light-blue;
+	border: 0;
+	color: $white;
+	padding: 24px;
+}
+
+.modal::backdrop {
+	background: rgba($black, .5);
+}
+
+.modal__box {
+	& > :first-child {
+		margin-top: 0;
+	}
+}
+
+.modal__options {
+	text-align: right;
+}

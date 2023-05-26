@@ -4,7 +4,7 @@
 	<div class="contain-small">
 		@include('shared.errors', ['errors' => $errors])
 
-		<form action="/tags/{{ $row->id }}" class="admin" data-confirmable="Are you sure you want to delete this tag?" id="delete-form" method="post">
+		<form action="/tags/{{ $row->id }}" class="admin" id="delete-form" method="post">
 			@csrf
 			@method('DELETE')
 		</form>
@@ -16,7 +16,9 @@
 				<div class="form-label"></div>
 				<div class="form-input">
 					<h1>Edit Tag</h1>
-					<button class="button--danger" form="delete-form" type="submit">Delete</button>
+					<button class="button--danger" data-confirmable="Are you sure you want to delete this tag?" form="delete-form" type="button">
+						Delete
+					</button>
 				</div>
 			</header>
 

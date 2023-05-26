@@ -1,15 +1,29 @@
-function Confirmable($form) {
-	const onSubmit = (e) => {
+import Modal from './modal';
+
+function Confirmable($button) {
+	const onClick = (e) => {
 		const message = e.target.getAttribute('data-confirmable');
-		if (!window.confirm(message)) { // eslint-disable-line no-alert
-			e.preventDefault();
-			return false;
-		}
-		return true;
+
+		Modal({
+			message,
+			buttons: [
+				{
+					label: 'Cancel',
+					class: 'button--secondary',
+				},
+				{
+					label: e.target.innerText,
+					class: e.target.getAttribute('class'),
+					onClick: () => {
+						document.querySelector(`#${$button.getAttribute('form')}`).submit();
+					},
+				},
+			],
+		});
 	};
 
 	const init = () => {
-		$form.addEventListener('submit', onSubmit, true);
+		$button.addEventListener('click', onClick, true);
 	};
 
 	init();

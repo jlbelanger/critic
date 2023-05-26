@@ -1030,6 +1030,25 @@ a:hover, a:active, a:focus {
   text-decoration: none;
 }
 
+.modal {
+  background: #404b6b;
+  border: 0;
+  color: #fff;
+  padding: 24px;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal__box > :first-child {
+  margin-top: 0;
+}
+
+.modal__options {
+  text-align: right;
+}
+
 p {
   line-height: 1.2;
   margin: 1rem 0 0;
