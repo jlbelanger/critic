@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 	$cacheKey = 'indexVars' . (Auth::user() ? 'Auth' : 'Guest');
-	$vars = Cache::remember($cacheKey, env('DISABLE_CACHE') ? 0 : 3600, function () {
+	$vars = Cache::remember($cacheKey, config('cache.enable') ? 3600 : 0, function () {
 		$vars = [];
 
 		$vars['recentMovies'] = Work::visible()
@@ -107,15 +107,16 @@ Route::get('/sitemap.xml', function () {
 		->header('Content-Type', 'text/xml');
 });
 
-Route::middleware('guest')->group(function () {
+Route::group(['middleware' => ['guest']], function () {
 	Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
-	Route::post('login', [AuthenticatedSessionController::class, 'store']);
-
 	Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
-	Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
 
-	Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
-	Route::post('reset-password', [NewPasswordController::class, 'store'])->name('password.update');
+	Route::group(['middleware' => ['throttle:' . config('auth.throttle_max_attempts') . ',1']], function () {
+		Route::post('login', [AuthenticatedSessionController::class, 'store']);
+		Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
+		Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
+		Route::post('reset-password', [NewPasswordController::class, 'store'])->name('password.update');
+	});
 });
 
 Route::middleware('auth')->group(function () {
