@@ -33,7 +33,7 @@ Route::get('/', function () {
 			->get();
 		$vars['tagCounts'] = DB::table('tags')
 			->select(['tags.slug', DB::raw('COUNT(*) AS num')])
-			->join(DB::raw('tag_work'), function ($join) {
+			->join('tag_work', function ($join) {
 				$join->on('tags.id', '=', 'tag_work.tag_id');
 			})
 			->groupBy('tags.slug')
