@@ -32,7 +32,15 @@
 						required
 						type="password"
 					/>
-					<button aria-label="Show Password" class="button--secondary password-button" data-toggle-password type="button">Show</button>
+					<button
+						aria-controls="password"
+						aria-label="Show Password"
+						class="button--secondary password-button postfix"
+						data-toggle-password
+						type="button"
+					>
+						Show
+					</button>
 				</span>
 				@error('password')
 					<span class="form-error">{{ $message }}</span>
@@ -51,7 +59,15 @@
 						required
 						type="password"
 					/>
-					<button aria-label="Show Password" class="button--secondary password-button" data-toggle-password type="button">Show</button>
+					<button
+						aria-controls="password_confirmation"
+						aria-label="Show Password"
+						class="button--secondary password-button postfix"
+						data-toggle-password
+						type="button"
+					>
+						Show
+					</button>
 				</span>
 				@error('password_confirmation')
 					<span class="form-error">{{ $message }}</span>
