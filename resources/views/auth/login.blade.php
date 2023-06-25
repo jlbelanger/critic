@@ -8,6 +8,7 @@
 
 		<form action="/login" method="post">
 			@csrf
+			<input name="redirect" type="hidden" value="{{ request()->query('redirect') }}" />
 
 			<p>
 				<label class="required" for="username">Username</label>

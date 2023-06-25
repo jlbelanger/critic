@@ -9,13 +9,13 @@ class Authenticate extends Middleware
 	/**
 	 * Gets the path the user should be redirected to when they are not authenticated.
 	 *
-	 * @param  \Illuminate\Http\Request $request
+	 * @param  Request $request
 	 * @return string|null
 	 */
 	protected function redirectTo($request) // phpcs:ignore Squiz.Commenting.FunctionComment.TypeHintMissing
 	{
 		if (!$request->expectsJson()) {
-			return route('login');
+			return '/login?redirect=' . urlencode(str_replace(config('app.url'), '', $request->fullUrl()));
 		}
 	}
 }
