@@ -19,7 +19,7 @@
 		"lint:js": "node_modules/.bin/eslint . --ext .js",
 		"lint:php": "./vendor/bin/phpcs",
 		"test:php": "./vendor/bin/phpunit",
-		"watch": "node_modules/.bin/mix watch"
+		"watch": "npx browserslist@latest --update-db && node_modules/.bin/mix watch"
 	},
 	"dependencies": {
 		"@ckeditor/ckeditor5-autoformat": "^35.4.0",
