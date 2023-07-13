@@ -1,3 +1,4 @@
+import './app/accessibility';
 import './app/cloudable';
 import './app/filterable';
 import './app/graphable';
