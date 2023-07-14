@@ -1,0 +1,143 @@
+#nav-dialog {
+	background: none;
+	border: 0;
+	box-shadow: 0 0 0 100vh rgba($dark-blue, 0);
+	padding: 0;
+	transition: box-shadow .3s ease-in-out;
+
+	&:focus {
+		box-shadow: inherit;
+	}
+
+	.show-nav.animate-nav & {
+		box-shadow: 0 0 0 100vh rgba($dark-blue, .7);
+	}
+}
+
+#nav-dialog::backdrop {
+	background: transparent;
+}
+
+#nav {
+	background: $darker-blue;
+	bottom: 0;
+	box-shadow: 0 20px 20px rgba($black, .5);
+	display: none;
+	left: 0;
+	max-width: 240px;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transform: translateX(-100%);
+	transition: transform .3s ease-in-out;
+	z-index: 9999;
+
+	.link,
+	button {
+		display: block;
+		font-size: $font-size;
+		font-weight: normal;
+		padding: $input-padding;
+		text-align: left;
+		width: 100%;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: $dark-blue;
+		}
+	}
+
+	.link {
+		border-bottom: 1px solid $blue;
+	}
+
+	.show-nav & {
+		display: block;
+	}
+
+	.show-nav.animate-nav & {
+		transform: translateX(0);
+	}
+
+	@media screen and (min-width: $breakpoint-nav) {
+		box-shadow: none;
+		display: flex;
+		flex-wrap: wrap;
+		max-width: none;
+		position: static;
+		text-align: right;
+		transform: none;
+		transition: none;
+		width: 100%;
+
+		.link,
+		button {
+			display: inline-block;
+			width: auto;
+		}
+
+		.link {
+			border: 0;
+		}
+	}
+}
+
+.button--icon {
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 20px;
+	border: 0;
+	border-radius: 0;
+	cursor: pointer;
+	font-size: 0;
+	height: $button-size;
+	width: $button-size;
+	z-index: 999;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+	}
+}
+
+#nav-show {
+	background-image: url('/assets/img/menu.svg');
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	.show-nav & {
+		visibility: hidden;
+	}
+
+	@media screen and (min-width: $breakpoint-nav) {
+		display: none;
+	}
+}
+
+#nav-close {
+	background-image: url('/assets/img/x.svg');
+	position: fixed;
+
+	@media screen and (min-width: $breakpoint-nav) {
+		display: none;
+	}
+}
+
+.show-nav.animate-nav {
+	height: 100vh;
+	overflow-y: hidden;
+	position: fixed;
+	width: 100%;
+
+	@media screen and (min-width: $breakpoint-nav) {
+		height: auto;
+		overflow-y: unset;
+		position: static;
+		width: auto;
+	}
+}

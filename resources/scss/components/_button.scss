@@ -1,5 +1,5 @@
 button {
-	background: $light-yellow;
+	background-color: $light-yellow;
 	border: 1px solid $light-yellow;
 	color: $black;
 	cursor: pointer;
@@ -11,7 +11,7 @@ button {
 	&:hover,
 	&:active,
 	&:focus {
-		background: $yellow;
+		background-color: $yellow;
 		border-color: $yellow;
 	}
 }
@@ -19,7 +19,7 @@ button {
 .button--link {
 	@include link;
 
-	background: transparent;
+	background-color: transparent;
 	border-color: transparent;
 	color: $white;
 	line-height: 1;
@@ -27,33 +27,33 @@ button {
 	&:hover,
 	&:active,
 	&:focus {
-		background: transparent;
+		background-color: transparent;
 		border-color: transparent;
 	}
 }
 
 .button--danger {
-	background: $red;
+	background-color: $red;
 	border-color: $red;
 	color: $white;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background: $light-red;
+		background-color: $light-red;
 		border-color: $light-red;
 	}
 }
 
 .button--secondary {
-	background: $light-blue;
+	background-color: $light-blue;
 	border-color: $light-blue;
 	color: $white;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background: $lighter-blue;
+		background-color: $lighter-blue;
 		border-color: $lighter-blue;
 	}
 }

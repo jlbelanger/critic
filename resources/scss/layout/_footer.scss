@@ -1,0 +1,20 @@
+#page-auth,
+#page-footer {
+	background: $darker-blue;
+	text-align: right;
+}
+
+#page-footer {
+	margin-top: #{$padding * 2};
+
+	@media screen and (min-width: $breakpoint-large) {
+		margin-top: $padding-large;
+	}
+}
+
+#page-auth-inner,
+#page-footer-inner {
+	@media screen and (min-width: $breakpoint-large) {
+		padding: 0;
+	}
+}

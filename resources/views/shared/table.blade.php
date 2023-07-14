@@ -1,16 +1,18 @@
 @if (!$works->isEmpty())
 	<button
+		aria-controls="thead"
+		aria-expanded="false"
 		class="button--secondary toggle-button"
-		data-hide-label="Hide Sort &amp; Filter Options"
-		data-show-label="Show Sort &amp; Filter Options"
-		data-toggle="thead"
+		data-toggleable="#thead"
+		data-toggleable-hide="Hide Sort &amp; Filter Options"
+		data-toggleable-show="Show Sort &amp; Filter Options"
 		type="button"
 	>
 		Show Sort &amp; Filter Options
 	</button>
 
 	<table data-filterable-list data-sortable-list data-sortable-default-key="{{ !empty($defaultSortKey) ? $defaultSortKey : 'title' }}">
-		<thead class="toggle-hidden">
+		<thead class="hide" id="thead">
 			<tr>
 				<th class="column--title" scope="col">
 					<button aria-label="Sort by Title" class="button--link sortable-button" data-sortable-key="title" type="button">Title</button>

@@ -31,8 +31,17 @@
 				@if (Auth::user())
 					<div id="page-auth">
 						<div class="contain" id="page-auth-inner">
-							<button id="menu-button" type="button">Menu</button>
-							<div id="menu">
+							<button
+								aria-controls="nav"
+								aria-expanded="false"
+								class="button--icon"
+								id="nav-show"
+								title="Show Menu"
+								type="button"
+							>
+								Show Menu
+							</button>
+							<nav id="nav">
 								<a class="link{{ Request::is('albums') ? ' link--active' : '' }}" href="/albums">Albums</a>
 								<a class="link{{ Request::is('books') ? ' link--active' : '' }}" href="/books">Books</a>
 								<a class="link{{ Request::is('movies') ? ' link--active' : '' }}" href="/movies">Movies</a>
@@ -88,7 +97,7 @@
 									@csrf
 									<button class="button--link" type="submit">Logout</button>
 								</form>
-							</div>
+							</nav>
 						</div>
 					</div>
 				@endif

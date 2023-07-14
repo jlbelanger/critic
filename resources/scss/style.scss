@@ -2,7 +2,10 @@
 @import 'utilities/variables';
 @import 'utilities/mixins';
 @import 'utilities/fonts';
+@import 'layout/content';
 @import 'layout/header';
+@import 'layout/nav';
+@import 'layout/footer';
 @import 'components/alert';
 @import 'components/auth';
 @import 'components/autocomplete';
@@ -27,42 +30,3 @@
 @import 'components/widget-cloud';
 @import 'components/widget-graph';
 @import 'utilities/print';
-
-* {
-	box-sizing: border-box;
-}
-
-body {
-	background-attachment: fixed;
-	background-color: $blue;
-	background-image: url('/assets/img/bg.png');
-	color: $white;
-	font-family: 'Libre Franklin', sans-serif;
-	font-size: $font-size;
-	line-height: $line-height;
-	margin: 0;
-
-	&::before {
-		background: linear-gradient($dark-blue, rgba($dark-blue, 0));
-		content: '';
-		display: block;
-		height: 50vh;
-		left: 0;
-		pointer-events: none;
-		position: fixed;
-		right: 0;
-		top: 0;
-		z-index: -1;
-	}
-}
-
-main {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-
-article {
-	flex: 1 1 auto;
-	padding: 0 $padding;
-}

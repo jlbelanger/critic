@@ -1,5 +1,5 @@
 :focus {
 	border-color: $focus-color;
-	box-shadow: 0 0 0 $focus-width $focus-color;
+	box-shadow: $focus;
 	outline: none !important; // stylelint-disable-line declaration-no-important
 }

@@ -44,7 +44,7 @@
 
 .ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
 	border-color: $focus-color !important;
-	box-shadow: 0 0 0 $focus-width $focus-color !important;
+	box-shadow: $focus !important;
 }
 
 .ck-word-count {
