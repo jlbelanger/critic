@@ -1,5 +1,11 @@
 body.auth {
 	padding-top: $page-auth-height;
+
+	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+		.no-js & {
+			padding-top: 0;
+		}
+	}
 }
 
 #page-auth-inner {
@@ -18,10 +24,22 @@ body.auth {
 	.link {
 		white-space: nowrap;
 	}
+
+	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+		.no-js & {
+			position: static;
+		}
+	}
 }
 
 #page-auth-flex {
 	flex: 1 1 auto;
+
+	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+		.no-js & {
+			display: none;
+		}
+	}
 }
 
 #auth {
@@ -36,6 +54,12 @@ body.auth {
 #logout {
 	display: inline-block;
 	width: 100%;
+
+	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+		.no-js & {
+			width: auto;
+		}
+	}
 
 	@media screen and (min-width: $breakpoint-nav) {
 		width: auto;

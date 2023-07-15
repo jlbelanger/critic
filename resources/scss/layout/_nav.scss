@@ -61,6 +61,25 @@
 		transform: translateX(0);
 	}
 
+	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+		.no-js & {
+			box-shadow: none;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			max-width: none;
+			overflow: unset;
+			position: static;
+			transform: none;
+			transition: none;
+
+			.link,
+			button {
+				width: auto;
+			}
+		}
+	}
+
 	@media screen and (min-width: $breakpoint-nav) {
 		box-shadow: none;
 		display: flex;
@@ -114,6 +133,12 @@
 		visibility: hidden;
 	}
 
+	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+		.no-js & {
+			display: none;
+		}
+	}
+
 	@media screen and (min-width: $breakpoint-nav) {
 		display: none;
 	}
@@ -122,6 +147,8 @@
 #nav-close {
 	background-image: url('/assets/img/x.svg');
 	position: fixed;
+	right: 0;
+	top: 0;
 
 	@media screen and (min-width: $breakpoint-nav) {
 		display: none;
