@@ -5,7 +5,5 @@
 *.log
 /vendor
 node_modules
-public/assets/css/style.css
-public/assets/js/admin.js
-public/assets/js/app.js
+public/assets/js/style.min.js
 TODO.md

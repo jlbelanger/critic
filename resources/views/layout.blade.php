@@ -117,7 +117,7 @@
 		<script src="{{ mix('/assets/js/app.min.js') }}"></script>
 		@if (Auth::user())
 			<script src="{{ mix('/assets/js/admin.min.js') }}"></script>
-			<script src="{{ url('/assets/js/ckeditor.min.js') }}"></script>
+			<script src="{{ mix('/assets/js/ckeditor.min.js') }}"></script>
 		@endif
 	</body>
 </html>
