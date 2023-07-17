@@ -9,7 +9,9 @@
 }
 
 #thead {
-	&.hide {
-		display: none;
+	@media (max-width: #{$breakpoint-table - 1px}) {
+		&.toggle-hide {
+			display: none;
+		}
 	}
 }

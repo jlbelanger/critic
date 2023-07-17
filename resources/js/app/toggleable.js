@@ -1,13 +1,13 @@
 function Toggleable($button) {
 	const showElement = ($element) => {
 		$button.setAttribute('aria-expanded', 'true');
-		$element.classList.remove('hide');
+		$element.classList.remove('toggle-hide');
 		return $button.getAttribute('data-toggleable-hide');
 	};
 
 	const hideElement = ($element) => {
 		$button.setAttribute('aria-expanded', 'false');
-		$element.classList.add('hide');
+		$element.classList.add('toggle-hide');
 		return $button.getAttribute('data-toggleable-show');
 	};
 
@@ -18,7 +18,7 @@ function Toggleable($button) {
 		Array.from($elements).forEach(($element) => {
 			let text;
 
-			if ($element.classList.contains('hide')) {
+			if ($element.classList.contains('toggle-hide')) {
 				text = showElement($element);
 			} else {
 				text = hideElement($element);
