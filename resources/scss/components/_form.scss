@@ -71,7 +71,7 @@
 	font-style: italic;
 }
 
-@media screen and (min-width: $breakpoint-medium) {
+@media (min-width: $breakpoint-medium) {
 	.form {
 		display: table;
 	}

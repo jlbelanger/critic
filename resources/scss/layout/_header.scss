@@ -4,7 +4,7 @@
 	margin: #{$padding * 2} 0 0;
 	text-align: center;
 
-	@media screen and (min-width: $breakpoint-large) {
+	@media (min-width: $breakpoint-large) {
 		margin-top: $padding-large;
 	}
 }
@@ -19,12 +19,12 @@
 	text-decoration: none;
 	width: 200px;
 
-	@media screen and (min-width: $breakpoint-small) {
+	@media (min-width: $breakpoint-small) {
 		height: 41px;
 		width: 300px;
 	}
 
-	@media screen and (min-width: $breakpoint-large) {
+	@media (min-width: $breakpoint-large) {
 		height: 62px;
 		width: 450px;
 	}

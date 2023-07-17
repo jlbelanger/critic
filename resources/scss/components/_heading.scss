@@ -14,7 +14,7 @@ h1 {
 #content-title {
 	margin-top: #{$padding * 2};
 
-	@media screen and (min-width: $breakpoint-large) {
+	@media (min-width: $breakpoint-large) {
 		margin-top: $padding-large;
 		padding-left: $padding;
 		padding-right: $padding;

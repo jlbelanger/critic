@@ -4,15 +4,15 @@
 	grid-template-rows: repeat(auto-fill, 1fr);
 	margin-top: #{$padding * 2};
 
-	@media screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {
+	@media (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	@media screen and (min-width: $breakpoint-large) {
+	@media (min-width: $breakpoint-large) {
 		margin-top: $padding-large;
 	}
 
-	@media screen and (min-width: ($breakpoint-large + 1px)) {
+	@media (min-width: ($breakpoint-large + 1px)) {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
@@ -28,7 +28,7 @@
 	padding: 1rem;
 	transform: rotateY(-180deg);
 
-	@media screen and (min-width: $breakpoint-medium) {
+	@media (min-width: $breakpoint-medium) {
 		padding: 1.25rem;
 	}
 
@@ -51,7 +51,7 @@
 	}
 }
 
-@media screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {
+@media (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {
 	.widget--m2row {
 		grid-row-end: span 2;
 	}
@@ -61,7 +61,7 @@
 	}
 }
 
-@media screen and (min-width: ($breakpoint-large + 1px)) {
+@media (min-width: ($breakpoint-large + 1px)) {
 	.widget--l2col {
 		grid-column-end: span 2;
 	}
@@ -78,7 +78,7 @@
 }
 
 .widget__list--columns {
-	@media screen and (min-width: $breakpoint-medium) {
+	@media (min-width: $breakpoint-medium) {
 		display: grid;
 		grid-auto-flow: column;
 		grid-gap: 0 1rem;
@@ -89,7 +89,7 @@
 .widget__list-item {
 	margin-top: 1.5rem;
 
-	@media screen and (min-width: $breakpoint-medium) {
+	@media (min-width: $breakpoint-medium) {
 		margin-top: 1rem;
 	}
 }

@@ -1,7 +1,7 @@
 body.auth {
 	padding-top: $page-auth-height;
 
-	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+	@media (max-width: #{$breakpoint-nav - 1px}) {
 		.no-js & {
 			padding-top: 0;
 		}
@@ -25,7 +25,7 @@ body.auth {
 		white-space: nowrap;
 	}
 
-	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+	@media (max-width: #{$breakpoint-nav - 1px}) {
 		.no-js & {
 			position: static;
 		}
@@ -35,7 +35,7 @@ body.auth {
 #page-auth-flex {
 	flex: 1 1 auto;
 
-	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+	@media (max-width: #{$breakpoint-nav - 1px}) {
 		.no-js & {
 			display: none;
 		}
@@ -46,7 +46,7 @@ body.auth {
 	margin: #{$padding * 2} auto 0;
 	max-width: 450px;
 
-	@media screen and (min-width: $breakpoint-large) {
+	@media (min-width: $breakpoint-large) {
 		margin-top: $padding-large;
 	}
 }
@@ -55,13 +55,13 @@ body.auth {
 	display: inline-block;
 	width: 100%;
 
-	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+	@media (max-width: #{$breakpoint-nav - 1px}) {
 		.no-js & {
 			width: auto;
 		}
 	}
 
-	@media screen and (min-width: $breakpoint-nav) {
+	@media (min-width: $breakpoint-nav) {
 		width: auto;
 	}
 }

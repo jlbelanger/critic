@@ -61,7 +61,7 @@
 		transform: translateX(0);
 	}
 
-	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+	@media (max-width: #{$breakpoint-nav - 1px}) {
 		.no-js & {
 			box-shadow: none;
 			display: flex;
@@ -80,7 +80,7 @@
 		}
 	}
 
-	@media screen and (min-width: $breakpoint-nav) {
+	@media (min-width: $breakpoint-nav) {
 		box-shadow: none;
 		display: flex;
 		flex-wrap: wrap;
@@ -133,13 +133,13 @@
 		visibility: hidden;
 	}
 
-	@media screen and (max-width: #{$breakpoint-nav - 1px}) {
+	@media (max-width: #{$breakpoint-nav - 1px}) {
 		.no-js & {
 			display: none;
 		}
 	}
 
-	@media screen and (min-width: $breakpoint-nav) {
+	@media (min-width: $breakpoint-nav) {
 		display: none;
 	}
 }
@@ -150,7 +150,7 @@
 	right: 0;
 	top: 0;
 
-	@media screen and (min-width: $breakpoint-nav) {
+	@media (min-width: $breakpoint-nav) {
 		display: none;
 	}
 }
@@ -161,7 +161,7 @@
 	position: fixed;
 	width: 100%;
 
-	@media screen and (min-width: $breakpoint-nav) {
+	@media (min-width: $breakpoint-nav) {
 		height: auto;
 		overflow-y: unset;
 		position: static;
