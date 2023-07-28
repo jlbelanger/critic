@@ -8,6 +8,7 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 require('dotenv').config();
 
 module.exports = {
+	mode: 'production',
 	devtool: false,
 	entry: {
 		admin: './resources/js/admin.js',
@@ -31,12 +32,22 @@ module.exports = {
 			fileName: 'mix-manifest.json',
 		}),
 		new BrowserSyncPlugin({
-			// injectChanges: true,
 			proxy: process.env.APP_URL,
+			port: 3000,
 			files: [
-				'public/assets/js/*.js',
-				'public/assets/css/*.css',
+				'public/assets/js/**/*',
+				'public/assets/css/**/*',
+				'resources/views/**/*',
 			],
+			snippetOptions: {
+				rule: {
+					match: /<body[^>]*>/i,
+					fn: (snippet, match) => (
+						// Allow Browsersync to work with Content-Security-Policy without script-src 'unsafe-inline'.
+						`${match}${snippet.replace('id=', 'nonce="browser-sync" id=')}`
+					),
+				},
+			},
 		}, {
 			reload: false,
 		}),

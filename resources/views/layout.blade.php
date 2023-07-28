@@ -20,7 +20,7 @@
 		@if (!empty($canonical))
 			<link rel="canonical" href="{{ url($canonical) }}">
 		@endif
-		<script>document.documentElement.classList.remove('no-js');</script>
+		<script integrity="sha256-tuKyZn/3ycw/MNMDii/kvSPrelo6SCsJSecqb1n2neg=">document.documentElement.classList.remove('no-js');</script>
 	</head>
 	<body class="{{ Auth::user() ? 'auth' : '' }}">
 		<a class="button" href="#article" id="skip">Skip to content</a>

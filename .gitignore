@@ -5,5 +5,4 @@
 *.log
 /vendor
 node_modules
-public/assets/js/style.min.js
 TODO.md
