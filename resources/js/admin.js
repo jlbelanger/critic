@@ -1,3 +1,4 @@
+import '../scss/admin.scss';
 import './admin/autocomplete';
 import './admin/beforeunload';
 import './admin/confirmable';

@@ -1,3 +1,4 @@
+import '../scss/style.scss';
 import './app/accessibility';
 import './app/cloudable';
 import './app/filterable';

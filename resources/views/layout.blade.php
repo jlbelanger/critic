@@ -13,6 +13,9 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 		<link rel="icon" href="/favicon.ico">
 		<link rel="stylesheet" href="{{ mix('/assets/css/style.min.css') }}">
+		@if (Auth::user())
+			<link rel="stylesheet" href="{{ mix('/assets/css/admin.min.css') }}">
+		@endif
 		<link rel="alternate" type="application/rss+xml" href="/feed.xml">
 		@if (!empty($canonical))
 			<link rel="canonical" href="{{ url($canonical) }}">

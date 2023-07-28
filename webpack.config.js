@@ -10,10 +10,9 @@ require('dotenv').config();
 module.exports = {
 	devtool: false,
 	entry: {
-		app: './resources/js/app.js',
 		admin: './resources/js/admin.js',
+		app: './resources/js/app.js',
 		ckeditor: './resources/js/ckeditor.js',
-		style: './resources/scss/style.scss',
 	},
 	output: {
 		filename: 'assets/js/[name].min.js?[contenthash]',
@@ -115,5 +114,21 @@ module.exports = {
 				extractComments: false,
 			}),
 		],
+		splitChunks: {
+			cacheGroups: {
+				style: {
+					name: 'style',
+					type: 'css/mini-extract',
+					chunks: (chunk) => (chunk.name === 'app'),
+					enforce: true,
+				},
+				admin: {
+					name: 'admin',
+					type: 'css/mini-extract',
+					chunks: (chunk) => (chunk.name === 'admin'),
+					enforce: true,
+				},
+			},
+		},
 	},
 };
