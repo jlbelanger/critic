@@ -1,5 +1,5 @@
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import AttributeCommand from '@ckeditor/ckeditor5-basic-styles/src/attributecommand';
+import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 
 const ITALIC = 'italic';
 

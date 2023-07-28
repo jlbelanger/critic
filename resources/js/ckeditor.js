@@ -2,9 +2,12 @@ import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage';
 import AutoLink from '@ckeditor/ckeditor5-link/src/autolink';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
+import Bold from './ckeditor/bold';
+import Cite from './ckeditor/cite';
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+import Emphasis from './ckeditor/emphasis';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import GeneralHtmlSupport from '@ckeditor/ckeditor5-html-support/src/generalhtmlsupport';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
@@ -12,22 +15,19 @@ import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalli
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
-import ImageTextAlternative from '@ckeditor/ckeditor5-image/src/imagetextalternative';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import ImageTextAlternative from '@ckeditor/ckeditor5-image/src/imagetextalternative';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
+import Small from './ckeditor/small';
 import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Strong from './ckeditor/strong';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
-import Bold from './ckeditor/bold';
-import Cite from './ckeditor/cite';
-import Emphasis from './ckeditor/emphasis';
-import Small from './ckeditor/small';
-import Strong from './ckeditor/strong';
 
 const ready = (callback) => {
 	if (document.readyState !== 'loading') {
