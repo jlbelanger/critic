@@ -14,5 +14,5 @@
 
 	<ul class="autocomplete__selected-list"></ul>
 
-	<script>window.AUTOCOMPLETE_SELECTED = {!! json_encode($items) !!};</script>
+	<input data-autocomplete-value type="hidden" value="{{ json_encode($items) }}" />
 </div>

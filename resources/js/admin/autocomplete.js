@@ -10,10 +10,14 @@ function Autocomplete($container) {
 	const $resultsList = $container.querySelector('.autocomplete__results-list');
 	const $noResults = $container.querySelector('.autocomplete__results-none');
 	const $selectedList = $container.querySelector('.autocomplete__selected-list');
-	const selectedItems = window.AUTOCOMPLETE_SELECTED;
 	let lastSearchTerm = '';
 	let selectedIndex = null;
 	let isSearching = false;
+
+	let selectedItems = $container.querySelector('[data-autocomplete-value]').value;
+	if (selectedItems) {
+		selectedItems = JSON.parse(selectedItems);
+	}
 
 	const hideResults = () => {
 		$resultsContainer.style.display = 'none';
