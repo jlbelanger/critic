@@ -1,6 +1,6 @@
 # Critic
 
-View the app at https://critic.jennybelanger.com/
+Critic is a movie/TV/music review site. [View the site](https://critic.jennybelanger.com/).
 
 ## Development
 
@@ -44,6 +44,8 @@ php artisan reset-auth
 ``` bash
 yarn start
 ```
+
+Your browser should automatically open https://localhost:3000/
 
 ### Lint
 
