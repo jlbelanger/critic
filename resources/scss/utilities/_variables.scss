@@ -1,3 +1,5 @@
+// Colors
+
 $black: #000;
 $white: #fff;
 $light-gray: #aaa;
@@ -17,9 +19,7 @@ $lighter-red: #ce717b;
 
 $green: #093;
 
-$focus-color: #0cf;
-$focus-width: 4px;
-$focus: 0 0 0 $focus-width $focus-color;
+// Sizes
 
 $button-size: 44px;
 $font-size: 20px;
@@ -32,6 +32,10 @@ $select-caret-size: 12px;
 $sorted-caret-size: 6px;
 
 $checkbox-size: 32px;
+
+$focus-color: #0cf;
+$focus-width: 4px;
+$focus: 0 0 0 $focus-width $focus-color;
 
 $form-margin: 10px;
 
@@ -52,9 +56,14 @@ $password-button-width: 87px;
 
 $star-size: 24px;
 
-$breakpoint-small: 480px;
-$breakpoint-medium: 768px;
-$breakpoint-large: 1024px;
+// Breakpoints
 
-$breakpoint-nav: $breakpoint-large;
-$breakpoint-table: $breakpoint-medium + 1px;
+$breakpoint-small: 480px;
+$screen-width-tablet-portrait: 768px;
+$screen-width-tablet-landscape: 1024px;
+
+$breakpoint-nav: $screen-width-tablet-landscape;
+$breakpoint-table: $screen-width-tablet-portrait + 1px;
+
+$tablet-portrait-up: '(min-width: #{$screen-width-tablet-portrait})';
+$tablet-landscape-up: '(min-width: #{$screen-width-tablet-landscape})';

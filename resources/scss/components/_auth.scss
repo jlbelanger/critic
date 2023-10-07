@@ -46,7 +46,7 @@ body.auth {
 	margin: #{$padding * 2} auto 0;
 	max-width: 450px;
 
-	@media (min-width: $breakpoint-large) {
+	@media ($tablet-landscape-up) {
 		margin-top: $padding-large;
 	}
 }

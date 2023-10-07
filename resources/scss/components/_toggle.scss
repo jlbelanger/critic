@@ -3,7 +3,7 @@
 	margin: $margin 0 0;
 	width: 100%;
 
-	@media (min-width: #{$breakpoint-table}) {
+	@media (min-width: $breakpoint-table) {
 		display: none;
 	}
 }

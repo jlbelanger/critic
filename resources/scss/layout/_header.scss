@@ -4,7 +4,7 @@
 	margin: #{$padding * 2} 0 0;
 	text-align: center;
 
-	@media (min-width: $breakpoint-large) {
+	@media ($tablet-landscape-up) {
 		margin-top: $padding-large;
 	}
 }
@@ -24,7 +24,7 @@
 		width: 300px;
 	}
 
-	@media (min-width: $breakpoint-large) {
+	@media ($tablet-landscape-up) {
 		height: 62px;
 		width: 450px;
 	}

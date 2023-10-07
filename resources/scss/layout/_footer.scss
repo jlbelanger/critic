@@ -7,14 +7,14 @@
 #page-footer {
 	margin-top: #{$padding * 2};
 
-	@media (min-width: $breakpoint-large) {
+	@media ($tablet-landscape-up) {
 		margin-top: $padding-large;
 	}
 }
 
 #page-auth-inner,
 #page-footer-inner {
-	@media (min-width: $breakpoint-large) {
+	@media ($tablet-landscape-up) {
 		padding: 0;
 	}
 }

@@ -14,7 +14,7 @@ h1 {
 #content-title {
 	margin-top: #{$padding * 2};
 
-	@media (min-width: $breakpoint-large) {
+	@media ($tablet-landscape-up) {
 		margin-top: $padding-large;
 		padding-left: $padding;
 		padding-right: $padding;

@@ -25,7 +25,7 @@
 	margin: .25rem;
 	padding: .5rem;
 
-	@media (min-width: #{$breakpoint-large}) {
+	@media ($tablet-landscape-up) {
 		padding: .25rem;
 	}
 }

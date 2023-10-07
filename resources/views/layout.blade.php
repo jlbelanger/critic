@@ -24,7 +24,7 @@
 	</head>
 	<body class="{{ Auth::user() ? 'auth' : '' }}">
 		<a class="button" href="#article" id="skip">Skip to content</a>
-		<main>
+		<main id="main">
 			<header id="page-header">
 				@if (Request::is('/'))
 					<span id="page-title">Critic</span>
