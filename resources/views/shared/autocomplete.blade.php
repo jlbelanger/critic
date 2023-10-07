@@ -6,7 +6,7 @@
 
 		<span class="autocomplete__loading">Loading...</span>
 
-		<div class="autocomplete__results" style="display:none" tabindex="-1">
+		<div class="autocomplete__results hide" tabindex="-1">
 			<ul class="autocomplete__results-list"></ul>
 			<p class="autocomplete__results-none">No results.</p>
 		</div>

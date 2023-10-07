@@ -20,7 +20,7 @@ function Autocomplete($container) {
 	}
 
 	const hideResults = () => {
-		$resultsContainer.style.display = 'none';
+		$resultsContainer.classList.add('hide');
 		$resultsList.innerText = '';
 	};
 
@@ -43,7 +43,7 @@ function Autocomplete($container) {
 			selectedItems.splice(pos, 1);
 
 			if (selectedItems.length <= 0) {
-				$selectedList.style.display = 'none';
+				$selectedList.classList.add('hide');
 			}
 		}
 	};
@@ -73,7 +73,7 @@ function Autocomplete($container) {
 		$li.appendChild($button);
 
 		$selectedList.appendChild($li);
-		$selectedList.style.display = '';
+		$selectedList.classList.remove('hide');
 
 		$input.value = '';
 		lastSearchTerm = '';
@@ -157,14 +157,14 @@ function Autocomplete($container) {
 					hasResults = true;
 				});
 
-				$resultsContainer.style.display = '';
+				$resultsContainer.classList.remove('hide');
 
 				if (!hasResults) {
-					$noResults.style.display = '';
-					$resultsList.style.display = 'none';
+					$noResults.classList.remove('hide');
+					$resultsList.classList.add('hide');
 				} else {
-					$noResults.style.display = 'none';
-					$resultsList.style.display = '';
+					$noResults.classList.add('hide');
+					$resultsList.classList.remove('hide');
 					$resultsList.firstChild.scrollIntoView({ block: 'nearest' });
 				}
 

@@ -3,9 +3,9 @@ function showHideByType() {
 	const $elements = document.querySelectorAll('[data-show-for-type]');
 	$elements.forEach(($element) => {
 		if ($element.getAttribute('data-show-for-type').split(',').includes(val)) {
-			$element.style.display = '';
+			$element.classList.remove('hide');
 		} else {
-			$element.style.display = 'none';
+			$element.classList.add('hide');
 		}
 	});
 }
