@@ -15,7 +15,6 @@
 				<input
 					autocapitalize="none"
 					autocomplete="username"
-					autofocus
 					id="username"
 					name="username"
 					required

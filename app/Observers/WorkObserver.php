@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Work;
+use Illuminate\Support\Carbon;
 
 class WorkObserver
 {
@@ -12,7 +13,7 @@ class WorkObserver
 	 */
 	public function deleted(Work $work)
 	{
-		$work->slug = 'deleted-' . strtotime('now') . '-' . $work->slug;
+		$work->slug = 'deleted-' . Carbon::now() . '-' . $work->slug;
 		$work->save();
 	}
 }
