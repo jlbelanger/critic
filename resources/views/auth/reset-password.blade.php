@@ -22,11 +22,11 @@
 				<span class="password-container">
 					<input
 						autocomplete="new-password"
-						autocorrect="off"
 						class="password-input"
 						id="new_password"
 						name="new_password"
 						required
+						spellcheck="false"
 						type="password"
 					/>
 					<button
@@ -49,11 +49,11 @@
 				<span class="password-container">
 					<input
 						autocomplete="new-password"
-						autocorrect="off"
 						class="password-input"
 						id="new_password_confirmation"
 						name="new_password_confirmation"
 						required
+						spellcheck="false"
 						type="password"
 					/>
 					<button
