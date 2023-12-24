@@ -33,7 +33,7 @@ class Tag extends Model
 		return '/tags/' . $this->id . '/edit';
 	}
 
-	public function rules(string $id = '') : array
+	public static function rules(string $id = '') : array
 	{
 		$unique = $id ? ',' . $id : '';
 		$required = $id ? 'filled' : 'required';
