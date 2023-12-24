@@ -69,8 +69,11 @@ class WorkController extends Controller
 	protected function index(Request $request, string $canonical, string $type, string $title) : View
 	{
 		$sortKey = $request->query('sort');
-		$sortDir = $sortKey && $sortKey[0] === '-' ? 'desc' : 'asc';
-		$sortKey = trim($sortKey, '-');
+		$sortDir = 'asc';
+		if ($sortKey) {
+			$sortDir = $sortKey[0] === '-' ? 'desc' : 'asc';
+			$sortKey = trim($sortKey, '-');
+		}
 
 		$works = Work::with([
 			'tags' => function ($q) {
