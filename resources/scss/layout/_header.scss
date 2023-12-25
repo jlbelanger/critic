@@ -19,7 +19,7 @@
 	text-decoration: none;
 	width: 200px;
 
-	@media (min-width: $breakpoint-small) {
+	@media (width >= $breakpoint-small) {
 		height: 41px;
 		width: 300px;
 	}

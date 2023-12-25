@@ -110,7 +110,7 @@ td {
 	display: none;
 }
 
-@media (max-width: #{$breakpoint-table - 1px}) {
+@media (width < $breakpoint-table) {
 	table {
 		input[size],
 		select {

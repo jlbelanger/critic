@@ -110,6 +110,7 @@ module.exports = {
 								plugins: [
 									'autoprefixer',
 									'cssnano',
+									'postcss-preset-env',
 								],
 							},
 						},
@@ -121,9 +122,7 @@ module.exports = {
 	},
 	optimization: {
 		minimizer: [
-			new TerserPlugin({
-				extractComments: false,
-			}),
+			new TerserPlugin(),
 		],
 		splitChunks: {
 			cacheGroups: {

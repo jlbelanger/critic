@@ -4,7 +4,7 @@
 	grid-template-rows: repeat(auto-fill, 1fr);
 	margin-top: #{$padding * 2};
 
-	@media ($tablet-portrait-up) and (max-width: $screen-width-tablet-landscape) {
+	@media ($tablet-portrait-up) and (width <= $screen-width-tablet-landscape) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
@@ -12,7 +12,7 @@
 		margin-top: $padding-large;
 	}
 
-	@media (min-width: ($screen-width-tablet-landscape + 1px)) {
+	@media (width > $screen-width-tablet-landscape) {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
@@ -51,7 +51,7 @@
 	}
 }
 
-@media ($tablet-portrait-up) and (max-width: $screen-width-tablet-landscape) {
+@media ($tablet-portrait-up) and (width <= $screen-width-tablet-landscape) {
 	.widget--m2row {
 		grid-row-end: span 2;
 	}
@@ -61,7 +61,7 @@
 	}
 }
 
-@media (min-width: ($screen-width-tablet-landscape + 1px)) {
+@media (width > $screen-width-tablet-landscape) {
 	.widget--l2col {
 		grid-column-end: span 2;
 	}

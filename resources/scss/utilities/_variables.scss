@@ -65,5 +65,5 @@ $screen-width-tablet-landscape: 1024px;
 $breakpoint-nav: $screen-width-tablet-landscape;
 $breakpoint-table: $screen-width-tablet-portrait + 1px;
 
-$tablet-portrait-up: 'min-width: #{$screen-width-tablet-portrait}';
-$tablet-landscape-up: 'min-width: #{$screen-width-tablet-landscape}';
+$tablet-portrait-up: 'width >= #{$screen-width-tablet-portrait}';
+$tablet-landscape-up: 'width >= #{$screen-width-tablet-landscape}';

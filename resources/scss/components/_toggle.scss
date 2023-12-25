@@ -3,13 +3,13 @@
 	margin: $margin 0 0;
 	width: 100%;
 
-	@media (min-width: $breakpoint-table) {
+	@media (width >= $breakpoint-table) {
 		display: none;
 	}
 }
 
 #thead {
-	@media (max-width: #{$breakpoint-table - 1px}) {
+	@media (width < $breakpoint-table) {
 		&.toggle-hide {
 			display: none;
 		}
