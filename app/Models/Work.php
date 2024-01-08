@@ -88,6 +88,7 @@ class Work extends Model
 
 	public function setContentAttribute($value)
 	{
+		$value = (string) $value;
 		$value = preg_replace('/<(p|li|blockquote|ul|ol|h1|h2|h3|h4|h5|h6|hr|pre|figure|figcaption|table|tr|td|th|dl|dt|dd|div)( [^>]+)?>/', "\n" . '<$1$2>', $value);
 		$value = str_replace('</blockquote>', "\n" . '</blockquote>', $value);
 		$this->attributes['content'] = trim($value);
