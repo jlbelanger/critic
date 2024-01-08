@@ -4,7 +4,7 @@
 	<div class="contain-small">
 		@include('shared.errors', ['errors' => $errors])
 
-		<form action="/profile" class="form" id="form" method="post">
+		<form action="/profile" class="form" data-form id="form" method="post">
 			@method('PUT')
 			@csrf
 

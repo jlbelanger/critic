@@ -4,7 +4,7 @@
 	<div class="contain-small">
 		@include('shared.errors', ['errors' => $errors])
 
-		<form action="/works" class="form" id="form" method="post">
+		<form action="/works" class="form" data-form id="form" method="post">
 			<header class="form-row">
 				<div class="form-label"></div>
 				<div class="form-input"><h1>Add Work</h1></div>

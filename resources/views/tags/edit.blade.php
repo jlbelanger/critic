@@ -9,7 +9,7 @@
 			@method('DELETE')
 		</form>
 
-		<form action="/tags/{{ $row->id }}" class="form" id="form" method="post">
+		<form action="/tags/{{ $row->id }}" class="form" data-form id="form" method="post">
 			@method('PUT')
 
 			<header class="form-row">
