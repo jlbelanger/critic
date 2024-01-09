@@ -4,7 +4,7 @@
 	<div class="contain-small">
 		@include('shared.errors', ['errors' => $errors])
 
-		<form action="/tags/{{ $row->id }}" class="admin" id="delete-form" method="post">
+		<form action="/tags/{{ $row->id }}" class="admin" data-ignore-unsaved id="delete-form" method="post">
 			@csrf
 			@method('DELETE')
 		</form>
