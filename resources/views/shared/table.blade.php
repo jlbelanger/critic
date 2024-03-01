@@ -11,7 +11,12 @@
 		Show Sort &amp; Filter Options
 	</button>
 
-	<table data-filterable-list data-sortable-list data-sortable-default-key="{{ !empty($defaultSortKey) ? $defaultSortKey : 'title' }}">
+	<table
+		data-filterable-list
+		data-sortable-list
+		data-sortable-default-key="{{ !empty($defaultSortKey) ? $defaultSortKey : 'title' }}"
+		data-sortable-default-dir="{{ !empty($defaultSortDir) ? $defaultSortDir : 'asc' }}"
+	>
 		<thead class="toggle-hide" id="thead">
 			<tr>
 				<th class="column--title" scope="col">

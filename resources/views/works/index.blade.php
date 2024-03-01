@@ -15,6 +15,7 @@
 				'authorTitle' => $metaTitle === 'Albums' ? 'Artist' : 'Author',
 				'longYear' => $metaTitle === 'TV Shows',
 				'defaultSortKey' => $defaultSortKey,
+				'defaultSortDir' => $defaultSortDir,
 			]
 		)
 	</div>

@@ -111,7 +111,8 @@ class WorkController extends Controller
 			->with('works', $works)
 			->with('canonical', $canonical)
 			->with('defaults', $defaults)
-			->with('defaultSortKey', $sortKey);
+			->with('defaultSortKey', $sortKey)
+			->with('defaultSortDir', $sortDir);
 	}
 
 	/**
