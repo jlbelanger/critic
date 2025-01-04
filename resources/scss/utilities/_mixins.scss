@@ -1,7 +1,9 @@
+@use 'variables';
+
 @mixin link {
-	color: $white;
+	color: variables.$white;
 	text-decoration: underline;
-	text-decoration-color: $light-blue;
+	text-decoration-color: variables.$light-blue;
 	text-decoration-thickness: 4px;
 
 	&:hover,

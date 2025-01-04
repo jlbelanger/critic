@@ -1,3 +1,5 @@
+@use '../utilities/variables';
+
 #form {
 	margin-top: 2rem;
 }
@@ -13,7 +15,7 @@
 }
 
 .form-footer {
-	margin-top: $margin;
+	margin-top: variables.$margin;
 	text-align: right;
 }
 
@@ -22,7 +24,7 @@
 }
 
 .form-row {
-	margin-top: $margin;
+	margin-top: variables.$margin;
 }
 
 .form-input {
@@ -42,11 +44,11 @@
 }
 
 .form-note {
-	color: $light-gray;
+	color: variables.$light-gray;
 }
 
 .form-error {
-	color: $lighter-red;
+	color: variables.$lighter-red;
 
 	&::before {
 		content: 'Error: ';
@@ -57,7 +59,7 @@
 	font-style: italic;
 }
 
-@media ($tablet-portrait-up) {
+@media (width >= variables.$screen-width-tablet-portrait) {
 	.form {
 		display: table;
 	}
@@ -69,20 +71,20 @@
 	.form-label,
 	.form-input {
 		display: table-cell;
-		padding-top: $form-margin;
+		padding-top: variables.$form-margin;
 		vertical-align: top;
 	}
 
 	.form-label {
-		padding: $label-padding 1rem $label-padding 0;
+		padding: variables.$label-padding 1rem variables.$label-padding 0;
 		text-align: right;
 		white-space: nowrap;
 		width: 0;
 
 		.form-row--checkbox & {
-			line-height: $checkbox-size;
-			padding-bottom: $form-margin;
-			padding-top: $form-margin;
+			line-height: variables.$checkbox-size;
+			padding-bottom: variables.$form-margin;
+			padding-top: variables.$form-margin;
 			vertical-align: middle;
 		}
 	}

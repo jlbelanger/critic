@@ -1,20 +1,22 @@
+@use '../utilities/variables';
+
 #page-auth,
 #page-footer {
-	background: $darker-blue;
+	background: variables.$darker-blue;
 	text-align: right;
 }
 
 #page-footer {
-	margin-top: #{$padding * 2};
+	margin-top: calc(variables.$padding * 2);
 
-	@media ($tablet-landscape-up) {
-		margin-top: $padding-large;
+	@media (width >= variables.$screen-width-tablet-landscape) {
+		margin-top: variables.$padding-large;
 	}
 }
 
 #page-auth-inner,
 #page-footer-inner {
-	@media ($tablet-landscape-up) {
+	@media (width >= variables.$screen-width-tablet-landscape) {
 		padding: 0;
 	}
 }

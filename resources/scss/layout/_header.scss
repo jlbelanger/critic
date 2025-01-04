@@ -1,11 +1,13 @@
+@use '../utilities/variables';
+
 #page-header {
 	font-size: 0;
 	line-height: 1;
-	margin: #{$padding * 2} 0 0;
+	margin: calc(variables.$padding * 2) 0 0;
 	text-align: center;
 
-	@media ($tablet-landscape-up) {
-		margin-top: $padding-large;
+	@media (width >= variables.$screen-width-tablet-landscape) {
+		margin-top: variables.$padding-large;
 	}
 }
 
@@ -19,12 +21,12 @@
 	text-decoration: none;
 	width: 200px;
 
-	@media (width >= $breakpoint-small) {
+	@media (width >= variables.$breakpoint-small) {
 		height: 41px;
 		width: 300px;
 	}
 
-	@media ($tablet-landscape-up) {
+	@media (width >= variables.$screen-width-tablet-landscape) {
 		height: 62px;
 		width: 450px;
 	}

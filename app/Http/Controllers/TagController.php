@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -161,7 +160,7 @@ class TagController extends Controller
 		if ($request->wantsJson()) {
 			return response()->json(['message' => 'Tag deleted successfully.']);
 		}
-		return redirect(RouteServiceProvider::HOME)
+		return redirect('/')
 			->with('message', 'Tag deleted successfully.')
 			->with('status', 'success');
 	}

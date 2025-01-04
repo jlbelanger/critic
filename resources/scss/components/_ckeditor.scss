@@ -1,14 +1,16 @@
-// stylelint-disable declaration-no-important
+@use '../utilities/variables';
+
+/* stylelint-disable declaration-no-important */
 #content {
-	background-color: $input-background-color;
-	border: 1px solid $white;
+	background-color: variables.$input-background-color;
+	border: 1px solid variables.$white;
 	line-height: 1.5;
 	min-height: 107px;
 	opacity: .5;
 	padding: 0 12px;
 
 	&::before {
-		background-color: $white;
+		background-color: variables.$white;
 		content: '';
 		display: block;
 		height: 77px;
@@ -18,7 +20,7 @@
 
 .ck-content {
 	blockquote {
-		border-color: $light-blue !important;
+		border-color: variables.$light-blue !important;
 		font-style: normal !important;
 
 		& > :first-child {
@@ -27,13 +29,13 @@
 	}
 
 	hr {
-		background-color: $light-blue !important;
+		background-color: variables.$light-blue !important;
 		height: 1px !important;
 	}
 }
 
 .ck.ck-editor__main > .ck-editor__editable {
-	background-color: $input-background-color !important;
+	background-color: variables.$input-background-color !important;
 
 	p,
 	ol,
@@ -43,12 +45,12 @@
 }
 
 .ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
-	border-color: $focus-color !important;
-	box-shadow: $focus !important;
+	border-color: variables.$focus-color !important;
+	box-shadow: variables.$focus !important;
 }
 
 .ck-word-count {
-	color: $light-gray;
+	color: variables.$light-gray;
 	display: flex;
 	font-size: 16px;
 	justify-content: space-between;
@@ -58,6 +60,6 @@
 .ck {
 	img:not([alt]),
 	img[alt=''] {
-		box-shadow: 0 0 0 4px $red;
+		box-shadow: 0 0 0 4px variables.$red;
 	}
 }

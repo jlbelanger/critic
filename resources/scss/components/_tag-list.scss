@@ -1,3 +1,5 @@
+@use '../utilities/variables';
+
 .tag-list {
 	font-size: 0;
 	list-style: none;
@@ -11,7 +13,7 @@
 	margin-right: 2rem;
 	margin-top: 2rem;
 
-	@media ($tablet-landscape-up) {
+	@media (width >= variables.$screen-width-tablet-landscape) {
 		margin-right: 1rem;
 		margin-top: 1rem;
 	}

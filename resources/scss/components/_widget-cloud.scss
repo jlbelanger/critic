@@ -1,3 +1,6 @@
+@use '../utilities/mixins';
+@use '../utilities/variables';
+
 .widget--cloud {
 	align-items: center;
 	display: flex;
@@ -15,23 +18,23 @@
 
 .cloud__list-item {
 	display: inline-block;
-	font-size: $font-size;
+	font-size: variables.$font-size;
 }
 
 .cloud__link {
-	@include unlink;
+	@include mixins.unlink;
 
 	display: block;
 	margin: .25rem;
 	padding: .5rem;
 
-	@media ($tablet-landscape-up) {
+	@media (width >= variables.$screen-width-tablet-landscape) {
 		padding: .25rem;
 	}
 }
 
 .cloud__text {
-	@include link;
+	@include mixins.link;
 }
 
 .cloud__num {

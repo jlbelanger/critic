@@ -1,7 +1,9 @@
+@use '../utilities/variables';
+
 #nav-dialog {
 	background: none;
 	border: 0;
-	box-shadow: 0 0 0 100vh rgba($dark-blue, 0);
+	box-shadow: 0 0 0 100vh rgba(variables.$dark-blue, 0);
 	padding: 0;
 	transition: box-shadow .3s ease-in-out;
 
@@ -10,7 +12,7 @@
 	}
 
 	.show-nav.animate-nav & {
-		box-shadow: 0 0 0 100vh rgba($dark-blue, .7);
+		box-shadow: 0 0 0 100vh rgba(variables.$dark-blue, .7);
 		display: block;
 	}
 }
@@ -20,8 +22,8 @@
 }
 
 #nav {
-	background: $darker-blue;
-	box-shadow: 0 20px 20px rgba($black, .5);
+	background: variables.$darker-blue;
+	box-shadow: 0 20px 20px rgba(variables.$black, .5);
 	display: none;
 	inset: 0;
 	max-width: 240px;
@@ -34,21 +36,21 @@
 	.link,
 	button {
 		display: block;
-		font-size: $font-size;
+		font-size: variables.$font-size;
 		font-weight: normal;
-		padding: $input-padding;
+		padding: variables.$input-padding;
 		text-align: left;
 		width: 100%;
 
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: $dark-blue;
+			background-color: variables.$dark-blue;
 		}
 	}
 
 	.link {
-		border-bottom: 1px solid $blue;
+		border-bottom: 1px solid variables.$blue;
 	}
 
 	.show-nav & {
@@ -59,7 +61,7 @@
 		transform: translateX(0);
 	}
 
-	@media (width < $breakpoint-nav) {
+	@media (width < variables.$breakpoint-nav) {
 		.no-js & {
 			box-shadow: none;
 			display: flex;
@@ -78,7 +80,7 @@
 		}
 	}
 
-	@media (width >= $breakpoint-nav) {
+	@media (width >= variables.$breakpoint-nav) {
 		box-shadow: none;
 		display: flex;
 		flex-wrap: wrap;
@@ -110,8 +112,8 @@
 	border-radius: 0;
 	cursor: pointer;
 	font-size: 0;
-	height: $button-size;
-	width: $button-size;
+	height: variables.$button-size;
+	width: variables.$button-size;
 	z-index: 999;
 
 	&:hover,
@@ -131,13 +133,13 @@
 		visibility: hidden;
 	}
 
-	@media (width < $breakpoint-nav) {
+	@media (width < variables.$breakpoint-nav) {
 		.no-js & {
 			display: none;
 		}
 	}
 
-	@media (width >= $breakpoint-nav) {
+	@media (width >= variables.$breakpoint-nav) {
 		display: none;
 	}
 }
@@ -148,7 +150,7 @@
 	right: 0;
 	top: 0;
 
-	@media (width >= $breakpoint-nav) {
+	@media (width >= variables.$breakpoint-nav) {
 		display: none;
 	}
 }
@@ -159,7 +161,7 @@
 	position: fixed;
 	width: 100%;
 
-	@media (width >= $breakpoint-nav) {
+	@media (width >= variables.$breakpoint-nav) {
 		height: auto;
 		overflow-y: unset;
 		position: static;

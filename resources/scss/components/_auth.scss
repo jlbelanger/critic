@@ -1,7 +1,9 @@
-body.auth {
-	padding-top: $page-auth-height;
+@use '../utilities/variables';
 
-	@media (width < $breakpoint-nav) {
+body.auth {
+	padding-top: variables.$page-auth-height;
+
+	@media (width < variables.$breakpoint-nav) {
 		.no-js & {
 			padding-top: 0;
 		}
@@ -15,7 +17,7 @@ body.auth {
 
 #page-auth {
 	left: 0;
-	min-height: $page-auth-height;
+	min-height: variables.$page-auth-height;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -25,7 +27,7 @@ body.auth {
 		white-space: nowrap;
 	}
 
-	@media (width < $breakpoint-nav) {
+	@media (width < variables.$breakpoint-nav) {
 		.no-js & {
 			position: static;
 		}
@@ -35,7 +37,7 @@ body.auth {
 #page-auth-flex {
 	flex: 1 1 auto;
 
-	@media (width < $breakpoint-nav) {
+	@media (width < variables.$breakpoint-nav) {
 		.no-js & {
 			display: none;
 		}
@@ -43,11 +45,11 @@ body.auth {
 }
 
 #auth {
-	margin: #{$padding * 2} auto 0;
+	margin: calc(variables.$padding * 2) auto 0;
 	max-width: 450px;
 
-	@media ($tablet-landscape-up) {
-		margin-top: $padding-large;
+	@media (width >= variables.$screen-width-tablet-landscape) {
+		margin-top: variables.$padding-large;
 	}
 }
 
@@ -55,13 +57,13 @@ body.auth {
 	display: inline-block;
 	width: 100%;
 
-	@media (width < $breakpoint-nav) {
+	@media (width < variables.$breakpoint-nav) {
 		.no-js & {
 			width: auto;
 		}
 	}
 
-	@media (width >= $breakpoint-nav) {
+	@media (width >= variables.$breakpoint-nav) {
 		width: auto;
 	}
 }

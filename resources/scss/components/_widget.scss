@@ -1,18 +1,21 @@
+@use '../utilities/mixins';
+@use '../utilities/variables';
+
 #widgets {
 	display: grid;
-	grid-gap: $padding;
+	grid-gap: variables.$padding;
 	grid-template-rows: repeat(auto-fill, 1fr);
-	margin-top: #{$padding * 2};
+	margin-top: calc(variables.$padding * 2);
 
-	@media ($tablet-portrait-up) and (width <= $screen-width-tablet-landscape) {
+	@media (width >= variables.$screen-width-tablet-portrait) and (width <= variables.$screen-width-tablet-landscape) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	@media ($tablet-landscape-up) {
-		margin-top: $padding-large;
+	@media (width >= variables.$screen-width-tablet-landscape) {
+		margin-top: variables.$padding-large;
 	}
 
-	@media (width > $screen-width-tablet-landscape) {
+	@media (width > variables.$screen-width-tablet-landscape) {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
@@ -22,13 +25,13 @@
 	animation-fill-mode: forwards;
 	animation-name: flip;
 	animation-timing-function: linear;
-	background: rgba($black, .2);
+	background: rgba(variables.$black, .2);
 	flex: 1 1 auto;
 	opacity: 0;
 	padding: 1rem;
 	transform: rotateY(-180deg);
 
-	@media ($tablet-portrait-up) {
+	@media (width >= variables.$screen-width-tablet-portrait) {
 		padding: 1.25rem;
 	}
 
@@ -51,7 +54,7 @@
 	}
 }
 
-@media ($tablet-portrait-up) and (width <= $screen-width-tablet-landscape) {
+@media (width >= variables.$screen-width-tablet-portrait) and (width <= variables.$screen-width-tablet-landscape) {
 	.widget--m2row {
 		grid-row-end: span 2;
 	}
@@ -61,7 +64,7 @@
 	}
 }
 
-@media (width > $screen-width-tablet-landscape) {
+@media (width > variables.$screen-width-tablet-landscape) {
 	.widget--l2col {
 		grid-column-end: span 2;
 	}
@@ -78,7 +81,7 @@
 }
 
 .widget__list--columns {
-	@media ($tablet-portrait-up) {
+	@media (width >= variables.$screen-width-tablet-portrait) {
 		display: grid;
 		grid-auto-flow: column;
 		grid-gap: 0 1rem;
@@ -89,7 +92,7 @@
 .widget__list-item {
 	margin-top: 1.5rem;
 
-	@media ($tablet-portrait-up) {
+	@media (width >= variables.$screen-width-tablet-portrait) {
 		margin-top: 1rem;
 	}
 }
@@ -122,9 +125,9 @@
 	}
 
 	.widget__link {
-		@include unlink;
+		@include mixins.unlink;
 
-		color: $light-gray;
+		color: variables.$light-gray;
 		display: inline-block;
 		margin: .5rem 0;
 		padding: .5rem;
@@ -139,7 +142,7 @@
 	}
 
 	.num {
-		@include link;
+		@include mixins.link;
 
 		display: block;
 		font-size: 2rem;

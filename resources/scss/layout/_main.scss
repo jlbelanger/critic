@@ -1,19 +1,21 @@
+@use '../utilities/variables';
+
 * {
 	box-sizing: border-box;
 }
 
 body {
 	background-attachment: fixed;
-	background-color: $blue;
+	background-color: variables.$blue;
 	background-image: url('/assets/img/bg.png');
-	color: $white;
+	color: variables.$white;
 	font-family: 'Libre Franklin', sans-serif;
-	font-size: $font-size;
-	line-height: $line-height;
+	font-size: variables.$font-size;
+	line-height: variables.$line-height;
 	margin: 0;
 
 	&::before {
-		background: linear-gradient($dark-blue, rgba($dark-blue, 0));
+		background: linear-gradient(variables.$dark-blue, rgba(variables.$dark-blue, 0));
 		content: '';
 		display: block;
 		height: 50vh;
@@ -32,6 +34,6 @@ body {
 	min-height: 100vh;
 
 	.auth & {
-		min-height: calc(100vh - #{$page-auth-height});
+		min-height: calc(100vh - #{variables.$page-auth-height});
 	}
 }

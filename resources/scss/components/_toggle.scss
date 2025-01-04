@@ -1,15 +1,17 @@
+@use '../utilities/variables';
+
 .toggle-button {
 	font-size: 18px;
-	margin: $margin 0 0;
+	margin: variables.$margin 0 0;
 	width: 100%;
 
-	@media (width >= $breakpoint-table) {
+	@media (width >= variables.$breakpoint-table) {
 		display: none;
 	}
 }
 
 #thead {
-	@media (width < $breakpoint-table) {
+	@media (width < variables.$breakpoint-table) {
 		&.toggle-hide {
 			display: none;
 		}

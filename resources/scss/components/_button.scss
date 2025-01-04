@@ -1,27 +1,30 @@
+@use '../utilities/mixins';
+@use '../utilities/variables';
+
 button {
-	background-color: $light-yellow;
-	border: 1px solid $light-yellow;
-	color: $black;
+	background-color: variables.$light-yellow;
+	border: 1px solid variables.$light-yellow;
+	color: variables.$black;
 	cursor: pointer;
 	display: inline-block;
-	line-height: $input-line-height;
-	padding: $input-padding 1rem;
+	line-height: variables.$input-line-height;
+	padding: variables.$input-padding 1rem;
 	text-decoration: none;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: $yellow;
-		border-color: $yellow;
+		background-color: variables.$yellow;
+		border-color: variables.$yellow;
 	}
 }
 
 .button--link {
-	@include link;
+	@include mixins.link;
 
 	background-color: transparent;
 	border-color: transparent;
-	color: $white;
+	color: variables.$white;
 	line-height: 1;
 
 	&:hover,
@@ -33,27 +36,27 @@ button {
 }
 
 .button--danger {
-	background-color: $red;
-	border-color: $red;
-	color: $white;
+	background-color: variables.$red;
+	border-color: variables.$red;
+	color: variables.$white;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: $light-red;
-		border-color: $light-red;
+		background-color: variables.$light-red;
+		border-color: variables.$light-red;
 	}
 }
 
 .button--secondary {
-	background-color: $light-blue;
-	border-color: $light-blue;
-	color: $white;
+	background-color: variables.$light-blue;
+	border-color: variables.$light-blue;
+	color: variables.$white;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: $lighter-blue;
-		border-color: $lighter-blue;
+		background-color: variables.$lighter-blue;
+		border-color: variables.$lighter-blue;
 	}
 }

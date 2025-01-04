@@ -1,13 +1,16 @@
+@use '../utilities/mixins';
+@use '../utilities/variables';
+
 a {
-	@include link;
+	@include mixins.link;
 }
 
 .link {
 	display: inline-block;
-	padding: $input-padding;
+	padding: variables.$input-padding;
 }
 
 .link--active {
-	color: $light-gray;
+	color: variables.$light-gray;
 	text-decoration: none;
 }

@@ -1,4 +1,6 @@
-// Colors
+@use 'sass:color';
+
+/* Colors. */
 
 $black: #000;
 $white: #fff;
@@ -8,18 +10,18 @@ $light-yellow: #eedfb7;
 $yellow: #f9d268;
 
 $dark-blue: #121829;
-$darker-blue: scale-color($dark-blue, $lightness: -50%);
+$darker-blue: color.scale($dark-blue, $lightness: -50%);
 $blue: #202636;
-$light-blue: scale-color($blue, $lightness: 20%);
-$lighter-blue: scale-color($light-blue, $lightness: 15%);
+$light-blue: color.scale($blue, $lightness: 20%);
+$lighter-blue: color.scale($light-blue, $lightness: 15%);
 
 $red: #782932;
-$light-red: scale-color($red, $lightness: 20%);
+$light-red: color.scale($red, $lightness: 20%);
 $lighter-red: #ce717b;
 
 $green: #093;
 
-// Sizes
+/* Sizes. */
 
 $button-size: 44px;
 $font-size: 20px;
@@ -56,7 +58,7 @@ $password-button-width: 87px;
 
 $star-size: 24px;
 
-// Breakpoints
+/* Breakpoints. */
 
 $breakpoint-small: 480px;
 $screen-width-tablet-portrait: 768px;
@@ -65,5 +67,3 @@ $screen-width-tablet-landscape: 1024px;
 $breakpoint-nav: $screen-width-tablet-landscape;
 $breakpoint-table: $screen-width-tablet-portrait + 1px;
 
-$tablet-portrait-up: 'width >= #{$screen-width-tablet-portrait}';
-$tablet-landscape-up: 'width >= #{$screen-width-tablet-landscape}';

@@ -1,7 +1,9 @@
+@use '../utilities/variables';
+
 .alert {
-	background: $light-blue;
-	margin: $margin 0 0;
-	padding: $padding;
+	background: variables.$light-blue;
+	margin: variables.$margin 0 0;
+	padding: variables.$padding;
 
 	div + div {
 		margin-top: .5rem;
@@ -9,9 +11,9 @@
 }
 
 .alert--danger {
-	background: $red;
+	background: variables.$red;
 }
 
 .alert--success {
-	background: $green;
+	background: variables.$green;
 }

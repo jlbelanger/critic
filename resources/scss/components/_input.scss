@@ -1,39 +1,41 @@
+@use '../utilities/variables';
+
 input,
 select,
 textarea {
-	-webkit-appearance: none; // stylelint-disable-line property-no-vendor-prefix
-	background-color: $input-background-color;
-	border: $input-border-width solid $input-border-color;
+	-webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+	background-color: variables.$input-background-color;
+	border: variables.$input-border-width solid variables.$input-border-color;
 	border-radius: 0;
-	color: $white;
-	line-height: $input-line-height;
+	color: variables.$white;
+	line-height: variables.$input-line-height;
 	max-width: 100%;
-	padding: $input-padding;
+	padding: variables.$input-padding;
 	width: 100%;
 }
 
 input[type='checkbox'] {
 	appearance: none;
-	background: $input-background-color;
-	border: 1px solid $input-border-color;
+	background: variables.$input-background-color;
+	border: 1px solid variables.$input-border-color;
 	border-radius: 0;
 	cursor: pointer;
-	height: $checkbox-size;
+	height: variables.$checkbox-size;
 	vertical-align: middle;
-	width: $checkbox-size;
+	width: variables.$checkbox-size;
 
 	&:checked {
 		&::after {
 			background-image: url('/assets/img/check.svg');
 			background-position: center;
 			background-repeat: no-repeat;
-			background-size: $icon-size;
+			background-size: variables.$icon-size;
 			content: '';
 			display: block;
-			height: $checkbox-size;
-			line-height: $checkbox-size;
+			height: variables.$checkbox-size;
+			line-height: variables.$checkbox-size;
 			text-align: center;
-			width: $checkbox-size;
+			width: variables.$checkbox-size;
 		}
 	}
 }
@@ -45,11 +47,11 @@ select {
 
 select {
 	background-image: url('/assets/img/caret.svg');
-	background-position: calc(100% - #{$input-padding}) center;
+	background-position: calc(100% - #{variables.$input-padding}) center;
 	background-repeat: no-repeat;
-	background-size: $select-caret-size;
+	background-size: variables.$select-caret-size;
 	cursor: pointer;
-	padding-right: #{$select-caret-size + ($input-padding * 2)};
+	padding-right: calc(variables.$select-caret-size + (variables.$input-padding * 2));
 }
 
 input,
@@ -72,7 +74,7 @@ textarea,
 
 input.password-input {
 	border-right-color: transparent;
-	width: calc(100% - #{$password-button-width});
+	width: calc(100% - #{variables.$password-button-width});
 
 	.no-js & {
 		width: 100%;
@@ -80,8 +82,8 @@ input.password-input {
 }
 
 .password-button {
-	border-color: $input-border-color;
-	width: $password-button-width;
+	border-color: variables.$input-border-color;
+	width: variables.$password-button-width;
 
 	.no-js & {
 		display: none;
@@ -90,6 +92,6 @@ input.password-input {
 	&:hover,
 	&:active,
 	&:focus {
-		border-color: $input-border-color;
+		border-color: variables.$input-border-color;
 	}
 }
