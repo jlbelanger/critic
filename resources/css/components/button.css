@@ -1,0 +1,56 @@
+button {
+	background-color: var(--light-yellow);
+	border: 1px solid var(--light-yellow);
+	color: var(--black);
+	cursor: pointer;
+	display: inline-block;
+	line-height: var(--input-line-height);
+	padding: var(--input-padding) 1rem;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: var(--yellow);
+		border-color: var(--yellow);
+	}
+}
+
+.button--link {
+	background-color: transparent;
+	border-color: transparent;
+	line-height: 1;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+		border-color: transparent;
+	}
+}
+
+.button--danger {
+	background-color: var(--red);
+	border-color: var(--red);
+	color: var(--white);
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: var(--light-red);
+		border-color: var(--light-red);
+	}
+}
+
+.button--secondary {
+	background-color: var(--light-blue);
+	border-color: var(--light-blue);
+	color: var(--white);
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: var(--lighter-blue);
+		border-color: var(--lighter-blue);
+	}
+}

@@ -1,0 +1,9 @@
+@custom-media --small-up (width >= 480px);
+@custom-media --tablet-portrait-up (width >= 768px);
+@custom-media --tablet-landscape-up (width >= 1024px);
+@custom-media --desktop-up (width > 1024px);
+@custom-media --nav-breakpoint-down (width < 1024px);
+@custom-media --nav-breakpoint-up (width >= 1024px);
+@custom-media --table-breakpoint-down (width < 769px);
+@custom-media --table-breakpoint-up (width >= 769px);
+@custom-media --tablet ((width >= 768px) and (width <= 1024px));

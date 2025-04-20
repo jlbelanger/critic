@@ -1,0 +1,26 @@
+h1 {
+	color: var(--light-yellow);
+	font-size: 1.5rem;
+	line-height: 1;
+	margin: 0;
+
+	small {
+		color: var(--light-gray);
+		font-size: 1rem;
+		font-weight: normal;
+	}
+}
+
+#content-title {
+	margin-top: calc(var(--padding) * 2);
+
+	@media (--tablet-landscape-up) {
+		margin-top: var(--padding-large);
+		padding-left: var(--padding);
+		padding-right: var(--padding);
+
+		&.content-title--no-results {
+			padding: 0;
+		}
+	}
+}

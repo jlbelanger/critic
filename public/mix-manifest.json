@@ -1,7 +1,8 @@
 {
-  "/assets/css/admin.min.css": "/assets/css/admin.min.css?5ca41815e9585714f459",
+  "/assets/css/admin.min.css": "/assets/css/admin.min.css?edd8ac750bdcbcf48f08",
   "/assets/js/admin.min.js": "/assets/js/admin.min.js?994c4f10e021f226e5e7",
   "/assets/js/app.min.js": "/assets/js/app.min.js?efe25e613872a2f71a86",
-  "/assets/js/ckeditor.min.js": "/assets/js/ckeditor.min.js?0c3ba4cd35b477b8d428",
-  "/assets/css/style.min.css": "/assets/css/style.min.css?bd1779ed1899ebbfd06c"
+  "/assets/css/ckeditor.min.css": "/assets/css/ckeditor.min.css?445dc4c7227e92e8f013",
+  "/assets/js/ckeditor.min.js": "/assets/js/ckeditor.min.js?889f723903a16ae666c0",
+  "/assets/css/style.min.css": "/assets/css/style.min.css?7a1307fce93c984271f6"
 }

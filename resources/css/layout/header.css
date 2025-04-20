@@ -1,0 +1,39 @@
+#page-header {
+	font-size: 0;
+	line-height: 1;
+	margin: calc(var(--padding) * 2) 0 0;
+	text-align: center;
+
+	@media (--tablet-landscape-up) {
+		margin-top: var(--padding-large);
+	}
+}
+
+#page-title {
+	background-image: url('/assets/img/title.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	font-size: 0;
+	height: 27px;
+	text-decoration: none;
+	width: 200px;
+
+	@media (--small-up) {
+		height: 41px;
+		width: 300px;
+	}
+
+	@media (--tablet-landscape-up) {
+		height: 62px;
+		width: 450px;
+	}
+}
+
+a#page-title {
+	&:hover,
+	&:active,
+	&:focus {
+		opacity: .7;
+	}
+}

@@ -1,0 +1,20 @@
+.modal {
+	background: var(--light-blue);
+	border: 0;
+	color: var(--white);
+	padding: 24px;
+}
+
+.modal::backdrop {
+	background: hsl(from var(--black) h s l / 50%);
+}
+
+.modal__box {
+	& > :first-child {
+		margin-top: 0;
+	}
+}
+
+.modal__options {
+	text-align: right;
+}

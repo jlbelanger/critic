@@ -1,0 +1,17 @@
+.toggle-button {
+	font-size: 18px;
+	margin: var(--margin) 0 0;
+	width: 100%;
+
+	@media (--table-breakpoint-up) {
+		display: none;
+	}
+}
+
+#thead {
+	@media (--table-breakpoint-down) {
+		&.toggle-hide {
+			display: none;
+		}
+	}
+}

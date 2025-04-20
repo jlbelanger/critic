@@ -1,0 +1,95 @@
+input,
+select,
+textarea {
+	-webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+	background-color: var(--input-background-color);
+	border: var(--input-border-width) solid var(--input-border-color);
+	border-radius: 0;
+	color: var(--white);
+	line-height: var(--input-line-height);
+	max-width: 100%;
+	padding: var(--input-padding);
+	width: 100%;
+}
+
+input[type='checkbox'] {
+	appearance: none;
+	background: var(--input-background-color);
+	border: 1px solid var(--input-border-color);
+	border-radius: 0;
+	cursor: pointer;
+	height: var(--checkbox-size);
+	vertical-align: middle;
+	width: var(--checkbox-size);
+
+	&:checked {
+		&::after {
+			background-image: url('/assets/img/check.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: var(--icon-size);
+			content: '';
+			display: block;
+			height: var(--checkbox-size);
+			line-height: var(--checkbox-size);
+			text-align: center;
+			width: var(--checkbox-size);
+		}
+	}
+}
+
+input[size],
+select {
+	width: auto;
+}
+
+select {
+	background-image: url('/assets/img/caret.svg');
+	background-position: calc(100% - var(--input-padding)) center;
+	background-repeat: no-repeat;
+	background-size: var(--select-caret-size);
+	cursor: pointer;
+	padding-right: calc(var(--select-caret-size) + (var(--input-padding) * 2));
+}
+
+input,
+select,
+textarea,
+.autocomplete__clear,
+.ck-editor.ck.ck-reset,
+.password-button {
+	margin-top: .25rem;
+}
+
+.textarea--large {
+	height: 50vh;
+	line-height: 1.5;
+}
+
+.password-container {
+	display: flex;
+}
+
+input.password-input {
+	border-right-color: transparent;
+	width: calc(100% - var(--password-button-width));
+
+	.no-js & {
+		width: 100%;
+	}
+}
+
+.password-button {
+	border-color: var(--input-border-color);
+	width: var(--password-button-width);
+
+	.no-js & {
+		display: none;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		border-color: var(--input-border-color);
+	}
+}

@@ -1,0 +1,17 @@
+.alert {
+	background: var(--light-blue);
+	margin: var(--margin) 0 0;
+	padding: var(--padding);
+
+	div + div {
+		margin-top: .5rem;
+	}
+}
+
+.alert--danger {
+	background: var(--red);
+}
+
+.alert--success {
+	background: var(--green);
+}

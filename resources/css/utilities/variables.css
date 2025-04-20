@@ -1,0 +1,46 @@
+:root {
+	/* Colors. */
+	--black: #000;
+	--white: #fff;
+	--light-gray: #aaa;
+	--light-yellow: #eedfb7;
+	--yellow: #f9d268;
+	--dark-blue: #121829;
+	--darker-blue: hsl(from var(--dark-blue) h s calc(l * .5));
+	--blue: #202636;
+	--light-blue: hsl(from var(--blue) h s calc(l * 2));
+	--lighter-blue: hsl(from var(--light-blue) h s calc(l * 1.3));
+	--red: #782932;
+	--light-red: hsl(from var(--red) h s calc(l * 1.45));
+	--lighter-red: #ce717b;
+	--green: #093;
+
+	/* Sizes. */
+	--button-size: 44px;
+	--font-size: 20px;
+	--line-height: 1.2;
+	--margin: 1rem;
+	--padding: .75rem;
+	--padding-large: calc(var(--padding) * 4);
+	--select-caret-size: 12px;
+	--sorted-caret-size: 6px;
+	--checkbox-size: 32px;
+	--focus-color: #0cf;
+	--focus-width: 4px;
+	--focus: 0 0 0 var(--focus-width) var(--focus-color);
+	--form-margin: 10px;
+	--icon-size: 20px;
+	--input-background-color: hsl(from var(--white) h s l / 5%);
+	--input-border-color: var(--black);
+	--input-border-width: 1px;
+	--input-line-height: 1.2;
+	--input-padding: 12px;
+	--input-height: calc((var(--font-size) * var(--input-line-height)) + (var(--input-padding) * 2));
+	--label-padding: calc(var(--form-margin) + var(--input-border-width) + var(--input-padding));
+	--page-auth-height: calc((var(--input-padding) * 2) + (var(--font-size) * var(--line-height)));
+	--password-button-width: 87px;
+	--star-size: 24px;
+	--table-cell-padding: .75rem;
+	--autocomplete-padding: var(--focus-width);
+	--autocomplete-selected-item-padding: 6px;
+}

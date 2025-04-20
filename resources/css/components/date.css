@@ -1,0 +1,5 @@
+.date,
+.year {
+	color: var(--light-gray);
+	font-size: 16px;
+}

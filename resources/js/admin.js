@@ -1,4 +1,4 @@
-import '../scss/admin.scss';
+import '../css/admin.css';
 import './admin/autocomplete';
 import './admin/beforeunload';
 import './admin/confirmable';
