@@ -1,6 +1,6 @@
-import slugify from '../utilities/slugify';
+import slugify from '../utilities/slugify.js';
 
-function Slugable($slugInput) {
+function slugable($slugInput) {
 	const inputSelectors = $slugInput.getAttribute('data-slug').split(',');
 	const $inputs = document.querySelectorAll(inputSelectors);
 
@@ -28,11 +28,9 @@ function Slugable($slugInput) {
 	init();
 }
 
-function initSlugable() {
+export const initSlugable = () => {
 	const $elements = document.querySelectorAll('[data-slug]');
 	$elements.forEach(($element) => {
-		Slugable($element);
+		slugable($element);
 	});
-}
-
-initSlugable();
+};

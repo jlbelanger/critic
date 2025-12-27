@@ -1,4 +1,4 @@
-function Sortable($list) {
+function sortable($list) {
 	let data = [];
 	let currentKey = $list.getAttribute('data-sortable-default-key');
 	let currentDirection = $list.getAttribute('data-sortable-default-dir') ? $list.getAttribute('data-sortable-default-dir') : 'asc';
@@ -82,11 +82,9 @@ function Sortable($list) {
 	init();
 }
 
-function initSortable() {
+export const initSortable = () => {
 	const $elements = document.querySelectorAll('[data-sortable-list]');
 	$elements.forEach(($element) => {
-		Sortable($element);
+		sortable($element);
 	});
-}
-
-initSortable();
+};

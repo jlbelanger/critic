@@ -1,6 +1,6 @@
-import ItalicEditing from './italic/italicediting';
-import ItalicUI from './italic/italicui';
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import ItalicEditing from './italic/italicediting.js';
+import ItalicUI from './italic/italicui.js';
+import { Plugin } from 'ckeditor5';
 
 export default class Italic extends Plugin {
 	static get requires() {

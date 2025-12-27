@@ -1,6 +1,6 @@
-import BoldEditing from './bold/boldediting';
-import BoldUI from './bold/boldui';
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import BoldEditing from './bold/boldediting.js';
+import BoldUI from './bold/boldui.js';
+import { Plugin } from 'ckeditor5';
 
 export default class Bold extends Plugin {
 	static get requires() {

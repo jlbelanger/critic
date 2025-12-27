@@ -34,6 +34,9 @@
 
 .ck.ck-editor__main > .ck-editor__editable {
 	background-color: var(--input-background-color) !important;
+	color: var(--white) !important;
+	font-family: var(--font-family);
+	font-size: var(--font-size);
 
 	p,
 	ol,

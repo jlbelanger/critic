@@ -1,8 +1,16 @@
 import '../css/style.css';
-import './app/accessibility';
-import './app/cloudable';
-import './app/filterable';
-import './app/graphable';
-import './app/password';
-import './app/sortable';
-import './app/toggleable';
+import { initAccessibility } from './app/accessibility.js';
+import { initClouds } from './app/cloudable.js';
+import { initFilterable } from './app/filterable.js';
+import { initGraphable } from './app/graphable.js';
+import { initPasswordable } from './app/password.js';
+import { initSortable } from './app/sortable.js';
+import { initToggleable } from './app/toggleable.js';
+
+initAccessibility();
+initClouds();
+initFilterable();
+initGraphable();
+initPasswordable();
+initSortable();
+initToggleable();

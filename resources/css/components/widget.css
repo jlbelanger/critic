@@ -1,6 +1,6 @@
 #widgets {
 	display: grid;
-	grid-gap: var(--padding);
+	gap: var(--padding);
 	margin-top: calc(var(--padding) * 2);
 
 	@media (--tablet) {
@@ -79,8 +79,8 @@
 .widget__list--columns {
 	@media (--tablet-portrait-up) {
 		display: grid;
+		gap: 0 1rem;
 		grid-auto-flow: column;
-		grid-gap: 0 1rem;
 		grid-template-rows: repeat(5, 1fr);
 	}
 }

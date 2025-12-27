@@ -1,6 +1,5 @@
-import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
+import { ButtonView, Plugin } from 'ckeditor5';
 import citeIcon from './cite.svg';
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 
 const CITE = 'cite';
 

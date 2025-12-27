@@ -1,6 +1,6 @@
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-import SmallEditing from './small/smallediting';
-import SmallUI from './small/smallui';
+import { Plugin } from 'ckeditor5';
+import SmallEditing from './small/smallediting.js';
+import SmallUI from './small/smallui.js';
 
 export default class Small extends Plugin {
 	static get requires() {

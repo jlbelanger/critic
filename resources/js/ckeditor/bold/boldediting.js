@@ -1,5 +1,4 @@
-import AttributeCommand from '@ckeditor/ckeditor5-basic-styles/src/attributecommand';
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import { AttributeCommand, Plugin } from 'ckeditor5';
 
 const BOLD = 'bold';
 

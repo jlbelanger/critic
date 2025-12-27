@@ -1,6 +1,6 @@
-import EmphasisEditing from './emphasis/emphasisediting';
-import EmphasisUI from './emphasis/emphasisui';
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import EmphasisEditing from './emphasis/emphasisediting.js';
+import EmphasisUI from './emphasis/emphasisui.js';
+import { Plugin } from 'ckeditor5';
 
 export default class Emphasis extends Plugin {
 	static get requires() {

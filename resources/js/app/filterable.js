@@ -1,7 +1,7 @@
-import debounce from '../utilities/debounce';
-import slugify from '../utilities/slugify';
+import debounce from '../utilities/debounce.js';
+import slugify from '../utilities/slugify.js';
 
-function Filterable($list) {
+function filterable($list) {
 	const $inputs = $list.querySelectorAll('[data-filterable-input]');
 	const $items = $list.querySelectorAll('[data-filterable-item]');
 	const $num = document.querySelector('[data-filterable-num]');
@@ -75,11 +75,9 @@ function Filterable($list) {
 	init();
 }
 
-function initFilterable() {
+export const initFilterable = () => {
 	const $elements = document.querySelectorAll('[data-filterable-list]');
 	$elements.forEach(($element) => {
-		Filterable($element);
+		filterable($element);
 	});
-}
-
-initFilterable();
+};

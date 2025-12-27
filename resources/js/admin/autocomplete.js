@@ -1,7 +1,7 @@
-import debounce from '../utilities/debounce';
-import slugify from '../utilities/slugify';
+import debounce from '../utilities/debounce.js';
+import slugify from '../utilities/slugify.js';
 
-function Autocomplete($container) {
+function autocomplete($container) {
 	const url = $container.getAttribute('data-autocomplete');
 	const name = $container.getAttribute('data-autocomplete-name');
 	const $input = $container.querySelector('.autocomplete__input');
@@ -159,13 +159,13 @@ function Autocomplete($container) {
 
 				$resultsContainer.classList.remove('hide');
 
-				if (!hasResults) {
-					$noResults.classList.remove('hide');
-					$resultsList.classList.add('hide');
-				} else {
+				if (hasResults) {
 					$noResults.classList.add('hide');
 					$resultsList.classList.remove('hide');
 					$resultsList.firstChild.scrollIntoView({ block: 'nearest' });
+				} else {
+					$noResults.classList.remove('hide');
+					$resultsList.classList.add('hide');
 				}
 
 				isSearching = false;
@@ -265,11 +265,9 @@ function Autocomplete($container) {
 	init();
 }
 
-function initAutocomplete() {
+export const initAutocomplete = () => {
 	const $elements = document.querySelectorAll('[data-autocomplete]');
 	$elements.forEach(($element) => {
-		Autocomplete($element);
+		autocomplete($element);
 	});
-}
-
-initAutocomplete();
+};

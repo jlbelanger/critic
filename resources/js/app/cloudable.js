@@ -1,4 +1,4 @@
-function Cloudable($cloud) {
+function init($cloud) {
 	const $nums = $cloud.querySelectorAll('.cloud__num');
 
 	let max = 0;
@@ -20,11 +20,9 @@ function Cloudable($cloud) {
 	});
 }
 
-function initClouds() {
-	const $elements = document.querySelectorAll('.cloud');
-	$elements.forEach(($element) => {
-		Cloudable($element);
+export const initClouds = () => {
+	const $clouds = document.querySelectorAll('.cloud');
+	$clouds.forEach(($cloud) => {
+		init($cloud);
 	});
-}
-
-initClouds();
+};

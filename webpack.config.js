@@ -1,14 +1,13 @@
-const path = require('path');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { styles } = require('@ckeditor/ckeditor5-dev-utils');
-const TerserPlugin = require('terser-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
+import TerserPlugin from 'terser-webpack-plugin';
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
-require('dotenv').config();
+process.loadEnvFile();
 
-module.exports = {
+export default {
 	mode: 'production',
 	devtool: false,
 	entry: {
@@ -18,7 +17,7 @@ module.exports = {
 	},
 	output: {
 		filename: 'assets/js/[name].min.js?[contenthash]',
-		path: path.resolve(__dirname, 'public'),
+		path: path.resolve(process.cwd(), 'public'),
 		publicPath: '/',
 	},
 	plugins: [
@@ -56,38 +55,8 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
-				use: ['raw-loader'],
-			},
-			{
 				test: /resources\/js\/ckeditor\/.+\.svg$/,
 				use: ['raw-loader'],
-			},
-			{
-				test: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
-				use: [
-					{
-						loader: 'style-loader',
-						options: {
-							injectType: 'singletonStyleTag',
-							attributes: {
-								'data-cke': true,
-							},
-						},
-					},
-					'css-loader',
-					{
-						loader: 'postcss-loader',
-						options: {
-							postcssOptions: styles.getPostCssConfig({
-								themeImporter: {
-									themePath: require.resolve('@ckeditor/ckeditor5-theme-lark'),
-								},
-								minify: false,
-							}),
-						},
-					},
-				],
 			},
 			{
 				test: /\.js$/,

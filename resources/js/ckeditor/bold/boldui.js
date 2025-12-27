@@ -1,6 +1,5 @@
-import boldIcon from '@ckeditor/ckeditor5-core/theme/icons/bold.svg';
-import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import { ButtonView, Plugin } from 'ckeditor5';
+import boldIcon from './bold.svg';
 
 const BOLD = 'bold';
 

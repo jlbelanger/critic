@@ -1,6 +1,6 @@
-import CiteEditing from './cite/citeediting';
-import CiteUI from './cite/citeui';
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import CiteEditing from './cite/citeediting.js';
+import CiteUI from './cite/citeui.js';
+import { Plugin } from 'ckeditor5';
 
 export default class Cite extends Plugin {
 	static get requires() {

@@ -1,4 +1,4 @@
-function Graphable($graph) {
+function graphable($graph) {
 	const $bars = $graph.querySelectorAll('.graph__bar');
 	const height = $bars[0].clientHeight;
 
@@ -20,11 +20,9 @@ function Graphable($graph) {
 	});
 }
 
-function initGraphs() {
+export const initGraphable = () => {
 	const $elements = document.querySelectorAll('.graph');
 	$elements.forEach(($element) => {
-		Graphable($element);
+		graphable($element);
 	});
-}
-
-initGraphs();
+};

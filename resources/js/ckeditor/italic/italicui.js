@@ -1,6 +1,5 @@
-import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-import italicIcon from '@ckeditor/ckeditor5-basic-styles/theme/icons/italic.svg';
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import { ButtonView, Plugin } from 'ckeditor5';
+import italicIcon from './italic.svg';
 
 const ITALIC = 'italic';
 
