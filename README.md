@@ -14,7 +14,7 @@ Critic is a movie/TV/music review site. [View the site](https://critic.jennybela
 
 ### Setup
 
-``` bash
+```bash
 # Clone the repo
 git clone https://github.com/jlbelanger/critic.git
 cd critic
@@ -41,7 +41,7 @@ php artisan auth:reset-admin
 
 ### Run
 
-``` bash
+```bash
 npm start
 ```
 
@@ -49,14 +49,14 @@ Your browser should automatically open https://localhost:3000/
 
 ### Lint
 
-``` bash
+```bash
 ./vendor/bin/phpcs
 npm run lint
 ```
 
 ### Test
 
-``` bash
+```bash
 ./vendor/bin/phpunit
 ```
 
@@ -64,7 +64,7 @@ npm run lint
 
 Essentially, to set up the repo on the server:
 
-``` bash
+```bash
 git clone https://github.com/jlbelanger/critic.git
 cd critic
 cp .env.example .env
@@ -77,7 +77,7 @@ chown -R www-data:www-data storage
 
 For subsequent deploys, push changes to the main branch, then run the following on the server:
 
-``` bash
+```bash
 cd critic
 git fetch origin
 git pull
@@ -89,6 +89,6 @@ php artisan config:clear
 
 Note: The deploy script included in this repo depends on other scripts that only exist in my private repos. If you want to deploy this repo, you'll have to create your own script.
 
-``` bash
+```bash
 ./deploy.sh
 ```

@@ -1,7 +1,9 @@
 function sortable($list) {
 	let data = [];
 	let currentKey = $list.getAttribute('data-sortable-default-key');
-	let currentDirection = $list.getAttribute('data-sortable-default-dir') ? $list.getAttribute('data-sortable-default-dir') : 'asc';
+	let currentDirection = $list.getAttribute('data-sortable-default-dir')
+		? $list.getAttribute('data-sortable-default-dir')
+		: 'asc';
 	const $buttons = $list.querySelectorAll('[data-sortable-key]');
 	const $container = $list.querySelector('[data-sortable-container]');
 	const $items = $list.querySelectorAll('[data-sortable-item]');

@@ -4,7 +4,7 @@
 	border: 1px solid var(--white);
 	line-height: 1.5;
 	min-height: 107px;
-	opacity: .5;
+	opacity: 0.5;
 	padding: 0 12px;
 
 	&::before {
@@ -55,7 +55,7 @@
 	display: flex;
 	font-size: 16px;
 	justify-content: space-between;
-	margin-top: .25rem;
+	margin-top: 0.25rem;
 }
 
 .ck {

@@ -20,12 +20,12 @@
 
 .cloud__link {
 	display: block;
-	margin: .25rem;
-	padding: .5rem;
+	margin: 0.25rem;
+	padding: 0.5rem;
 	text-decoration: none;
 
 	@media (--tablet-landscape-up) {
-		padding: .25rem;
+		padding: 0.25rem;
 	}
 }
 

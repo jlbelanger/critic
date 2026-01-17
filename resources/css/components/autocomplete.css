@@ -104,14 +104,14 @@
 	color: var(--light-gray);
 	font-style: italic;
 	margin: 0;
-	padding: .7rem 1rem;
+	padding: 0.7rem 1rem;
 }
 
 .autocomplete__selected-list {
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
-	margin: .5rem calc(var(--autocomplete-selected-item-padding) * -1) calc(var(--autocomplete-selected-item-padding) * -1);
+	margin: 0.5rem calc(var(--autocomplete-selected-item-padding) * -1) calc(var(--autocomplete-selected-item-padding) * -1);
 	padding: 0;
 }
 
@@ -127,7 +127,7 @@
 	display: inline-block;
 	font-size: 16px;
 	line-height: 1;
-	padding: .75rem;
+	padding: 0.75rem;
 }
 
 .autocomplete__selected-button {

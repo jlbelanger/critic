@@ -6,7 +6,7 @@
 	--light-yellow: #eedfb7;
 	--yellow: #f9d268;
 	--dark-blue: #121829;
-	--darker-blue: hsl(from var(--dark-blue) h s calc(l * .5));
+	--darker-blue: hsl(from var(--dark-blue) h s calc(l * 0.5));
 	--blue: #202636;
 	--light-blue: hsl(from var(--blue) h s calc(l * 2));
 	--lighter-blue: hsl(from var(--light-blue) h s calc(l * 1.3));
@@ -21,7 +21,7 @@
 	--font-size: 20px;
 	--line-height: 1.2;
 	--margin: 1rem;
-	--padding: .75rem;
+	--padding: 0.75rem;
 	--padding-large: calc(var(--padding) * 4);
 	--select-caret-size: 12px;
 	--sorted-caret-size: 6px;
@@ -41,7 +41,7 @@
 	--page-auth-height: calc((var(--input-padding) * 2) + (var(--font-size) * var(--line-height)));
 	--password-button-width: 87px;
 	--star-size: 24px;
-	--table-cell-padding: .75rem;
+	--table-cell-padding: 0.75rem;
 	--autocomplete-padding: var(--focus-width);
 	--autocomplete-selected-item-padding: 6px;
 }

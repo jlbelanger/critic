@@ -38,7 +38,7 @@ function autocomplete($container) {
 		$li.remove();
 		$input.focus();
 
-		const pos = selectedItems.findIndex((item) => (item.id === id));
+		const pos = selectedItems.findIndex((item) => item.id === id);
 		if (pos > -1) {
 			selectedItems.splice(pos, 1);
 
@@ -145,7 +145,7 @@ function autocomplete($container) {
 
 				response.items.forEach((row) => {
 					// Do not show terms that have already been selected.
-					const pos = selectedItems.findIndex((item) => (item.id === row.id));
+					const pos = selectedItems.findIndex((item) => item.id === row.id);
 					if (pos > -1) {
 						return;
 					}
@@ -193,9 +193,7 @@ function autocomplete($container) {
 		}
 	};
 
-	const areResultsVisible = () => (
-		$resultsContainer.style.display !== 'none'
-	);
+	const areResultsVisible = () => $resultsContainer.style.display !== 'none';
 
 	const onFocusInput = () => {
 		const value = slugify($input.value);
@@ -218,7 +216,7 @@ function autocomplete($container) {
 			}
 		} else if (e.key === 'ArrowDown') {
 			$selectedListItem.removeAttribute('data-selected');
-			if (selectedIndex >= ($resultsList.querySelectorAll('li').length - 1)) {
+			if (selectedIndex >= $resultsList.querySelectorAll('li').length - 1) {
 				selectedIndex = 0;
 			} else {
 				selectedIndex += 1;

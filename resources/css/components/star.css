@@ -2,7 +2,7 @@
 	font-size: 0;
 	height: var(--star-size);
 	margin-right: 1rem;
-	margin-top: .2rem;
+	margin-top: 0.2rem;
 	order: -1;
 	position: relative;
 	width: calc(var(--star-size) * 5);
@@ -23,13 +23,13 @@
 	}
 
 	&::after {
-		opacity: .1;
+		opacity: 0.1;
 		width: calc(var(--star-size) * 5);
 	}
 }
 
 .star--05::before {
-	width: calc(var(--star-size) * .5);
+	width: calc(var(--star-size) * 0.5);
 }
 
 .star--10::before {

@@ -14,7 +14,7 @@ function init($cloud) {
 	$nums.forEach(($num) => {
 		const val = parseInt($num.innerText, 10);
 		if (val) {
-			const fontSize = (Math.log(val) / Math.log(max)) * (maxFontSize - minFontSize) + minFontSize;
+			const fontSize = ((Math.log(val) / Math.log(max)) * (maxFontSize - minFontSize)) + minFontSize; // prettier-ignore
 			$num.closest('li').style.fontSize = `${fontSize}px`;
 		}
 	});
