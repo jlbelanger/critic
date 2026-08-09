@@ -13,12 +13,6 @@ use Illuminate\View\View;
 
 class TagController extends Controller
 {
-	/**
-	 * Shows the form for creating a new resource.
-	 *
-	 * @param  Request $request
-	 * @return View
-	 */
 	public function create(Request $request) : View
 	{
 		return view('tags/create')
@@ -56,13 +50,6 @@ class TagController extends Controller
 			->with('status', 'success');
 	}
 
-	/**
-	 * Displays the specified resource.
-	 *
-	 * @param  Request $request
-	 * @param  string  $slug
-	 * @return View
-	 */
 	public function show(Request $request, string $slug) : View
 	{
 		$row = Tag::where('slug', '=', $slug);
@@ -96,12 +83,6 @@ class TagController extends Controller
 			->with('defaults', $defaults);
 	}
 
-	/**
-	 * Shows the form for editing the specified resource.
-	 *
-	 * @param  string $id
-	 * @return View
-	 */
 	public function edit(string $id) : View
 	{
 		$row = Tag::findOrFail($id);
@@ -165,10 +146,6 @@ class TagController extends Controller
 			->with('status', 'success');
 	}
 
-	/**
-	 * @param  Request $request
-	 * @return JsonResponse
-	 */
 	public function search(Request $request) : JsonResponse
 	{
 		$term = Str::slug($request->query('q'));

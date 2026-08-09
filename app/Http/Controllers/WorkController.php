@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Work;
 use DB;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,59 +14,26 @@ use Illuminate\View\View;
 
 class WorkController extends Controller
 {
-	/**
-	 * Displays the specified resource.
-	 *
-	 * @param  Request $request
-	 * @return View
-	 */
 	public function albums(Request $request) : View
 	{
 		return $this->index($request, '/albums', 'Album', 'Albums');
 	}
 
-	/**
-	 * Displays the specified resource.
-	 *
-	 * @param  Request $request
-	 * @return View
-	 */
 	public function books(Request $request) : View
 	{
 		return $this->index($request, '/books', 'Book', 'Books');
 	}
 
-	/**
-	 * Displays the specified resource.
-	 *
-	 * @param  Request $request
-	 * @return View
-	 */
 	public function movies(Request $request) : View
 	{
 		return $this->index($request, '/movies', 'Movie', 'Movies');
 	}
 
-	/**
-	 * Displays the specified resource.
-	 *
-	 * @param  Request $request
-	 * @return View
-	 */
 	public function tv(Request $request) : View
 	{
 		return $this->index($request, '/tv', 'Tv', 'TV Shows');
 	}
 
-	/**
-	 * Displays the specified resource.
-	 *
-	 * @param  Request $request
-	 * @param  string  $canonical
-	 * @param  string  $type
-	 * @param  string  $title
-	 * @return View
-	 */
 	protected function index(Request $request, string $canonical, string $type, string $title) : View
 	{
 		$sortKey = $request->query('sort');
@@ -115,12 +83,6 @@ class WorkController extends Controller
 			->with('defaultSortDir', $sortDir);
 	}
 
-	/**
-	 * Shows the form for creating a new resource.
-	 *
-	 * @param  Request $request
-	 * @return View
-	 */
 	public function create(Request $request) : View
 	{
 		return view('works/create')
@@ -163,12 +125,6 @@ class WorkController extends Controller
 			->with('status', 'success');
 	}
 
-	/**
-	 * Shows the form for editing the specified resource.
-	 *
-	 * @param  string $id
-	 * @return View
-	 */
 	public function edit(string $id) : View
 	{
 		$row = Work::findOrFail($id);
@@ -231,7 +187,7 @@ class WorkController extends Controller
 	 * @param  string  $id
 	 * @return JsonResponse|RedirectResponse
 	 */
-	public function destroy(Request $request, string $id) : RedirectResponse
+	public function destroy(Request $request, string $id)
 	{
 		$row = Work::findOrFail($id);
 		$type = strtolower($row->type);

@@ -7,11 +7,7 @@ use Illuminate\Support\Carbon;
 
 class WorkObserver
 {
-	/**
-	 * @param  Work $work
-	 * @return void
-	 */
-	public function deleted(Work $work)
+	public function deleted(Work $work) : void
 	{
 		$work->slug = 'deleted-' . Carbon::now() . '-' . $work->slug;
 		$work->save();
